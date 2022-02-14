@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>长列表优化table</title>
+    <style>
+      #app {
+        margin: 10px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://unpkg.com/view-design/dist/styles/iview.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/umy-ui/lib/theme-chalk/index.css"
+    />
+    <style>
+      .plTableBox .el-table td.is-hidden > *,
+      .plTableBox .el-table th.is-hidden > * {
+        visibility: visible !important;
+      }
+    </style>
+    <script type="text/javascript" src="./js/vue.min.js"></script>
+    <script src="./js/umy-ui.js"></script>
+    <script type="text/javascript" src="./js/iview.min.js"></script>
+    <script type="text/javascript" src="./js/mock-min.js"></script>
+    <script type="text/javascript" src="./js/axios.min.js"></script>
+    <script type="text/javascript" src="./mockserver.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <Row align="middle" type="flex" gutter="10">
+        <i-col span="24"><h2>虚拟列表性能优化测试</h2></i-col>
+        <i-col span="3">
+          pageNum<i-input v-model.number="pageParams.pageNum"></i-input>
+        </i-col>
+        <i-col span="3">
+          pageSize<i-input v-model.number="pageParams.pageSize"></i-input>
+        </i-col>
+        <i-col span="3">
+          total<i-input v-model.number="pageParams.total"></i-input>
+        </i-col>
+        <i-col span="3">
+          <i-button type="primary" @click="handleReflush">刷新</i-button>
+        </i-col>
+      </Row>
+      <u-table
+        ref="table"
+        :data="tableData"
+        :height="height"
+        use-virtual
+        :row-height="rowHeight"
+        :treeConfig="{
+            children: 'children',
+            expandAll: false,
+            lazy: true,
+          }"
+        row-id="id"
+        border
+      >
+        <u-table-column
+          type="index"
+          width="100"
+          label="序号"
+          fixed
+        ></u-table-column>
+
+        <u-table-column
+          v-for="item in columns"
+          :key="item.key"
+          :prop="item.key"
+          :tree-node="item.hasChildren"
+          :label="item.title"
+        >
+        </u-table-column>
+      </u-table>
+      <Page
+        :total="pageParams.total"
+        @on-change="handleChangePage"
+        show-sizer
+      ></Page>
+    </div>
+    <script>
+      // 引入UMYUI 组件
+      const { UTable, UTableColumn } = UMYUI;
+      var vm = new Vue({
+        el: "#app",
+        components: {
+          UTable,
+          UTableColumn,
+        },
+        data: {
+          loading: false,
+          tableData: [],
+          height: 500,
+          rowHeight: 55,
+          pageParams: {
+            pageNum: 1,
+            pageSize: 100,
+            total: 100,
+          },
+          columns: [
+            {
+              title: "Name",
+              key: "name",
+              hasChildren: true,
+            },
+            {
+              title: "age",
+              key: "age",
+            },
+            {
+              title: "address",
+              key: "adress",
+            },
+          ],
+        },
+        methods: {
+          // todo 请求数据
+          featchData() {
+            const { pageParams } = this;
+            this.loading = true;
+            this.tableData = [];
+            let timer;
+            mockServer("http://test.com", pageParams).then((res) => {
+              const {
+                data: { result },
+              } = res;
+              console.log(result);
+              this.tableData = result;
+              if (timer) {
+                clearTimeout(timer);
+              }
+              // todo 模拟数据延时loading
+              timer = setTimeout(() => {
+                this.loading = false;
+              }, 2000);
+            });
+          },
+          // todo 点击按钮刷新操作
+          handleReflush() {
+            this.featchData();
+          },
+          // 分页参数请求
+          handleChangePage(pageNum) {
+            this.pageParams = {
+              ...this.pageParams,
+              pageNum,
+            };
+            this.featchData();
+          },
+        },
+        mounted() {
+          console.log(UMYUI);
+          this.featchData();
+        },
+      });
+    </script>
+  </body>
+</html>

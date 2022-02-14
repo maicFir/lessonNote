@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iview-table</title>
+    <style>
+      #app {
+        margin: 10px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="http://unpkg.com/view-design/dist/styles/iview.css"
+    />
+    <script type="text/javascript" src="./js/vue.min.js"></script>
+    <script type="text/javascript" src="./js/iview.min.js"></script>
+    <script type="text/javascript" src="./js/mock-min.js"></script>
+    <script type="text/javascript" src="./js/axios.min.js"></script>
+    <script type="text/javascript" src="./mockserver.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <Row align="middle" type="flex" gutter="10">
+        <i-col span="24"><h2>iview-table性能优化测试</h2></i-col>
+        <i-col span="3">
+          pageNum<i-input v-model.number="pageParams.pageNum"></i-input>
+        </i-col>
+        <i-col span="3">
+          pageSize<i-input v-model.number="pageParams.pageSize"></i-input>
+        </i-col>
+        <i-col span="3">
+          total<i-input v-model.number="pageParams.total"></i-input>
+        </i-col>
+        <i-col span="3">
+          <i-button type="primary" @click="handleReflush">刷新</i-button>
+        </i-col>
+      </Row>
+      <i-table
+        row-key="id"
+        :loading="loading"
+        :columns="columns"
+        :data="tableData"
+        border
+      ></i-table>
+      <Page
+        :total="pageParams.total"
+        @on-change="handleChangePage"
+        show-sizer
+      ></Page>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

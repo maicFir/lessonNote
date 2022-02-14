@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>element-table</title>
+    <style>
+      #app {
+        margin: 10px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+
+    <script type="text/javascript" src="./js/vue.min.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script type="text/javascript" src="./js/mock-min.js"></script>
+    <script type="text/javascript" src="./js/axios.min.js"></script>
+    <script type="text/javascript" src="./mockserver.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <el-row type="flex">
+        <el-col span="5"><h2>element-table性能优化测试</h2></el-col>
+        <el-col span="3">
+          pageNum<el-input v-model.number="pageParams.pageNum"></el-input>
+        </el-col>
+        <el-col span="3">
+          pageSize<el-input v-model.number="pageParams.pageSize"></el-input>
+        </el-col>
+        <el-col span="3">
+          total<el-input v-model.number="pageParams.total"></el-input>
+        </el-col>
+        <el-col span="3">
+          <el-button type="primary" @click="handleReflush">刷新</el-button>
+        </el-col>
+      </el-row>
+      <el-table
+        row-key="id"
+        :data="tableData"
+        :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
+        border
+      >
+      <el-table-column
+        type="index"
+        label="序号"
+        width="50">
+        </el-table-column>
+        <el-table-column v-for="(item) in columns" :prop="item.key" :label="item.title">
+        </el-table-column>
+        </el-table-column>
+    </el-table>
+    <el-pagination
+    :total="pageParams.total"
+    :page-size="pageParams.pageSize"
+    :page-sizes="[10, 20, 30, 40]"
+    @current-change="handleChangePage"
+  ></el-pagination>
+    </div>
+    <script>
+        var vm = new Vue({
+    el: "#app",
+    data: {
+        loading: false,
+        tableData: [],
+        pageParams: {
+            pageNum: 1,
+            pageSize: 10,
+            total: 10,
+        },
+        columns: [
+            {
+                title: "Name",
+                key: "name",
+                tree: true,
+            },
+            {
+                title: "age",
+                key: "age",
+            },
+            {
+                title: "address",
+                key: "adress",
+            },
+        ],
+    },
+    methods: {
+        // todo 请求数据
+        featchData() {
+            const { pageParams } = this;
+            this.loading = true;
+            this.tableData = [];
+            let timer;
+            mockServer("http://test.com", pageParams).then((res) => {
+                const {
+                    data: { result },
+                } = res;
+                console.log(res, "=res");
+                this.tableData = result;
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                // todo 模拟数据延时loading
+                timer = setTimeout(() => {
+                    this.loading = false;
+                }, 2000);
+            });
+        },
+        // todo 点击按钮刷新操作
+        handleReflush() {
+            this.featchData();
+        },
+         // 分页参数请求
+        handleChangePage(pageNum) {
+            this.pageParams = {
+                ...this.pageParams,
+                pageNum,
+            };
+            this.featchData();
+        },
+    },
+    mounted() {
+        this.featchData();
+    },
+});
+    </script>
+  </body>
+</html>
