@@ -25,5 +25,9 @@
     "dependencies": {
         "eazyutils": "^1.0.1",
         "ramda": "^0.27.1"
+    },
+    "devDependencies": {
+        "qs": "^6.10.3",
+        "xss": "^1.0.10"
     }
 }
