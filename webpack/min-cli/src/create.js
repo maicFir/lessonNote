@@ -50,8 +50,8 @@ const download = (url, message) => {
 };
 const templates = {
     'template-lib': {
-        url: 'direct:http://git.aqara.com/root/AIOT_aqara-npm-libs.git#dev-aqara-lib',
-        directory: 'aqara-cli/template-lib',
+        url: '',
+        directory: '',
     },
     'template-lib-vue': {
         url: '',
@@ -106,7 +106,7 @@ module.exports = async (projectName) => {
         cd ${projectName}
         =========================================
                 `
-    );
+        );
     } else {
         console.log('invalid template');
     }
