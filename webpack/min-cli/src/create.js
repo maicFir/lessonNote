@@ -6,7 +6,20 @@ const ora = require('ora');
 const fs = require('fs-extra');
 const { promisify } = require('util');
 const gitrpo = require('download-git-repo');
+const ncp = require('ncp');
+let figlet = require('figlet');
 const downGitPro = promisify(gitrpo);
+const { spawn } = require('child_process');
+const command = (...args) => {
+    return new Promise((resolve) => {
+        const proc = spawn(...args);
+        proc.stdout.pipe(process.stdout);
+        proc.stderr.pipe(process.stderr);
+        proc.on('close', () => {
+            resolve();
+        })
+    })
+}
 const loaderGitPro = () => {
     return promisify(downGitPro);
 }
@@ -67,6 +80,34 @@ module.exports = async (projectName) => {
     const choose = templates[tempName];
     if (choose) {
         // 选择模板下载
-        let templateDir = await download(choose.url, `download template ${choose.directory} on ${hoose.url}`)
+        let templateDir = await download(choose.url, `download template ${choose.directory} on ${hoose.url}`);
+        // 如果文件存在，则删除目标文件
+        if (isFileWrite) {
+            await fs.remove(targetDir);
+        }
+        const directorDir = path.join(templateDir, choose.directory || '');
+        // 复制对应项目到临时文件
+        await ncp(directorDir, path.resolve(projectName));
+
+        // 删除临时文件
+        await fs.remove(templateDir);
+        // 安装依赖
+        const order = 'npm';
+        console.log('start install dependices');
+        await command(process.platform === 'win32' ? `${order}.cmd` : order, ['install'], {
+            cwd: `./${projectName}`
+        });
+        const data = await figlet('success');
+        console.log(data);
+        console.log(`
+        successfully created project ${projectName}：
+        Get started with the following commands:
+        =========================================
+        cd ${projectName}
+        =========================================
+                `
+    );
+    } else {
+        console.log('invalid template');
     }
 }
