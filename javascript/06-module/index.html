@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>module</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="./js/2.js" defer></script>
+    <script src="./js/1.js" async></script>
+    <script src="./js/3.js"></script>
+    <script type="module">
+       import userInfo, {cityList} from './js/4.js';
+       import {userInfo as nuseInfo, count, countAge, utils, cutils, animal } from './js/7.js'
+       console.log(userInfo, cityList); 
+       console.log(this)
+       // { name: 'Maic', age: 18}
+      //  const userInfo2 = require('./js/6.js')
+      countAge();
+      console.log(nuseInfo, count);
+      utils.add();
+      new cutils().add();
+      console.log(utils)
+      console.log(new animal('cat'))
+    </script>
+    <script type="module">
+      import { utils, cutils, animal } from './js/7.js';
+      console.log('sum=',utils.sum);
+      console.log(utils);
+      console.log('sum2=', new cutils().sum);
+      console.log(new animal('trigger'));
+    </script>
+</body>
+</html>

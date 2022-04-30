@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>websocket</title>
+</head>
+
+<body>
+  <h3>hello websocket</h3>
+  <input type="number" id="textContent" />
+  <button id="handleSend">发送</button>
+  <button id="auto-send">开启服务端向客户端发消息模式</button>
+  <hr />
+  <div id="app"></div>
+  <script>
+    const sendDom = document.getElementById('send');
+const appDom = document.getElementById('app');
+const autoDom = document.getElementById('auto-send');
+const inputContent = document.getElementById('textContent');
+const socketPath = 'ws://192.168.31.40:3000';
+let timer = null;
+let num = 0;
+const result = [];
+// 建立连接
+const ws = new WebSocket(socketPath);
+const sendMyNum = (isSetInterval = false, to = 'client', val) => {
+  const setNum = () => {
+    num = val || Math.ceil(Math.random() * 10);
+    ws.send(
+      JSON.stringify({
+        clientText: `client:hello,我是${num}号`,
+        num,
+        to
+      })
+    );
+  };
+  if (isSetInterval) {
+    timer = setInterval(() => {
+      setNum();
+    }, 1000);
+  } else {
+    setNum();
+  }
+};
+const renderHtml = (data) => {
+  const { serverText, clientText } = JSON.parse(data);
+  appDom.innerHTML = '';
+  result.push({
+    serverText,
+    clientText
+  });
+  console.log(result);
+  if (result.length > 0) {
+    let str = '';
+    result.forEach((v) => {
+      str += `<ul>
+          <li>${v.clientText}</li>
+          <li>${v.serverText}</li>
+        </ul>`;
+    });
+    appDom.innerHTML = str;
+  }
+};
+// 发送数据
+ws.onopen = function () {
+  console.log('websocket connection start');
+  sendMyNum(false);
+};
+// 接收服务端发送的消息
+ws.onmessage = function (evt) {
+  console.log(`receive:${evt.data}`);
+  if (evt.data) {
+    renderHtml(evt.data);
+    // 接收数据后关闭定时器
+    clearInterval(timer);
+    // sendMyNum(true)
+  }
+};
+// 关闭连接
+ws.onclose = function () {
+  console.log('关闭了');
+};
+// 手动向客户端发送消息
+handleSend.onclick = function () {
+  const val = inputContent.value;
+  if (val === '') {
+    alert('请输入你的编号');
+    return;
+  }
+  sendMyNum(false, 'client', val);
+};
+// 自动开启像客户端发送消息
+autoDom.onclick = function () {
+  sendMyNum(true, 'server');
+};
+  </script>
+</body>
+
+</html>

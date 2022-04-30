@@ -46,8 +46,13 @@ function getName(name: NameType, age?: number): string {
 getName('Maic');
 /**
  * function getName(name: NameType): string
+<<<<<<< Updated upstream
  函数形参参数类型
  应有 1 个参数，但获得 0 个。ts(2554)
+=======
+  函数形参参数类型
+  应有 1 个参数，但获得 0 个。ts(2554)
+>>>>>>> Stashed changes
   index.ts(8, 18): 未提供 "name" 的自变量。
  */
 
@@ -186,8 +191,13 @@ const foods: {
 };
 /**
  * const foods: {
+<<<<<<< Updated upstream
  鸭子: "a" | "b";
  鸡腿: "a" | "b";
+=======
+    鸭子: "a" | "b";
+    鸡腿: "a" | "b";
+>>>>>>> Stashed changes
 }
  */
 console.log(foods[FOODS.a]);
