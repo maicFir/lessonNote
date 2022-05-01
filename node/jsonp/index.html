@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jsonp</title>
+  </head>
+  <body>
+    <h3>jsonp</h3>
+    <div id="app"></div>
+    <button id="send">请求非同源数据</button>
+    <hr/>
+    <div class="content"></div>
+    <script>
+      var script = document.createElement('script');
+      script.setAttribute('type', 'text/javascript');
+      script.src = 'http://192.168.31.40:8080/api?callback=jsonp';
+      document.body.appendChild(script);
+      const renderHtml = ({name, age}, dom) => {
+        dom.innerHTML = `<div>我的名字${name},今年${age}岁了</div>`
+      }
+      function jsonp(data) {
+        console.log(data);
+        const app = document.getElementById('app');
+        const { name, age } = data;
+       renderHtml({age, name}, app);
+      }
+      const send = document.getElementById('send');
+      send.onclick = function () {
+        if (!window.fetch) {
+          return;
+        }
+       fetch('http://localhost:8081/list.json')
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+            const contentDom = document.querySelector('.content');
+            renderHtml(result, contentDom);
+          });
+      };
+    </script>
+  </body>
+</html>
