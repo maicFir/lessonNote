@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>触发BFC</title>
+  <style>
+    * {
+      padding:0;
+      margin: 0;
+    }
+  </style>
+  <!---
+    BFC 是什么: 块级格式上下文,页面中相对独立的一块区域，决定了内部元素如何摆放，以及内部元素与外部元素相互作用关系
+    特征:同一相邻BFC块级元素在垂直方向上边距会合并
+        BFC会包含浮动元素
+        BFC确定的区域不会与相邻浮动BFC边距重合
+
+    --->
+    <style>
+      .wrap-box {
+        width: 300px;
+        border: 1px solid #111;
+        overflow: hidden;
+      }
+      .slide {
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          float: left;
+      }
+      .main {
+        height: 100px;
+        overflow: hidden; /* 触发main的BFC 如果不加就会造成main元素与slide的浮动元素重合，随着左侧的宽度，右侧而自适应*/
+        background-color: yellow;
+      }
+      .main-float {
+        height: 100px;
+        float: left; /* 触发main的BFC 如果不加就会造成main元素与slide的浮动元素重合，随着自身内容自适应而自适应*/
+        background-color: yellow;
+        /*
+            设置浮动，会造成父级高度坍塌，为解决父级高度坍塌问题我们可以在父级元素设置
+            .wrap-box {
+                display: inline-block / box / flex / table
+            }
+            // or
+            overflow: hidden / auto
+
+            // or 
+            position: absolute;
+        */
+      }
+      .wrap-box .child-1, .wrap-box .child-2{
+          width: 100px;
+          height: 100px;
+          margin: 10px 0;
+          border: 1px solid #111;
+      }
+      .wrap-box .wp {
+        overflow: hidden;
+      }
+    </style>
+</head>
+<body>
+    <h1>右边自适应，随着左边的宽度而自适应</h1>
+    <div class="wrap-box">
+        <div class="slide">slide</div>
+        <div class="main">main</div>
+    </div>
+    <h1>浮动</h1>
+    <div class="wrap-box">
+      <div class="slide">slide</div>
+      <div class="main-float">main-float</div>
+    </div>
+    <h1>相邻BFC上下边距会重合</h1>
+    <div class="wrap-box">
+        <div class="child-1"></div>
+        <div class="child-2"></div>
+    </div>
+    <h1>隔离BFC,外层加个div并且overflow:hidden</h1>
+    <div class="wrap-box">
+        <div class="child-1"></div>
+        <div class="wp">
+          <div class="child-2"></div>
+        </div>
+    </div>
+</body>
+</html>

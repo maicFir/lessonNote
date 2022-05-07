@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BFC</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .wrap-box {
+      width: 300px;
+      border: 1px solid #111;
+      overflow: hidden;
+    }
+    .inner-box {
+      width: 100px;
+      height: 50px;
+      margin: 10px 0;
+      overflow: hidden;
+      float: left;
+    }
+    .inner-box:nth-of-type(2n+1) {
+      background-color: red;
+    }
+    .inner-box:nth-of-type(2n) {
+      background-color: yellow;
+    }
+    .item-2 {
+      float: left;
+      margin: -10px 0;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="wrap-box">
+      <div class="inner-box">1</div>
+      <div class="inner-box">2</div>
+      <div class="inner-box">3</div>
+      <div class="item-2">
+        <div class="inner-box">4</div>
+        <div class="inner-box">5</div>
+        <div class="inner-box">6</div>
+      </div>
+      <div class="inner-box">7</div>
+      <div class="inner-box">8</div>
+      <div class="inner-box">9</div>
+  </div>
+</body>
+</html>

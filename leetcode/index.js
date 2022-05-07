@@ -631,3 +631,113 @@ var getRow = (rowIndex) => {
     pre = cur;
   }
 }
+
+/***
+ * leetcode:  给定一个长度为n的数组nums,其中，nums所有的范围都在[1,n]
+ * 
+ * 数组中找到循环的重复的数字，复杂度为O(n)
+ */
+
+const findNumberRepeat = (source) => {
+  const result = new Array(source.length).fill(0);
+  const arr = [];
+  for (let i=0;i<result.length;i++) {
+    if (!result[source[i]]) {
+      result[source[i]] = 1;
+      continue;
+    }
+    arr.push(source[i]);
+  };
+  return arr;
+}
+
+/**
+ * 两个数组合并成一个数组
+ * 请把两个数组 ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'] 和 ['A', 'B', 'C', 'D']，
+ * 合并为 ['A1', 'A2', 'A', 'B1', 'B2', 'B', 'C1', 'C2', 'C', 'D1', 'D2', 'D']。
+ */
+function hebingArr() {
+  const arr1 = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'];
+  const arr2 = ['A', 'B', 'C', 'D'];
+  const narr = arr2.map(v => v + 3);
+  const result = [...arr1, ...narr];
+  return result.sort().map(v => {
+    if (v.includes('3')) {
+      v = v.split('3')[0]
+    }
+    return v;
+  })
+}
+hebingArr();
+
+/**
+ * 冒泡排序 降序
+ */
+function bubuleSort() {
+    const arr = [1,2,5,3,5,6,4];
+    for (let i=0;i<arr.length -1;i++) {
+      for (let j=0;j<arr.length -i -1;j++) {
+        if (arr[j] < arr[j+1]) {
+          var t = arr[j+1];
+          arr[j+1] = arr[j];
+          arr[j] = t;
+        }
+      }
+    }
+    return arr;
+}
+/** 升排序**/
+function descBubleSort() {
+  const arr = [1,2,5,3,5,6,4];
+  for(let i=0;i<arr.length-1;i++) {
+    for (let j=0;j<arr.length-i-1;j++) {
+      if (arr[j]> arr[j+1]) {
+          var t = arr[j];
+          arr[j+1] = arr[j];
+          arr[j] = t;
+      }
+    }
+  }
+}
+/** 冒泡3 */
+function bubleSort3() {
+  const arr = [1,2,5,3,5,6,4];
+  const swap = (arr, i, j) => {
+      [arr[j], arr[i]] = [arr[i], arr[j]]
+  }
+  for (let i=arr.length;i> 0;i--) {
+    for (let j=0;j<i;j++) {
+      if (arr[j] < arr[j+1]) {
+        swap(arr, j, j+1)
+      }
+    }
+  }
+  return arr;
+}
+/**
+ * 快排排序
+ */
+function quickSort() {
+  let arr = [1,2,5,3,5,6,4]
+  if (arr.length <= 1) {
+    return arr;
+  }
+  const left = [];
+  const right = [];
+  // 获取中间位置
+  const cIndex = Math.floor(arr.length /2);
+  // 获取中间位置的值
+  const cValue = arr.splice(cIndex, 1)[0];
+  for (let i=0;i<arr.length;i++) {
+      if(arr[i] < cValue) {
+        left.push(arr[i])
+      } else {
+        right.push(arr[i]);
+      }
+  }
+  return quickSort(left).concat(cIndex, quickSort(right))
+}
+/***
+ * 二分查找
+ */
+

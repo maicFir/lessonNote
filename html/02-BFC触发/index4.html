@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BFC</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .wrap-box {
+      width: 300px;
+      border: 1px solid #111;
+      overflow: hidden;
+      resize:horizontal;
+    }
+    .slide-left {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      float: left;
+    }
+    .main {
+      height: 100px;
+      background-color: yellow;
+      overflow: hidden;
+    }
+    
+    
+  
+  </style>
+</head>
+<body>
+  <h1>左边固定，右边自适应，右边随着左边的宽度而自适应</h1>
+  <div class="wrap-box">
+      <div class="slide-left">left</div>
+      <div class="main">main</div>
+  </div>
+</body>
+</html>
