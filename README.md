@@ -2,7 +2,7 @@
 
 > 本仓库主要用于记录学习 js，以及一些常用的笔记，会不断输出笔者在工作以及学习 JS 中的一些问题和想法，觉得有帮助的就点个`star`,本仓库所有示例代码永久开放，对应文章可以关注`Web技术学苑`,一起交流学习
 
-![Web技术学苑](./code.jpg)
+![Web技术学苑](https://files.mdnice.com/user/24614/50dd18f5-e2d5-4eb5-ac76-716aec6da88f.jpg)
 
 ### javascript
 
