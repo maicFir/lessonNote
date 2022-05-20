@@ -24,8 +24,8 @@ function mynew(fn, ...arg) {
 }
 function mynew2() {
   const obj = new Object();
-  obj.__proto__ = fn.prototype;
   const fn = [].shift.call(arguments);
+  obj.__proto__ = fn.prototype;
   const result = fn.call(obj, ...arguments);
   return typeof result === 'object' ? result : obj;
 }

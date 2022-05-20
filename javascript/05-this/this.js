@@ -126,7 +126,10 @@ Child.prototype.constructor = Child;
 
 const c = new Child();
 
-console.log(c.name)
+console.log(c.name);
+/**
+ * this: 是指函数运行时自动生成的内部对象，只能在函数内部使用，总是指向他被调用的那个对象
+ */
 
 
 

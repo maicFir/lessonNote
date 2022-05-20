@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vue通信的几种方式</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+    <div id="app">
+      {{listData}}
+       <List :listData="listData"></List>
+    </div>
+    <script src="./js/vue.js"></script>
+ 
+    <script>
+      const ListCompent = {
+          props: {
+            listData: {
+              type: Array,
+              default: () => []
+            }
+          },
+          data() {
+            return {
+              list: []
+            }
+          },
+          mounted() {
+           
+          },
+          template: `<div>
+                --{{typeof listData}}--
+                <template v-for="item in listData">
+                  <h1>{{item}}</h1>
+                  </template>
+            </div>`
+      }
+       var vm = new Vue({
+         el: '#app',
+         components: {
+            'List': ListCompent
+         },
+         data() {
+          return {
+            listData: [
+              {
+                title: 'js',
+                subTitle: 'this is js'
+              },
+              {
+                title: 'nodejs',
+                subTitle: 'this is nodejs'
+              }
+            ]
+          }
+         },
+       });
+      
+     
+    </script>
+</body>
+</html>
