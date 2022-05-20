@@ -1,6 +1,6 @@
 # lessonNote-js 学习笔记
 
-> 本仓库主要用于记录学习 js，以及一些常用的笔记，会不断输出笔者在工作以及学习 JS 中的一些问题和想法，觉得有帮助的就点个`star`,本仓库所有示例代码永久开放，对应文章可以关注`Web技术学苑`,一起交流学习
+> 本仓库主要用于记录学习 js，以及一些常用的笔记，会不断输出笔者在工作以及学习 JS 中的一些问题和想法，觉得有帮助的就点个`star`,本仓库所有示例代码永久开放，对应文章可以扫描关注`Web技术学苑`,一起交流学习
 
 ![Web技术学苑](https://files.mdnice.com/user/24614/50dd18f5-e2d5-4eb5-ac76-716aec6da88f.jpg)
 
@@ -13,7 +13,7 @@
 - 05-this
 - 06-module-[你真的了解 esModule 吗 ](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247487148&idx=1&sn=b7455889d2f9f83e1bfda636741f2de1&chksm=c36837def41fbec83f7504518742a82ba2da9d15fc58cd47dc67a3a8b49a0f9d2e2289e7c1e0#rd)
 - 07-promiseAPI 的详解
-- 08-实现虚拟列表
+- 08-实现虚拟列表 -[了解虚拟列表背后原理，轻松实现虚拟列表](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247487858&idx=1&sn=7f7e5d6e3430438bcad17ca85c8d6c6f&chksm=c3682800f41fa1167e57552bb701483b760deeaa1cb3b2597e59064c4c02c80b78bf893a1e14#rd)
 
 ### webpack
 
