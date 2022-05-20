@@ -1,10 +1,10 @@
-# 01
+# todolist
 
 > a sample demo
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
