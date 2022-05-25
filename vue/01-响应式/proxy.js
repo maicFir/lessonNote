@@ -22,4 +22,4 @@ var proxy = new Proxy(options, {
       renderHtml(val, key);
       return Reflect.set(target, key, val);;
     }
-})
+});
