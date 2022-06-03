@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>跑马灯</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #wrap-box {
+        height: 31px;
+        overflow: hidden;
+        background-color: red;
+      }
+      #wrap-box li {
+        height: 30px;
+        border-bottom: 1px solid #e5e5e5;
+        transition: all 1s ease;
+      }
+      @keyframes marqueeAnim {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-90px);
+        }
+      }
+      #wrap-box li{
+        animation: marqueeAnim 5s linear 0s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <ul id="wrap-box">
+        <li>1</li>
+        <li>2</li>
+      </ul>
+    </div>
+    <script>
+      // const wrapBox = document.getElementById('wrap-box');
+      // const child = wrapBox.children;
+      // const firstElem = child[0];
+      // const liHeight = firstElem.clientHeight;
+
+      // function animation() {
+      //   let count = 0;
+      //   console.log(liHeight);
+      //   setInterval(() => {
+      //         count++;
+      //         for (let i=0;i<child.length;i++) {
+      //           if (count === 3) {
+      //           count = 0;
+      //           wrapBox.style.opacity = 0;
+      //         } else {
+      //           wrapBox.style.opacity = 1;
+      //         }
+      //           child[i].style.transform = `translateY(-${liHeight * count}px)`;
+      //         }
+      //       }, 1000);
+      // }
+      // animation();
+    </script>
+  </body>
+</html>

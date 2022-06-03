@@ -14,6 +14,8 @@
 - 06-module-[你真的了解 esModule 吗 ](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247487148&idx=1&sn=b7455889d2f9f83e1bfda636741f2de1&chksm=c36837def41fbec83f7504518742a82ba2da9d15fc58cd47dc67a3a8b49a0f9d2e2289e7c1e0#rd)
 - 07-promiseAPI 的详解
 - 08-实现虚拟列表 -[了解虚拟列表背后原理，轻松实现虚拟列表](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247487858&idx=1&sn=7f7e5d6e3430438bcad17ca85c8d6c6f&chksm=c3682800f41fa1167e57552bb701483b760deeaa1cb3b2597e59064c4c02c80b78bf893a1e14#rd)
+- 09-闭包-[掌握闭包，夯实基本功](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247488034&idx=1&sn=1121685a5471fda10f676f927cddee7b&chksm=c3682b50f41fa2467176eb050cc8492d3406205285beba94f344c77565b3e8543dfff7c17d38#rd)
+- 10-es6 -[es6 你用过哪些惊艳的写法](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247488153&idx=1&sn=792152192f0716ca53e50f3127033d88&chksm=c3682bebf41fa2fdc71ff5f2fb627cc853c6dd1f2c5e8d7f5b765a87bc0bcd02ab5fb0575bb7#rd)
 
 ### webpack
 
@@ -22,8 +24,8 @@
 
 ### vue
 
-- 01- 响应式
-- 02 - vue 通信的几种方式
+- 01- 响应式 -[Vue 数据双向绑定实现原理](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247488098&idx=1&sn=72277f5fe0fc4fda02dc4b30cd7ad22a&chksm=c3682b10f41fa20608e51eb356b9da2589b0ac9f9b2604be60c9a42a2e3b3f766f44495f9bfd#rd)
+- 02 - vue 通信的几种方式-[在业务代码中常用到的 Vue 数据通信方式](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247488096&idx=1&sn=666ad099a1f6e286b1a0f476b8312861&chksm=c3682b12f41fa2042f234991fb83fcb53b89f47bc96fe416570c522e708d42991d65e97601f6#rd)
 
 ### 面试题
 
@@ -51,3 +53,6 @@
 ### leetcode
 
 - [leetcode(442)数据中重复的数据](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247487664&idx=1&sn=23cdbbbd148285f9edf9de0137115d85&chksm=c36829c2f41fa0d4c3144809c9fe1547dd98f81076e5b73dc364223acf1a40df79814966c8bd#rd)
+- [掌握常见的几种排序-选择排序](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247488060&idx=1&sn=cf0eccd5a0aab589577e913230f848e3&chksm=c3682b4ef41fa2589d31be424fe55c53487dc77f2f183cd531c462e56bbfaeb8af244c22d51c#rd)
+- [深度优先与广度优先遍历](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247488183&idx=1&sn=0c5f8b2ac273b796cc33e9346de02c47&chksm=c3682bc5f41fa2d3a578e0339b8f110ff0096f257f74db735d862c465e8228792f1fa63750ce#rd)
+- [关于栈的理解以及实际应用场景](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247488195&idx=1&sn=08fb7c24be940558db409ca1655819ee&chksm=c3682bb1f41fa2a755bf2772b05c6d46fb117d32ecb9a84f5574de663331adf877122db887a7#rd)
