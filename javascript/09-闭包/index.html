@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>闭包</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>闭包</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+    </div>
+    <script>
+      const ulDom = document.getElementsByTagName('ul')[0];
+      const child = ulDom.children;
+      // for (let i = 0; i < child.length; i++) {
+      //   child[i].onclick = function () {
+      //     console.log(i);
+      //   };
+      // }
+      for (var i = 0; i < child.length; i++) {
+        ((i) => {
+          child[i].onclick = function () {
+            console.log(i);
+          };
+        })(i);
+      }
+
+      // 缓存优化
+      var mult = (function () {
+        var cache = {};
+        return function () {
+          var args = Array.prototype.join.call(arguments, ',');
+          if (cache[args]) {
+            return cache[args];
+          }
+          var a = 1;
+          for (var i = 0; i < arguments.length; i++) {
+            a = a * arguments[i];
+          }
+          return (cache[args] = a);
+        };
+      })();
+    </script>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>

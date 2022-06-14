@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大数据</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      var arr = [];
+      var max = 1000;
+      for (let i = 0; i < max; i++) {
+        arr.push(i);
+      }
+      // 创建一个分时函数
+      const timerChunk = (sourceArr, callback, count = 1, wait = 200) => {
+        let ret,
+          timer = null;
+        const renderData = () => {
+          for (let i = 0; i < Math.min(count, sourceArr.length); i++) {
+            ret = sourceArr.shift();
+            callback(ret);
+          }
+        };
+        return () => {
+          if (!timer) {
+            timer = setInterval(() => {
+              // 如果数据取完了，清空定时器
+              if (sourceArr.length === 0) {
+                clearInterval(timer);
+                return;
+              }
+              renderData();
+            }, wait);
+          }
+        };
+      };
+      const createElem = (res) => {
+        const appDom = document.getElementById('app');
+        const divDom = document.createElement('div');
+        divDom.innerHTML = res;
+        appDom.appendChild(divDom);
+      };
+      var curentRender = timerChunk(
+        arr,
+        (res) => {
+          createElem(res);
+        },
+        10,
+        200
+      );
+      console.time('start');
+      curentRender(); // start: 0.05322265625 ms
+      console.timeEnd('start');
+    </script>
+  </body>
+</html>

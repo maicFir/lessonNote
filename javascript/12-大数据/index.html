@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>大数据</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      var arr = [];
+      var max = 1000;
+      for (let i = 0; i < max; i++) {
+        arr.push(i);
+      }
+
+      function renderList(sourceData) {
+        const domApp = document.getElementById('app');
+        const len = sourceData.length;
+        for (let i = 0; i < len; i++) {
+          const divDom = document.createElement('div');
+          divDom.innerHTML = sourceData[i];
+          domApp.appendChild(divDom);
+        }
+      }
+      console.time('start');
+      renderList(arr);
+      console.timeEnd('start');
+    </script>
+  </body>
+</html>
