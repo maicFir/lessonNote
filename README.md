@@ -21,7 +21,7 @@
 ### webpack
 
 - npm-[npm 有个命令突破我知识认知了](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247485472&idx=1&sn=7187f5b155fde09e167d42a0745f7e9a&chksm=c3683152f41fb8445b4e5637c12499af015fca56b1151cef13fb4b3f6889cda2743860b395c7#rd)
-- webpack-08-wds [WDS 必知必会](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247489583&idx=1&sn=4c06429683f23106642b3e4744d7c392&chksm=c368215df41fa84b8bed393f3e3850372cdcd9197995b1f9e02f428f0d23fb94d544ff7ea6c1#rd)
+- webpack-07-wds [WDS 必知必会](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247489583&idx=1&sn=4c06429683f23106642b3e4744d7c392&chksm=c368215df41fa84b8bed393f3e3850372cdcd9197995b1f9e02f428f0d23fb94d544ff7ea6c1#rd)
 - webpack-06-eslint [eslint 项目从 0 到 1](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247489497&idx=1&sn=55bc187f020c8e3f9945e1c8e7bcff8a&chksm=c3682eabf41fa7bdc7b84f55d52c884a1ef3db6fc0d953106b6b1d93075a217b83bbd276562a#rd)
 - webpack-05-module [揭秘 webpack5 模块打包](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247489094&idx=1&sn=f1bdbf1d463dceb2799349ffab77e246&chksm=c3682f34f41fa622d4c1672bb55a3eeb22c7a3736355bab1cc1f4bfe65f45740a216e0824814#rd)
 - webpack-04-assets [webpack5 资源最佳加载方案 ](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247488881&idx=1&sn=adc4e2babb87f50073f6bf472fa3bbf3&chksm=c3682c03f41fa51587272a378c67b67f03c97296cc02cb3907843fed77704adf2041bc87891f#rd)
