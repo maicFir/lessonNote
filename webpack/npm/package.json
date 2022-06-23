@@ -1,0 +1,33 @@
+{
+    "name": "npm-know",
+    "version": "1.0.0",
+    "description": "My first encounter with npm",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "keywords": [
+        "npm"
+    ],
+    "author": "Maic",
+    "license": "ISC",
+    "workspaces": [
+        "01"
+    ],
+    "bin": {
+        "maic-app-cli": "./cli.js"
+    },
+    "config": {
+        "name": "npm-know",
+        "port": "8080"
+    },
+    "dependencies": {
+        "eazyutils": "^1.0.1",
+        "ramda": "^0.27.1"
+    },
+    "devDependencies": {
+        "qs": "^6.10.3",
+        "xss": "^1.0.10"
+    }
+}

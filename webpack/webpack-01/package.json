@@ -1,0 +1,35 @@
+{
+  "name": "webpack-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --watch --progress",
+    "build:test_dev": "webpack --config webpack_test_dev_config.js",
+    "build:test_prd": "webpack --config webpack_test_prd_config.js",
+    "build:default": "webpack --config webpack.config.js",
+    "build:o": "webpack ./src/app.js --output-path='./dist2' --output-filename='[name]_[hash].bundle.js'",
+    "build2": "webpack --mode='development' --env libraryTarget='umd' --config webpack.config.js",
+    "server": "webpack server --mode='development' --env libraryTarget='commonjs'",
+    "server2": "node ./config/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@webpack-cli/generators": "^2.4.2",
+    "css-loader": "^6.7.1",
+    "express": "^4.18.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-defaults": "^4.0.0",
+    "webpack-dev-middleware": "^5.3.3",
+    "webpack-dev-server": "^4.9.1"
+  }
+}
