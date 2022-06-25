@@ -1,0 +1,327 @@
+bot: "webpack-bot"
+rules:
+  # add conflict label to pull requests with conflict
+  # on conflict all result labels are removed
+  - filters:
+      open: true
+      pull_request:
+        mergeable: false
+    actions:
+      label:
+        add: "PR: conflict"
+  - filters:
+      open: true
+      pull_request:
+        mergeable: true
+    actions:
+      label:
+        remove: "PR: conflict"
+
+  # add unreviewed, reviewed, review-outdated labels
+  # comment to ping reviewer
+  # comment on new PR
+  - filters:
+      open: true
+      in_order:
+        commit: true
+        review:
+          state: APPROVED|CHANGES_REQUESTED
+      ensure:
+        value: "{{review.state}}"
+        equals: APPROVED
+      permission:
+        user: "{{review.user.login}}"
+    actions:
+      label:
+        add: "PR: reviewed-approved"
+        remove:
+          - "PR: review-outdated"
+          - "PR: unreviewed"
+          - "PR: reviewed"
+  - filters:
+      open: true
+      in_order:
+        commit: true
+        review:
+          state: APPROVED|CHANGES_REQUESTED
+      permission:
+        user: "{{review.user.login}}"
+      ensure:
+        value: "{{review.state}}"
+        equals: CHANGES_REQUESTED
+    actions:
+      label:
+        add: "PR: reviewed-changes-requested"
+        remove:
+          - "PR: review-outdated"
+          - "PR: unreviewed"
+          - "PR: reviewed"
+  - filters:
+      open: true
+      in_order:
+        review:
+          state: APPROVED|CHANGES_REQUESTED
+        commit: true
+      permission:
+        user: "{{review.user.login}}"
+      not:
+        label: "review-outdated"
+      ensure:
+        value: "{{commit.author.login}}"
+        notEquals: "{{review.user.login}}"
+    actions:
+      label:
+        add: "PR: review-outdated"
+        remove:
+          - "PR: reviewed-approved"
+          - "PR: reviewed-changes-requested"
+          - "PR: unreviewed"
+          - "PR: reviewed"
+      comment:
+        identifier: "review-outdated"
+        message: |-
+          @{{commit.author.login}} Thanks for your update.
+
+          I labeled the Pull Request so reviewers will review it again.
+
+          @{{review.user.login}} Please review the new changes.
+  - filters:
+      open: true
+      commit: true
+      not:
+        review:
+          state: APPROVED|CHANGES_REQUESTED
+    actions:
+      label: "PR: unreviewed"
+
+  # add non-main, dev-1, webpack-4 and next label to pull request to other branch
+  - filters:
+      pull_request:
+        base_ref: "^main$"
+    actions:
+      label:
+        remove:
+          - "PR: next"
+          - "PR: dev-1"
+          - "PR: webpack-4"
+          - "PR: non-main"
+  - filters:
+      pull_request:
+        base_ref: "^dev-1$"
+    actions:
+      label:
+        add: "PR: dev-1"
+        remove:
+          - "PR: next"
+          - "PR: webpack-4"
+          - "PR: non-main"
+  - filters:
+      pull_request:
+        base_ref: "^next$"
+    actions:
+      label:
+        add: "PR: next"
+        remove:
+          - "PR: dev-1"
+          - "PR: webpack-4"
+          - "PR: non-main"
+  - filters:
+      pull_request:
+        base_ref: "^webpack-4$"
+    actions:
+      label:
+        add: "PR: webpack-4"
+        remove:
+          - "PR: dev-1"
+          - "PR: next"
+          - "PR: non-main"
+  - filters:
+      pull_request:
+        base_ref: "^(?!main$)(?!webpack-4$)(?!next$)"
+    actions:
+      label:
+        add: "PR: non-main"
+        remove:
+          - "PR: dev-1"
+          - "PR: next"
+          - "PR: webpack-4"
+
+  # show hint about contributing
+  - filters:
+      open: true
+      age:
+        minimum: 1d
+        maximum: 1w
+      pull_request:
+        head_ref: "^main$"
+      permission: "read|none"
+    actions:
+      comment:
+        identifier: "head-main"
+        edit: true
+        message: |-
+          Hi @{{pull_request.user.login}}.
+
+          Just a little hint from a friendly bot about the best practice when submitting pull requests:
+
+          > Don't submit pull request from your own `main` branch. It's recommended to create a feature branch for the PR.
+
+          *You don't have to change it for this PR, just make sure to follow this hint the next time you submit a PR.*
+
+  # add "Send a PR" label when somebody with write permission say it
+  - filters:
+      open: true
+      comment: "[Ss]end a [Pp][Rr]"
+      permission:
+        user: "{{comment.actor.login}}"
+    actions:
+      label: "Send a PR"
+
+  # Move issue task
+  - filters:
+      open: true
+      comment: "\\s*@webpack-bot\\s+move\\s+(?:to\\s+)?([a-z0-9_\\-\\.]+/[a-z0-9_\\-\\.]+)\\s*([\\s\\S]*)$"
+      not:
+        comment_1:
+          matching: "moved\\-by\\-bot"
+          author: "."
+      permission:
+        user: "{{comment.actor.login}}"
+    actions:
+      new_issue:
+        target: "{{{comment_match.[1]}}}"
+        body: |-
+          {{{issue.body}}}
+
+          ---
+
+          This issue was moved from {{owner}}/{{repo}}#{{issue.number}} by @{{comment.actor.login}}. Original issue was by @{{issue.user.login}}.
+
+          {{{comment_match.[2]}}}
+      comment:
+        identifier: moved-by-bot
+        message: |-
+          I've moved it to {{comment_match.[1]}}.
+      close: true
+
+  # mark inactive issues with inactive label
+  # close them when no activity after warning
+  - filters:
+      issue: true
+      open: true
+      not:
+        label: inactive
+      ensure:
+        value: "{{issue.reactions.[+1]}}"
+        range: "< 10"
+      last_action_age: 13w # three months
+    actions:
+      comment:
+        identifier: inactive-warning
+        message: |-
+          **This issue had no activity for at least three months.**
+
+          It's subject to automatic issue closing if there is no activity in the next 15 days.
+      label: inactive
+  - filters:
+      open: true
+      label: inactive
+      last_action_age:
+        maximum: 13w # three months
+    actions:
+      label:
+        remove:
+          - inactive
+  - filters:
+      open: true
+      label: inactive
+      last_action_age:
+        minimum: 15d
+        includeBotActions: true
+    actions:
+      close: true
+      comment:
+        identifier: inactive-close
+        message: |-
+          Issue was closed because of inactivity.
+
+          If you think this is still a valid issue, please file a new issue with additional information.
+
+  # Add action actions box to each pull request
+  - filters:
+      pull_request: true
+      open: true
+      not:
+        comment:
+          matching: admin-actions
+          author: webpack-bot
+    actions:
+      comment:
+        identifier: admin-actions
+        message: |-
+          *For maintainers only:*
+
+          * [ ] <!-- document --> This needs to be documented (issue in webpack/webpack.js.org will be filed when merged)
+          * [ ] <!-- webpack-4-backport --> This needs to be backported to webpack 4 (issue will be created when merged)
+
+  # When a pull request need to be documented, create an issue in webpack/webpack.js.org when merged
+  - filters:
+      pull_request:
+        merged: true
+      comment:
+        author: webpack-bot
+        matching: "\\* \\[x\\] <!-- document -->"
+      not:
+        comment_1:
+          author: webpack-bot
+          matching: admin-action-document-executed
+    actions:
+      new_issue:
+        target: webpack/webpack.js.org
+        title: "Document webpack change: {{{pull_request.title}}}"
+        body: |-
+          <!-- documentation request from webpack/webpack -->
+
+          *A pull request by @{{pull_request.user.login}} was merged and maintainers requested a documentation change.*
+
+          See pull request: {{{pull_request.html_url}}}
+
+          ---
+
+          {{{pull_request.body}}}
+      comment:
+        identifier: admin-action-document-executed
+        message: |-
+          I've created an issue to document this in webpack/webpack.js.org.
+
+  # When a pull request need to be backported, create an issue in webpack/webpack when merged
+  - filters:
+      pull_request:
+        merged: true
+      comment:
+        author: webpack-bot
+        matching: "\\* \\[x\\] <!-- webpack-4-backport -->"
+      not:
+        comment_1:
+          author: webpack-bot
+          matching: admin-action-webpack-4-backport-executed
+    actions:
+      new_issue:
+        target: webpack/webpack
+        title: "Backport to webpack 4: {{{pull_request.title}}}"
+        body: |-
+          {{{pull_request.html_url}}} needs to be backported to webpack 4.
+
+          Send a PR.
+
+          cc @{{pull_request.user.login}}
+      comment:
+        identifier: admin-action-webpack-4-backport-executed
+        message: |-
+          I've created an issue to backport this.
+
+  # Check open issues and pull requests every day
+  - filters:
+      open: true
+    actions:
+      schedule: 1d

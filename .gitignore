@@ -2,3 +2,6 @@ node_modules
 
 .DS_Store
 
+# Add an exception so as to not ignore a file with the specified name.
+# Scope is all repo folders.
+!package.json
