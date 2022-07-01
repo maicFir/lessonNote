@@ -1,0 +1,3 @@
+interface callBack {
+  (): void;
+}

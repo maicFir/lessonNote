@@ -1,6 +1,6 @@
 # lessonNote-js 学习笔记
 
-> 本仓库主要用于记录学习 js，以及一些常用的笔记，会不断输出笔者在工作以及学习 JS 中的一些问题和想法，觉得有帮助的就点个`star`,本仓库所有示例代码永久开放，对应文章可以扫描关注`Web技术学苑`,一起交流学习
+> 本仓库主要用于记录学习 js，以及一些常用的笔记，会不断输出笔者在工作以及学习 JS 中的一些问题和想法，本仓库所有示例代码永久开放，对应文章可以扫描关注`Web技术学苑`，如果看完文章觉得有帮助，有收获，那么就点个`star`鼓励下作者哈，作者会持续输出更有价值的技术笔记，一起学习，一起成长。
 
 ![Web技术学苑](https://files.mdnice.com/user/24614/50dd18f5-e2d5-4eb5-ac76-716aec6da88f.jpg)
 
@@ -17,10 +17,13 @@
 - 09-闭包-[掌握闭包，夯实基本功](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247488034&idx=1&sn=1121685a5471fda10f676f927cddee7b&chksm=c3682b50f41fa2467176eb050cc8492d3406205285beba94f344c77565b3e8543dfff7c17d38#rd)
 - 10-es6 -[es6 你用过哪些惊艳的写法](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247488153&idx=1&sn=792152192f0716ca53e50f3127033d88&chksm=c3682bebf41fa2fdc71ff5f2fb627cc853c6dd1f2c5e8d7f5b765a87bc0bcd02ab5fb0575bb7#rd)
 - 12-大数据 [分时函数优化大数据量渲染](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247489110&idx=1&sn=cae17be447d66bbfb33ea49554d3b282&chksm=c3682f24f41fa6328a3361ad371dd8514fe1c50e57ccf026d07d92b0a226c808163a35fd5cba#rd)
+- 13-缓存函数 [如何设计一个缓存函数](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247489964&idx=1&sn=601f6f2f81e5ba3e7c674592095fd483&chksm=c36820def41fa9c85d476e0232909c920eb2703bd848ec0a8aae642250d9311c5e1240ea9fa8#rd)
 
 ### webpack
 
 - npm-[npm 有个命令突破我知识认知了](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247485472&idx=1&sn=7187f5b155fde09e167d42a0745f7e9a&chksm=c3683152f41fb8445b4e5637c12499af015fca56b1151cef13fb4b3f6889cda2743860b395c7#rd)
+- webpack5 构建一个通用的组件库 [nice-utils](https://github.com/maicFir/nice_utils)
+- webpack-08-tree-shaking [爆肝总结万字长文笔记 webpack5 打包资源优化](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247489849&idx=1&sn=fefb77acd8fd30a91adaad4edff83c1f&chksm=c368204bf41fa95d3b0b01834e81b8f1c100f3d1c933b8feb9f85f67d01801301a6303ab281e#rd)
 - webpack-07-wds [WDS 必知必会](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247489583&idx=1&sn=4c06429683f23106642b3e4744d7c392&chksm=c368215df41fa84b8bed393f3e3850372cdcd9197995b1f9e02f428f0d23fb94d544ff7ea6c1#rd)
 - webpack-06-eslint [eslint 项目从 0 到 1](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247489497&idx=1&sn=55bc187f020c8e3f9945e1c8e7bcff8a&chksm=c3682eabf41fa7bdc7b84f55d52c884a1ef3db6fc0d953106b6b1d93075a217b83bbd276562a#rd)
 - webpack-05-module [揭秘 webpack5 模块打包](https://mp.weixin.qq.com/s?__biz=Mzk0ODMxODIzNw==&mid=2247489094&idx=1&sn=f1bdbf1d463dceb2799349ffab77e246&chksm=c3682f34f41fa622d4c1672bb55a3eeb22c7a3736355bab1cc1f4bfe65f45740a216e0824814#rd)

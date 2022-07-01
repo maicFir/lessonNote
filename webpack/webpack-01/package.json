@@ -17,7 +17,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@maicfir/nice_utils": "^1.0.3"
+  },
   "devDependencies": {
     "@webpack-cli/generators": "^2.4.2",
     "css-loader": "^6.7.1",

@@ -1,0 +1,32 @@
+{
+  "name": "webpack-10-library",
+  "version": "1.0.0",
+  "description": "为组内贡献一个通用的工具类库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --mode development --node-env=development",
+    "build": "webpack --mode production --node-env=production"
+  },
+  "keywords": [
+    "npm",
+    "webpack"
+  ],
+  "author": "maicFir",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "babel-loader": "^8.2.5",
+    "eslint": "^8.18.0",
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
+  }
+}

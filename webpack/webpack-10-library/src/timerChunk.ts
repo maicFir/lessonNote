@@ -1,13 +1,14 @@
 // 分时函数
-module.exports = (sourceArr = [], callback, count = 1, wait = 200) => {
-  let ret, timer = null;
+module.exports = (sourceArr: any[] = [], callback: (args: unknown) => void, count = 1, wait = 200) => {
+  let ret: any,
+    timer: any = null;
   const renderData = () => {
     for (let i = 0; i < Math.min(count, sourceArr.length); i++) {
       // 取出数据
       ret = sourceArr.shift();
       callback(ret);
     }
-  }
+  };
   return () => {
     if (!timer) {
       // 利用定时器每隔200ms取出数据
@@ -19,7 +20,7 @@ module.exports = (sourceArr = [], callback, count = 1, wait = 200) => {
           return;
         }
         renderData();
-      }, wait)
+      }, wait);
     }
-  }
-}
+  };
+};
