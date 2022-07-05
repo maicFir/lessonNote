@@ -1,0 +1,14 @@
+.app h1[data-v-6e3d9fd2] {
+  color: red;
+  font-size: 30px;
+}
+.app h2[data-v-6e3d9fd2] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+

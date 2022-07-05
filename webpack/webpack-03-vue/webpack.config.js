@@ -2,16 +2,18 @@ const path = require('path');
 const HtmlWebpackPlguins = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 module.exports = {
   entry: {
-    app: './src/index.js'
+    app: './src/index.js',
   },
   output: {
-    filename: '[name][hash].js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true
   },
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
@@ -20,7 +22,10 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          esModule: true
+        }
       },
       {
         test: /\.less$/,
@@ -46,6 +51,11 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   plugins: [
     new HtmlWebpackPlguins({
       template: './public/index.html'
@@ -53,6 +63,7 @@ module.exports = {
     new miniCssExtractPlugin({
       filename: 'css/[name].css'
     }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new BundleAnalyzerPlugin()
   ]
 };

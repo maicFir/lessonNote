@@ -1,0 +1,1 @@
+"use strict";var e=document.getElementById("app");e.innerHTML="hello gulp";var n=function(){console.log("公众号：Web技术学苑，好好学习，天天向上")};n();

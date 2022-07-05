@@ -1,0 +1,23 @@
+{
+  "name": "module-federation",
+  "version": "1.0.0",
+  "description": "模块联邦demo测试",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wsrun --parallel start",
+    "build": "yarn workspaces run build",
+    "dev": "wsrun --parallel dev",
+    "start:all": "npm workspaces run start"
+  },
+  "keywords": [],
+  "author": "maicFir",
+  "license": "ISC",
+  "devDependencies": {
+    "wsrun": "^5.2.4"
+  }
+}

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "webpack server"
+    "server": "webpack server",
+    "async": "webpack --profile --json=stats.json",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
     "style-loader": "^3.3.1",
     "vue-loader": "^17.0.0",
     "webpack": "^5.73.0",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.1"
   },
