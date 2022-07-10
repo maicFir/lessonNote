@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>初识index-db</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h3>{{lesson}}</h3>
+      <a href="javascript:void(0)" @click="handleAdd('add')">新增</a>
+      <div class="content-box">
+        <div class="search-bar">
+          <input type="text" placeholder="请输入名称" v-model="searchName" />
+          <span @click="handleSearch">点击搜索</span>
+        </div>
+        <template v-for="(item) in initData">
+          <p>
+            <span>{{item.name}}</span>
+            <span>{{item.age}}</span>
+            <span @click="handleAdd('edit',item)">编辑</span>
+            <span @click="handleDel(item)">删除</span>
+          </p>
+        </template>
+      </div>
+      <div class="wrap-modal" v-if="showDiag">
+        <input placeholder="请输入name" v-model="formParams.name" />
+        <input placeholder="请输入age" v-model="formParams.age" />
+        <div>
+          <span @click="handleSure">确认</span>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.7.0/vue.min.js"></script>
+    <script src="./js/dexie.min.js"></script>
+    <script type="module">
+      import { useApp, useIndexDB } from './hooks/index.js';
+      const { reactive, toRefs, createApp, onMounted } = Vue;
+      const App = {
+        setup() {
+          const { searchName, lesson, initData, showDiag, view, formParams } = useApp();
+          const { add_indexDB, update_indexDB, search_indexDB, del_indexDB } = useIndexDB();
+          // todo 查询数据
+          const featchList = async (searchName = '') => {
+            const colletion = await search_indexDB(searchName);
+            initData.value = colletion;
+          };
+          onMounted(() => {
+            featchList();
+          });
+          // todo 编辑or添加
+          const handleAdd = (viewType, row) => {
+            searchName.value = '';
+            view.value = viewType;
+            showDiag.value = true;
+            // 编辑
+            if (view.value === 'edit') {
+              console.log(row);
+              formParams.value = {
+                ...row
+              };
+            } else {
+              // 添加
+              formParams.value.name = '';
+              formParams.value.age = '';
+            }
+          };
+          const handleSure = () => {
+            // showDiag.value = false;
+            view.value === 'edit' ? update_indexDB(formParams.value, featchList) : add_indexDB(formParams.value, featchList);
+          };
+          const handleDel = (row) => {
+            del_indexDB(row.id, featchList);
+          };
+          // 搜索
+          const handleSearch = () => {
+            featchList(searchName.value);
+          };
+          return {
+            searchName,
+            lesson,
+            showDiag,
+            initData,
+            formParams,
+            handleAdd,
+            handleSure,
+            handleDel,
+            handleSearch
+          };
+        }
+      };
+      // 绑定app
+      const app = new Vue(App).$mount('#app');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+}
+#app {
+  padding: 10px;
+}
+.wrap-modal {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateY(30%);
+}
+.search-bar span {
+  cursor: pointer;
+  color: #3400ec;
+}
