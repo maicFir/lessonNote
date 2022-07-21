@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      .wrap-box {
+        width: 500px;
+        height: 500px;
+        overflow: hidden;
+        display: flex;
+        background-color: green;
+        justify-content: space-between;
+        /* align-items: stretch; */
+      }
+      .wrap-box .item-1,
+      .wrap-box .item-2,
+      .wrap-box .item-3 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+      .wrap-box .item-1 {
+        /* align-self: flex-start; */
+        animation: ani-1 5s infinite;
+        transition: order 1s ease;
+      }
+      .wrap-box .item-2 {
+        align-self: center;
+        animation: ani-2 5s infinite;
+        transition: order 1s ease;
+      }
+      .wrap-box .item-3 {
+        align-self: flex-end;
+        animation: ani-3 5s infinite;
+        transition: order 1s ease;
+      }
+      @keyframes ani-1 {
+        0% {
+          order: 0;
+        }
+        50% {
+          order: 1;
+        }
+        100% {
+          order: 2;
+        }
+      }
+      @keyframes ani-2 {
+        0% {
+          order: 1;
+        }
+        50% {
+          order: 0;
+        }
+        100% {
+          order: 1;
+        }
+      }
+      @keyframes ani-3 {
+        0% {
+          order: 2;
+        }
+        50% {
+          order: 2;
+        }
+        100% {
+          order: 0;
+        }
+      }
+      .wrap-box-2 {
+        width: 500px;
+        height: 500px;
+        background-color: green;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="wrap-box">
+        <div class="item-1">1</div>
+        <div class="item-2">2</div>
+        <div class="item-3">3</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -93,19 +93,19 @@ npm init
 
 ```js
 #!/usr/bin/env node
-const program = require('commander')
+const program = require('commander');
 program
   .version(require('../package').version)
   .usage('<command> [options]')
   .command('init', 'generate a new project from a template')
   .command('list', 'list available official templates')
   .command('build', 'prototype a new project')
-  .command('create', '(for v3 warning only)')
+  .command('create', '(for v3 warning only)');
 
-program.parse(process.argv)
+program.parse(process.argv);
 ```
 
-这里就是熟悉的脚手架`vue create xx`,`vue init`的一些 `xxx`项目的脚手架工作了，具体可以查看[vue-cli 源码](https://github.com/vuejs/vue-cli/blob/v2 "vue-cli源码")
+这里就是熟悉的脚手架`vue create xx`,`vue init`的一些 `xxx`项目的脚手架工作了，具体可以查看[vue-cli 源码](https://github.com/vuejs/vue-cli/blob/v2 'vue-cli源码')
 
 关于`bin`的实际操作，后续会专门写一个自己的脚手架，再来细细了解下这些知识。
 
@@ -121,7 +121,7 @@ program.parse(process.argv)
 注意`scripts`
 
 在`scripts`配置中有一个`"build": "npm run build:es && npm run build:cjs && npm run build:umd && npm run build:umd:min && npm run build:mjs"`,`ramda`
-是用`rollup`打包的，这行命令可以将你的`ramda`打包成了不同模式,支持按需引入还是`script`标签引用的多种方式。关于`rollup`打包，可以参考官网学习[rollup.js](https://www.rollupjs.com/ "rollup.js")。
+是用`rollup`打包的，这行命令可以将你的`ramda`打包成了不同模式,支持按需引入还是`script`标签引用的多种方式。关于`rollup`打包，可以参考官网学习[rollup.js](https://www.rollupjs.com/ 'rollup.js')。
 
 现在我们测试下自己配置的`scripts`,当前目录下新建一个文件`index.js`,并控制台运行`npm run start`
 
@@ -145,19 +145,19 @@ program.parse(process.argv)
 // 由于刚项目已经安装ramda，所以直接require该包
 const R = require('ramda');
 const cityMap = [
-    {
-        city: '北京',
-    },
-    {
-        city: '上海'
-    },
-    {
-        city: '深圳'
-    }
+  {
+    city: '北京'
+  },
+  {
+    city: '上海'
+  },
+  {
+    city: '深圳'
+  }
 ];
 // 找到上海
-const shanghaiCity = R.find(R.propEq('city', '上海'))(cityMap)
-console.log(shanghaiCity)
+const shanghaiCity = R.find(R.propEq('city', '上海'))(cityMap);
+console.log(shanghaiCity);
 ```
 
 测试结果如下：
@@ -165,24 +165,22 @@ console.log(shanghaiCity)
 
 在你执行`npm run start`时，它与`npm start`也是等价的，实际上当我们执行这行命令时本质上在执行`node index.js`,前者相当于就是一个命令的别名，所以你看到`ramda`的`scripts`上配置了多行命令，`"build": "npm run build:es && npm run build:cjs && npm run build:umd && npm run build:umd:min && npm run build:mjs",`,在`ramda`中，这行命令执行了多行配置
 
-在`npm init`生成的`package.json`内部还有其他的字段，更多可以参考官方文档[pckage.json](https://docs.npmjs.com/cli/v8/configuring-npm/package-json "pckage.json"),你已经了解`npm`最硬核的一些知识了，其他的，你就熟悉下些配置时，比如支持操作系统、node 指定环境版本等等，巴拉巴拉...
+在`npm init`生成的`package.json`内部还有其他的字段，更多可以参考官方文档[pckage.json](https://docs.npmjs.com/cli/v8/configuring-npm/package-json 'pckage.json'),你已经了解`npm`最硬核的一些知识了，其他的，你就熟悉下些配置时，比如支持操作系统、node 指定环境版本等等，巴拉巴拉...
 ![](https://img.soogif.com/goKDU3bQAgPVcajH8bdsf21FQF4MmHCr.gif?scope=mdnice)
-
-
 
 #### npm -h
 
 ```javascript
-npm -h
+npm - h;
 ```
 
 这是一个查看`npm`cmmand 有那些指令，等价于`npm help`,如果你记不起 npm 有哪些命令，那么你可以用这个查看她的全家桶
 ![](https://files.mdnice.com/user/24614/424d5ac3-864b-4698-b09c-a08558db004c.jpg)
 
-#### npm i(npm install的简写)
+#### npm i(npm install 的简写)
 
 ```javascript
-npm i 
+npm i
 // npm i -g 全局安装
 // npm i xx@latest 安装最新xx版本的包
 // npm i xx@1.x.x 安装指定版本的包
@@ -206,11 +204,13 @@ npm cache clear
 npm bugs ramda
 ```
 
-这是一个很有用的命令，快速链接到你这个包的`issue`，在`issue`中会找到你遇到的一些问题，例如：`cd node_modules/ramda`，执行命令`npm bugs`,浏览器自动给你打开了该包`issue`地址。(如果只是在你自己的项目根目录里，执行这个命令，这个命令会把以当前`package.json`的 name，在 npm官网当成一个路由地址打开，那么就是 404 了，不信你可以试试)。
+这是一个很有用的命令，快速链接到你这个包的`issue`，在`issue`中会找到你遇到的一些问题，例如：`cd node_modules/ramda`，执行命令`npm bugs`,浏览器自动给你打开了该包`issue`地址。(如果只是在你自己的项目根目录里，执行这个命令，这个命令会把以当前`package.json`的 name，在 npm 官网当成一个路由地址打开，那么就是 404 了，不信你可以试试)。
 ![](https://files.mdnice.com/user/24614/53613955-1c4c-4871-b8df-abd9e7649c7a.jpg)
 
 #### npm view ramda versions
-查看ramda所有版本包
+
+查看 ramda 所有版本包
+
 ```javascript
 npm view ramda versions
 // npm view ramda version  查看当前项目ramda版本
@@ -234,51 +234,65 @@ npm diff --diff=ramda@0.0.1 --diff=ramda@0.1.0
 ```javascript
 npm docs ramda
 ```
+
 这个命令打开`ramda`的官方文档，就是`package.json`里面的那个`homepage`地址
+
 #### npm update xxx
-更新xxx包
+
+更新 xxx 包
+
 ```javascript
 npm update ramda // 更新ramda包
 ```
 
 #### npm uninstall xxx
-卸载xxx包
+
+卸载 xxx 包
+
 ```javascript
 npm uninstall ramda
 // 简写，等价于下面  npm un ramda or npm rm ramda or npm r ramda
 ```
+
 #### npm pkg get xx1 xx2
+
 ```javascrpt
 npm pkg get name version
 ```
+
 读取包名、版本等信息
 ![](https://files.mdnice.com/user/24614/aecf7ada-d094-4066-a3e0-11d088d990b2.jpg)
 
-----
+---
+
 接下来说几个关于`npm`发包的几个关键命令
+
 #### npm login
+
 ```javascript
-npm login 
+npm login
 ```
+
 ![](https://files.mdnice.com/user/24614/af57b026-15c3-4538-9251-b1ccb1c94431.jpg)
 
-这中途需要`npm`官方会给你发个邮箱的验证码，收到`npm`注册的邮箱，输入就OK了，这里以笔者n年前上传的一个包`eazyutils`包为例。
+这中途需要`npm`官方会给你发个邮箱的验证码，收到`npm`注册的邮箱，输入就 OK 了，这里以笔者 n 年前上传的一个包`eazyutils`包为例。
+
 #### npm publish
+
 ```javascript
 npm publish
 ```
+
 ![](https://files.mdnice.com/user/24614/76046df6-cacb-4b8a-8a3c-82bfd68dfa9a.png)
 
 (注意修改下`package.json`的版本)，否则提交不上
 
 更多`npm`命令参考[npm commands](https://docs.npmjs.com/cli/v8/commands)了，不常用的就没写了，因为那些不常用的，笔者也没用过，哈哈。更多关于`npm`的命令最好就是找官方文档查询，本来以为你看到这里，以为已经总结了所有`npm`命令，但是....,笔者文章已经覆盖了项目里所用到的绝大部分场景。![](https://img.soogif.com/iM5TsaPVs9nfoJemXrpPRgpdCktSZmPK.gif?imageMogr2/thumbnail/!64.33917507232614p&scope=mdnice)
 
-
 #### 总结
-1. npm常用的`command`命令，譬如高频命令`npm view xxx versions`,`npm update@lastest`、`npm un xxx`、`npm i xx -s`,常用的`增删查改`基本以及涵盖了。
-2. 了解`package.json`关键的几个字断意思，但是`bin`这个你必须要知道，因为她，你可以任性创建一个自己的`xx-cli`了
-3. `npm`如何发布一个全世界都能看到，全世界都能下载的`npm`包，以n年前的一个简单`eazyutils`包为例
 
+1. npm 常用的`command`命令，譬如高频命令`npm view xxx versions`,`npm update@lastest`、`npm un xxx`、`npm i xx -s`,常用的`增删查改`基本以及涵盖了。
+2. 了解`package.json`关键的几个字断意思，但是`bin`这个你必须要知道，因为她，你可以任性创建一个自己的`xx-cli`了
+3. `npm`如何发布一个全世界都能看到，全世界都能下载的`npm`包，以 n 年前的一个简单`eazyutils`包为例
 
 最后，喜欢的点个赞，在看，收藏等于学会，我会以循序渐进的方式一直分享下去。
-

@@ -1,4 +1,8 @@
-const shopList = [{ title: 'Apple', price: 10 }, { title: 'banana', price: '' }, { title: 'orange', price: 5 }]
+const shopList = [
+    { title: 'Apple', price: 10 },
+    { title: 'banana', price: '' },
+    { title: 'orange', price: 5 }
+]
 const hasPriceEmpty = (arr) => {
     bool = false; // 默认都不是空
     arr.forEach(v => {
