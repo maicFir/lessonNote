@@ -80,6 +80,19 @@
         background-color: green;
         margin-top: 10px;
       }
+      .wrap {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+      }
+      .wrap .inner-box {
+        width: 50px;
+        height: 50px;
+        background: green;
+      }
     </style>
   </head>
   <body>
@@ -88,6 +101,10 @@
         <div class="item-1">1</div>
         <div class="item-2">2</div>
         <div class="item-3">3</div>
+      </div>
+      <h2>垂直居中</h2>
+      <div class="wrap">
+        <div class="inner-box"></div>
       </div>
     </div>
   </body>
