@@ -1,0 +1,21 @@
+{
+    "name": "lessonNote",
+    "version": "1.0.0",
+    "description": "lessonNote-js 学习笔记",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "push": "bash deplop.sh"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/maicFir/lessonNote.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/maicFir/lessonNote/issues"
+    },
+    "homepage": "https://github.com/maicFir/lessonNote#readme"
+}
