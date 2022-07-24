@@ -8,7 +8,7 @@ git status
 git add .
 
 # 提交
-git commit -m 'add xx'
+git commit -m 'update package.json'
 # 添加远程remote 如果项目已经remote，可以省略
 # git remote add origin https://github.com/maicFir/lessonNote.git
 # 推送到指定分支
