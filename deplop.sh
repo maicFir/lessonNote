@@ -9,7 +9,7 @@ git add .
 
 # 提交
 read -p "input commit message: " msg
-git commit -m '$msg'
+git commit -m "$msg"
 # 添加远程remote 如果项目已经remote，可以省略
 # git remote add origin https://github.com/maicFir/lessonNote.git
 # 推送到指定分支
