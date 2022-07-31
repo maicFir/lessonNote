@@ -33,7 +33,8 @@ var twoSum = function (nums, target) {
   // 利用map
   let retMap = new Map();
   let len = nums.length;
-  for (let i = 0; i < len; i++) {
+    for (let i = 0; i < len; i++) {
+    // 将数组中的值当成key,对应的key当成下标索引
     retMap.set(nums[i], i);
   }
   for (let i = 0; i < len; i++) {

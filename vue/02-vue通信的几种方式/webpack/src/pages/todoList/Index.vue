@@ -1,35 +1,35 @@
 <template>
   <div class="container">
-      <a-button type="link" v-for="item in routerData" :key="item.path">
-         <router-link :to="item.path">{{item.path}}</router-link>
-      </a-button>
-      
-      <router-view></router-view>
+    <a-button type="link" v-for="item in routerData" :key="item.path">
+      <router-link :to="item.path">{{ item.path }}</router-link>
+    </a-button>
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       routerData: [
         {
-          path: '/todolist/props',
+          path: '/todolist/props'
         },
         {
-          path: '/todolist/sync',
-        },
-         {
-          path: '/todolist/vuex',
+          path: '/todolist/sync'
         },
         {
-          path: '/todolist/observer',
+          path: '/todolist/vuex'
         },
         {
-          path: '/todolist/provide',
+          path: '/todolist/observer'
         },
         {
-          path: '/todolist/eventbus',
+          path: '/todolist/provide'
+        },
+        {
+          path: '/todolist/eventbus'
         }
       ]
     }
@@ -37,6 +37,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
