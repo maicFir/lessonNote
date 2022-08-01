@@ -14,31 +14,35 @@
   </head>
   <body>
     <div id="app">
+      {{test}}
       <div v-for="item in dataList">{{item}}</div>
       <div v-for="item in dataList2">{{item.name}}</div>
     </div>
     <script src="./vue.js"></script>
     <script>
       var vm = new Vue({
-        el: '#app',
+        el: "#app",
         data() {
           return {
-            dataList: ['Maic', 'Test'],
+            test: "Web技术学苑",
+            dataList: ["Maic", "Test"],
             dataList2: [
               {
-                name: '深圳'
+                name: "深圳",
               },
               {
-                name: '广州'
-              }
-            ]
+                name: "广州",
+              },
+            ],
           };
         },
         mounted() {
           debugger;
-          // this.dataList[0] = '111';
-          this.dataList2[0].name = '北京';
-        }
+          this.dataList[0] = "111";
+          this.test = "前端早早聊";
+          //   this.dataList2[0].name = "北京";
+          // this.dataList = ["aa", "bb"];
+        },
       });
     </script>
   </body>
