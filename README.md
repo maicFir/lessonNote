@@ -86,4 +86,4 @@
 - [leetcode(442)数据中重复的数据](https://github.com/maicFir/lessonNote/issues/36)
 - [掌握常见的几种排序-选择排序](https://github.com/maicFir/lessonNote/issues/37)
 - [深度优先与广度优先遍历](https://github.com/maicFir/lessonNote/issues/38)
-- [关于栈的理解以及实际应用场景](ttps://github.com/maicFir/lessonNote/issues/39)
+- [关于栈的理解以及实际应用场景](https://github.com/maicFir/lessonNote/issues/39)
