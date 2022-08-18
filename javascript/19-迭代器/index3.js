@@ -9,6 +9,6 @@ function* test() {
 }
 const gen = test();
 // console.log(gen.next())
-gen.throw('错误了');
+// gen.throw('错误了');
 console.log(gen.next())
 

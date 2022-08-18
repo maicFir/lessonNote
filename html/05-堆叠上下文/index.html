@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>堆叠上下文</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #app {
+        overflow: hidden;
+      }
+      .wrap {
+        height: 300px;
+        border: 1px solid #111;
+        margin: 10px;
+        overflow-y: auto;
+        /*transform: translateY(0);*/
+        /*filter: blur(1px)*/
+      }
+      .subContent {
+        position: fixed;
+        right: 10px;
+        top: 20px;
+        background-color: red;
+      }
+      /* .leavel-2,
+      .leavel-1 {
+        width: 100px;
+        height: 100px;
+        float: left;
+      }
+      .wrap2 {
+        margin: 10px;
+      }
+      .leavel-1 {
+        background: red;
+      }
+      .leavel-2 {
+        background-color: green;
+      } */
+      .leavel-2,
+      .leavel-1 {
+        width: 100px;
+        height: 100px;
+      }
+      .wrap2 {
+        margin: 10px;
+      }
+      .leavel-1 {
+        background: red;
+      }
+      .leavel-2 {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="wrap">
+        <div class="subContent">我是fixed在最右侧</div>
+        <div class="inner-content"></div>
+      </div>
+      <div class="wrap2">
+        <div class="leavel-1">leavel-1</div>
+        <div class="leavel-2">leavel-2</div>
+      </div>
+    </div>
+    <script async>
+      console.log(2222);
+      const innerContent = document.getElementsByClassName("inner-content")[0];
+      function renderHtml() {
+        let str = "";
+        let max = 50;
+        for (let i = 0; i < max; i++) {
+          str += `<p>${i}</p>`;
+        }
+        innerContent.innerHTML = str;
+      }
+      renderHtml();
+    </script>
+  </body>
+</html>
