@@ -6,6 +6,7 @@
           v-model="form.value"
           placeholder="请选择"
           @visible-change="handleVisibleChange"
+          filterable
           v-select="{ ...selectAttrs, data: sourceData }"
         >
           <el-option
