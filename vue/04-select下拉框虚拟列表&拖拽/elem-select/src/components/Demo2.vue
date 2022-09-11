@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <el-form ref="form" :model="form" inline>
-      <el-form-item label="活动名称">
+      <el-form-item label="vue-virtual-scroll-list:活动名称">
         <el-select
           v-model="form.value"
           placeholder="请选择"
@@ -12,7 +12,8 @@
             :data-key="'id'"
             :data-sources="sourceData"
             :data-component="optionComponent"
-            :keeps="20"
+            :keeps="10"
+            :extra-props="extraProps"
             style="max-height: 245px; overflow-y: auto;"
           >
           </virtual-list>
@@ -31,10 +32,12 @@ const optionComponent = {
       default () {
         return {};
       }
-    }
+    },
+    label: String,
+    value: String
   },
   template:
-    '<el-option :label="source.label" :value="source.value"></el-option>'
+    '<el-option :label="source[label]" :value="source[value]"></el-option>'
 };
 export default {
   name: 'HelloWorld',
@@ -48,7 +51,11 @@ export default {
         value: ''
       },
       optionComponent,
-      sourceData: []
+      sourceData: [],
+      extraProps: {
+        label: 'label',
+        value: 'value'
+      }
     };
   },
   methods: {
