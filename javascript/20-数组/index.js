@@ -43,17 +43,17 @@ console.log(JSON.stringify(Reflect.ownKeys(Array.prototype), null, 2))
  */
 var sourceArr = [
     {
-        name: 'a',
+        name: 'Maic',
         age: 18,
         arr: ['a', 'b']
     },
     {
-        name: 'b',
+        name: 'Tom',
         age: 20,
         arr: ['a', 'b', 'c']
     },
     {
-        name: 'c',
+        name: 'Jack',
         age: 15,
         arr: ['e', 'd', 'f']
     }
@@ -62,6 +62,28 @@ var sourceArr = [
    arr.reduce((curent, prev) => {}, init) curent默认init值
    场景：应用比较丰富，常用有计算，构建对象原原数据映射关系等
 */
+Array.prototype.$getMap = function (key) {
+    return this.reduce((prev, cur) => {
+        if (key) {
+            prev[cur[key]] = cur;
+            return prev
+        }
+    }, {})
+}
+console.log(sourceArr.$getMap('name'))
+
+
+function getMap(key, arr) {
+    return arr.reduce((prev, cur) => {
+        if (key) {
+            prev[cur[key]] = prev;
+            return prev
+        }
+    }, {})
+}
+console.log(getMap('name', sourceArr))
+
+
 // 将一个数组与新建一个对象建立关系
 const sourceMap = sourceArr.reduce((prev, cur) => {
     prev[cur.name] = cur;
@@ -70,13 +92,13 @@ const sourceMap = sourceArr.reduce((prev, cur) => {
 console.log('reduce:', sourceMap)
 /**
 {
-  a: { name: 'a', age: 18, arr: [ 'a', 'b' ] },
-  b: { name: 'b', age: 20, arr: [ 'a', 'b', 'c' ] },
-  c: { name: 'c', age: 15, arr: [ 'e', 'd', 'f' ] }
+  Maic: { name: 'Maic', age: 18, arr: [ 'a', 'b' ] },
+  Tom: { name: 'Tom', age: 20, arr: [ 'a', 'b', 'c' ] },
+  Jack: { name: 'Jack', age: 15, arr: [ 'e', 'd', 'f' ] }
 }
 */
 // 此时可以根据sourceArr中的name的具体值,在sourceMap中能根据name值找到对应的原始数据
-console.log('reduce:', sourceMap['a']) // { name: 'a', age: 18 }
+console.log('reduce:', sourceMap['Maic']) // { name: 'Maic', age: 18, arr: [ 'a', 'b' ] }
 
 /* 现在输入arr：['a', 'b']
 // 只要该数组在原数据sourceArr的arr中完全包含，就返回true
@@ -194,7 +216,92 @@ console.log('pop:', arrayPop(['a', 'b', 'c'])) // c
  * push: 想数组中添加元素，原数组长度会发生变化,返回的是新增元素后长度
  * 场景: 页面新增数据，添加等
  */
+var sourcesData = [
+    {
+        bookType: '文学类',
+        type: 1,
+        bookName: '基督山伯爵',
+        id: 'x123'
+    },
+    {
+        bookType: '财商类',
+        type: 2,
+        bookName: '穷爸爸与富爸爸',
+        id: 'x45622'
+    },
+    {
+        bookType: '经济学',
+        type: 3,
+        bookName: '货币战争',
+        id: 'ssxdede'
+    },
+    {
+        bookType: '文学类',
+        type: 1,
+        bookName: '百年孤独',
+        id: '1234562sx'
+    }
+]
 
+const transformTree = (sourceArr, result) => {
+    // 1、先根据type字段进行分组
+    const typeData = [1, 2, 3].map(type => sourceArr.filter(v => v.type === type * 1))
+    // 2、分别含有type字段进行分类后
+    for (data of typeData) {
+        data.forEach(item => {
+            // 3、根据bookType进行归组，文件夹分类，同一文件夹的归到一类去
+            const target = result.find(v => v.label === item.bookType);
+            if (target) {
+                // 如果找到了就添加到children里去
+                target.children.push({
+                    label: item.bookName,
+                    ...item
+                })
+            } else {
+                result.push({
+                    label: item.bookType,
+                    children: [
+                        {
+                            ...item,
+                            label: item.bookName
+                        }
+                    ]
+                })
+            }
+        })
+    }
+    return result
+}
+const transformTree2 = (sourceArr, result) => {
+    // 1、先根据type字段进行分组
+    const typeData = [1, 2, 3].map(type => sourceArr.filter(v => v.type === type * 1))
+    // 2、分别含有type字段进行分类后
+    for (data of typeData) {
+        data.reduce((prev, cur) => {
+            // 3、根据bookType进行归组，文件夹分类，同一文件夹的归到一类去
+            const target = result.find(v => v.label === cur.bookType);
+            if (target) {
+                target.children.push({
+                    label: cur.bookName,
+                    ...cur
+                })
+            } else {
+                result.push({
+                    label: cur.bookType,
+                    children: [
+                        {
+                            ...cur,
+                            label: cur.bookName
+                        }
+                    ]
+                })
+            }
+        }, sourceArr[0])
+    }
+    return result
+}
+console.log('push:res', transformTree(sourcesData, []));
+console.log('push:res2', transformTree2(sourcesData, []));
 const arrayPush = (sourceData, val) => {
     const result = sourceData.push(val)
     return {
@@ -311,6 +418,14 @@ const arrayForeach = (sourceArr) => {
         console.log(v)
     })
 }
+function getMap2(key, arr) {
+    const res = {}
+    arr.forEach(v => {
+        res[v[key]] = v;
+    })
+    return res;
+}
+console.log('forEach', getMap2('name', sourceArr)['Maic'])
 console.log('forEach', arrayForeach([1, 2, 3, 4]))
 
 /**
@@ -349,14 +464,13 @@ console.log('map:', arrayMap([1, 2, 3]))
 /**
  * flatMap： 对原数据过滤操作
  */
-const arrayFlatMap = (sourceArr) => {
-    const arr = [{ id: 1, name: 'Maic', value: 0 }, { id: 2, name: 'Tom', value: 1 }]
+const arrayFlatMap = (sourceArr, arr) => {
     return {
         source: sourceArr.flatMap(v => typeof v === 'number' ? [v] : []),
         narr: arr.flatMap(v => [{ name: v.name, value: v.value }])
     }
 }
-console.log('flatMap:', arrayFlatMap([1, 2, [3, 4]]))
+console.log('flatMap:', arrayFlatMap([1, 2, [3, 4]], [{ id: 1, name: 'Maic', value: 0 }, { id: 2, name: 'Tom', value: 1 }]))
 /**
  * flatMap: {
         source: [ 1, 2 ],
@@ -372,3 +486,27 @@ const arrayTostring = (sourceArr) => {
     return sourceArr.toString()
 }
 console.log('toString:', arrayTostring([1, 2, 3, 4]))
+
+/**
+ * includes: 包含
+ * 场景：一个元素是否在数组中存在
+ */
+const arrayIncludes = (arr, val) => {
+    return arr.includes(val)
+}
+console.log('arrayIncludes:', arrayIncludes([1, 2, 3], 1))
+
+/**
+ * indexOf: 获取元素的下标
+ */
+const arrayIndexOf = (arr, val) => {
+    return arr.indexOf(val)
+}
+console.log(arrayIndexOf([1, 2, 3], 1));
+/**
+ * join: 将一个数组以什么方式拼接
+ */
+const arrayJoin = (arr, split) => {
+    return arr.join(split)
+}
+console.log('join:', arrayJoin([1, 2, 3], '-'))
