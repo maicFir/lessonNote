@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       routerList: routes,
-      curentRouter: '/'
+      curentRouter: '/4'
     };
   },
   methods: {
