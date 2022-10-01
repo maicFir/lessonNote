@@ -1,7 +1,7 @@
 <template>
   <div class="drap">
     <div class="left">
-      <h3>原始区域</h3>
+      <h3>原始区域{{ $route.fullPath }}</h3>
       <div class="content">
         <div>
           <p>source1</p>
@@ -40,6 +40,7 @@
         ]"
         data-type="a"
         @dragenter="handleDragEnter"
+        @dragover.prevent="() => {}"
         @dragleave="handleLeave"
       >
         <p>source1</p>
@@ -51,6 +52,7 @@
           :data-type="item.type"
           @dragstart="dragstart2($event)"
           @drap="handleDrap"
+          @dragover.prevent="() => {}"
           >{{ item.text }}</span
         >
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="demo">
     <el-form ref="form" :model="form" inline>
       <el-form-item label="虚拟列表-活动名称">
         <el-select
