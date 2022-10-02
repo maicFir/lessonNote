@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>attr</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      :root {
+        --color: red;
+        --width: 200px;
+        --height: 200px;
+      }
+      #app {
+        width: var(--width);
+        height: var(--height);
+        margin: 0 auto;
+        border: 1px solid var(--color);
+      }
+      #app button {
+        margin: 5px 10px;
+      }
+      .content {
+        height: calc(var(--width) / 2);
+        border: 1px solid green;
+        text-align: center;
+        line-height: calc(var(--width) / 2);
+        font-size: 50px;
+      }
+      .content::before {
+        content: attr(data-content);
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button id="startBtn">开始计数</button>
+      <div class="content" data-content="10"></div>
+    </div>
+    <script>
+      // requestAnimationFrame 模拟setInterval
+      function customizeSetInterval(callback, interval) {
+        let timer = null;
+        let startTime = Date.now();
+        let loop = () => {
+          let endTime = Date.now();
+          if (endTime - startTime >= interval) {
+            startTime = endTime = Date.now();
+            callback(timer);
+          }
+          timer = window.requestAnimationFrame(loop);
+        };
+        loop();
+        return timer;
+      }
+
+      const startBtn = document.getElementById("startBtn");
+      const contentDom = document.querySelector(".content");
+      let initData = contentDom.dataset.content * 1;
+      startBtn.onclick = function () {
+        setCount();
+      };
+      // 计数操作
+      function setCount(interval = 1000) {
+        const timer = customizeSetInterval(() => {
+          if (initData >= 0) {
+            startBtn.innerText = "正在计数...";
+            contentDom.setAttribute("data-content", initData--);
+          }
+          if (initData === -1) {
+            startBtn.innerText = "重新计数";
+          }
+        }, interval);
+        if (initData === -1) {
+          initData = 10;
+          window.cancelAnimationFrame(timer);
+        }
+      }
+    </script>
+  </body>
+</html>
