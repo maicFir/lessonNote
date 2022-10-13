@@ -9,19 +9,25 @@ Vue.use(Router);
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/hello-world',
       name: 'HelloWorld',
       component: HelloWorld,
     },
     {
-      path: '/list',
+      path: '/',
       name: 'list',
       component: List,
+      meta: {
+        cache: ['list'],
+      },
     },
     {
       path: '/detail',
       name: 'detail',
       component: Detail,
+      meta: {
+        cache: ['detail'],
+      },
     },
   ],
 });
