@@ -1,15 +1,18 @@
-
+/* eslint-disable no-param-reassign */
 export default {
+  functional: true,
   props: ['value'],
-  render(h) {
-    const self = this;
-    const { formater, attrs } = this.$attrs;
+  render(h, ctx) {
+    // console.log(this, '---'); // 会是null，只能通过第二个参数ctx拿对应参数
+    const { formater, attrs, input: handleInput } = ctx.data.attrs;
     return formater(h, {
-      domProps: { value: self.value },
-      attrs,
+      attrs: {
+        ...attrs,
+        value: ctx.props.value,
+      },
       on: {
-        input(event) {
-          self.$emit('input', event.target.value);
+        input(e) {
+          handleInput(e);
         },
       },
     });

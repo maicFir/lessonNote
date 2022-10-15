@@ -5,10 +5,11 @@
         <div v-for="(item, index) in formConfig.fields" :key="index">
           <el-form-item :label="item.label">
             <!--自定义render-->
-            <template v-if="item.render">
+            <template v-if="item.formater">
               <component
                 :is="'renderComponent'"
                 :value="formParams[item.key]"
+                :input="e => formParams[item.key] = e"
                 v-bind="{ ...item }"
               ></component>
             </template>

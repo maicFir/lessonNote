@@ -180,7 +180,10 @@ export default {
             attrs: {
               placeholder: '请输入毕业学校',
             },
-            formater: h => h('el-input'),
+            formater: (h, props) =>
+              h('el-input', {
+                ...props,
+              }),
           },
         ],
       };
@@ -232,7 +235,7 @@ export default {
       this.$router.push('/detail');
     },
     handleEdit(row, visibleType = 'dialogVisible') {
-      this.formParams = { ...this.formParams, ...row };
+      this.formParams = { ...row };
       this[visibleType] = true;
       console.log(row);
     },
