@@ -17,8 +17,8 @@
           placeholder="请选择地址"
         >
           <el-option
-            v-for="item in tableData"
-            :key="item.name"
+            v-for="(item, index) in tableData"
+            :key="index"
             :label="item.address"
             :value="item.address"
           >
@@ -45,6 +45,11 @@
         <template slot-scope="scope">
           <a href="javascript:void(0);" @click="handleView">查看详情</a>
           <a href="javascript:void(0);" @click="handleEdit(scope.row)">编辑</a>
+          <a
+            href="javascript:void(0);"
+            @click="handleEdit(scope.row, 'dialogVisible2')"
+            >编辑form-modal</a
+          >
         </template>
       </el-table-column>
     </el-table>
@@ -58,10 +63,34 @@
     <list-modal
       title="编辑"
       width="50%"
+      class="list-modal"
+      style="border: 1px solid transparent"
       v-model="formParams"
       :visible.sync="dialogVisible"
       @refresh="featchList"
-    ></list-modal>
+      @close="handleClose"
+    >
+      <div slot="footer">确定</div>
+    </list-modal>
+    <form-modal
+      title="编辑"
+      width="50%"
+      class="list-modal"
+      style="border: 1px solid transparent"
+      v-model="formParams"
+      :formConfig="formConfig"
+      :visible.sync="dialogVisible2"
+      @refresh="featchList"
+      @close="handleClose"
+    >
+      <template slot-scope="{ row }" slot="number">
+        <el-input
+          :type="row.type"
+          v-bind="row.attrs || {}"
+          v-model="row.formParams[row.slot]"
+        ></el-input>
+      </template>
+    </form-modal>
   </div>
 </template>
 
@@ -84,12 +113,78 @@ export default {
         page: 1,
       },
       dialogVisible: false,
+      dialogVisible2: false,
       formParams: {
         date: '',
         name: '',
         address: '',
+        number: '1',
+        scholl: '公众号:Web技术学苑',
       },
     };
+  },
+  computed: {
+    formConfig() {
+      return {
+        formAttrs: {
+          labelWidth: '80px',
+          labelPosition: 'left',
+        },
+        fields: [
+          {
+            type: 'text',
+            key: 'date',
+            label: '日期',
+            attrs: {
+              placeholder: '请填写日期',
+            },
+          },
+          {
+            type: 'text',
+            key: 'name',
+            label: '名称',
+            attrs: {
+              placeholder: '请填写名称',
+            },
+          },
+          {
+            type: 'select',
+            key: 'address',
+            label: '地址',
+            attrs: {
+              placeholder: '请选择地址',
+              style: {
+                width: '100%',
+              },
+            },
+            options: {
+              data: this.tableData,
+              extraProps: {
+                value: 'address',
+                label: 'address',
+              },
+            },
+          },
+          {
+            type: 'text',
+            slot: 'number',
+            label: '编号',
+            attrs: {
+              placeholder: '请输入编号',
+            },
+          },
+          {
+            type: 'text',
+            key: 'scholl',
+            label: '毕业学校',
+            attrs: {
+              placeholder: '请输入毕业学校',
+            },
+            formater: h => h('el-input'),
+          },
+        ],
+      };
+    },
   },
   watch: {
     // eslint-disable-next-line func-names
@@ -115,6 +210,9 @@ export default {
     this.featchList();
   },
   methods: {
+    handleClose() {
+      console.log('关闭了');
+    },
     handleToHello() {
       this.$router.push('/hello-world');
     },
@@ -133,9 +231,9 @@ export default {
     handleView() {
       this.$router.push('/detail');
     },
-    handleEdit(row) {
-      this.formParams = { ...row };
-      this.dialogVisible = true;
+    handleEdit(row, visibleType = 'dialogVisible') {
+      this.formParams = { ...this.formParams, ...row };
+      this[visibleType] = true;
       console.log(row);
     },
     featchList() {

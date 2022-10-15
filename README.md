@@ -2,8 +2,8 @@
  * @Author: maicFir mcodes@163.com
  * @Date: 2022-04-30 22:32:18
  * @LastEditors: maicFir mcodes@163.com
- * @LastEditTime: 2022-08-11 15:05:03
- * @FilePath: /maicFir.github.io/Users/atom/mc/lessonNote/README.md
+ * @LastEditTime: 2022-10-15 16:14:27
+ * @FilePath: /lessonNote/README.md
  * @Description: 
 -->
 # lessonNote-js 学习笔记
@@ -31,6 +31,8 @@
 - 17-[掌握原型链，再炒冷饭系列](https://github.com/maicFir/lessonNote/issues/19)
 - 18-循环
 - 19-[一文彻底掌握迭代器与生成器](https://github.com/maicFir/lessonNote/issues/47)
+- 20-[盘盘项目中你常用到的数组API]()
+- 21-[埋点统计优化，首屏加载速度提升]()
 #### gulp
 
 - gulp-01-simple-demo - [放弃 webpack,拥抱 gulp](https://github.com/maicFir/lessonNote/issues/48)
@@ -57,7 +59,10 @@
 
 - 01- 响应式 -[Vue 数据双向绑定实现原理](https://github.com/maicFir/lessonNote/issues/46)
 - 02 - vue 通信的几种方式-[在业务代码中常用到的 Vue 数据通信方式](https://github.com/maicFir/lessonNote/issues/46)
-
+- 03 - [面试题分享，修改数据无法更新UI]()
+- 04 - [写了个自定义指令，支持elementUI2.0下拉框组件虚拟列表显示]()
+- 05 - [掌握原生拖拽，类似拖拽需求，一网打尽]()
+- 06 - [keep-alive多级路由缓存最佳实践]()
 ### 面试题
 
 - http - 记录相关面试题
@@ -66,7 +71,9 @@
 
 - 01 -不同尺寸展示响应式图片
 - 02 - BFC[了解 BFC 特性，轻松实现自适应布局](https://github.com/maicFir/lessonNote/issues/42)
-
+- 03 - [flex给我实现一个对角线布局]()
+- 05 - [fixed失效，css堆叠上下文问题]()
+- 07 - [css3的attr函数使用，加载unicode图标]()
 ### typescript
 
 - [demo ts 基础扫盲](https://github.com/maicFir/lessonNote/issues/33)

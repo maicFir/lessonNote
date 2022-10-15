@@ -1,10 +1,11 @@
 <template>
   <el-dialog
-    title="编辑"
     :visible.sync="currentVisible"
     width="30%"
     v-bind="$attrs"
+    v-on="$listeners"
   >
+    {{ $attrs }}
     <el-form label-position="left" label-width="80px" :model="formParams">
       <el-form-item label="日期">
         <el-input v-model="formParams.date"></el-input>
@@ -16,7 +17,10 @@
         <el-input v-model="formParams.address"></el-input>
       </el-form-item>
     </el-form>
-    <span slot="footer" class="dialog-footer">
+    <template v-if="$slots.footer">
+      <slot name="footer" />
+    </template>
+    <span v-else slot="footer" class="dialog-footer">
       <el-button @click="closeModal">取 消</el-button>
       <el-button type="primary" @click="handleSure">确 定</el-button>
     </span>
