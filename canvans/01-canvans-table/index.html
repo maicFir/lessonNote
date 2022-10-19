@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>canvans-table</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .content-table {
+        width: 600px;
+        position: relative;
+        margin: 10px 5px;
+      }
+      #canvans {
+        border: none;
+      }
+      #slide-wrap {
+        width: 5px;
+        height: 60px;
+        background-color: #e5e5e5;
+        position: absolute;
+        right: 0;
+        top: 30px;
+        border-radius: 5px;
+      }
+      .slide {
+        width: 5px;
+        height: 60px;
+        background-color: #e5e5e5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="content-table">
+        <canvas id="canvans" width="600" height="300"></canvas>
+        <!---自定义滚动条-->
+        <div id="slide-wrap">
+          <div class="slide"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const columns = [
+        {
+          label: "姓名",
+          key: "name",
+        },
+        {
+          label: "年龄",
+          key: "age",
+        },
+        {
+          label: "学校",
+          key: "school",
+        },
+        {
+          label: "分数",
+          key: "source",
+        },
+      ];
+      const mockData = [
+        {
+          name: "张三",
+          id: 123,
+          age: 18,
+          school: "公众号：web技术学苑",
+          source: 800,
+        },
+      ];
+      const tableData = new Array(20).fill(mockData[0]).map((v, index) => {
+        return {
+          ...v,
+          name: `${v.name}-${index}`,
+          age: v.age + index,
+        };
+      });
+      console.log(tableData);
+      const contentTable = document.querySelector(".content-table");
+      const slideWrap = document.getElementById("slide-wrap");
+      const slide = slideWrap.querySelector(".slide");
+      const canvansDom = document.getElementById("canvans");
+      const ctx = canvansDom.getContext("2d");
+      const rowHeight = 30;
+      ctx.strokeStyle = "#111";
+      // 绘制整个表区域
+      //   ctx.strokeRect(0, 0, canvansDom.width, canvansDom.height);
+      // 表头
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.lineTo(canvansDom.width, 0);
+      ctx.lineWidth = 0.5;
+      ctx.closePath();
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(0, rowHeight);
+      ctx.lineTo(canvansDom.width, rowHeight);
+      ctx.lineWidth = 0.5;
+      ctx.stroke();
+      ctx.closePath();
+      const colWidth = Math.ceil(canvansDom.width / columns.length);
+      for (let index = 0; index < columns.length + 1; index++) {
+        if (columns[index]) {
+          ctx.fillText(columns[index].label, index * colWidth + 10, 18);
+        }
+      }
+      // 绘制表body,绘制横线
+      const row = Math.ceil(canvansDom.height / rowHeight);
+      const tableDataLen = tableData.length;
+      for (let i = 2; i < row + 2; i++) {
+        ctx.beginPath();
+        ctx.moveTo(0, i * rowHeight);
+        ctx.lineTo(canvansDom.width, i * rowHeight);
+        ctx.stroke();
+        ctx.closePath();
+      }
+      // 绘制竖线
+      for (let index = 0; index < columns.length + 1; index++) {
+        ctx.beginPath();
+        ctx.moveTo(index * colWidth, 0);
+        ctx.lineTo(index * colWidth, (tableDataLen + 1) * rowHeight);
+        ctx.stroke();
+        ctx.closePath();
+      }
+      // 填充内容
+      const col = columns.length;
+      const columnsKeys = columns.map((v) => v.key);
+      //   ctx.fillText(tableData[0].name, 10, 48);
+      //   ctx.fillText(tableData[0].age, 160, 48);
+      //   ctx.fillText(tableData[0].school, 310, 48);
+      //   ctx.fillText(tableData[0].source, 460, 48);
+      //   ctx.fillText(tableData[1].name, 10, 78);
+      //   ctx.fillText(tableData[1].age, 160, 78);
+      //   ctx.fillText(tableData[1].school, 310, 78);
+      //   ctx.fillText(tableData[1].source, 460, 78);
+      //   ctx.fillText(tableData[2].name, 10, 108);
+      //   ctx.fillText(tableData[2].age, 160, 108);
+      //   ctx.fillText(tableData[2].school, 310, 108);
+      //   ctx.fillText(tableData[2].source, 460, 108);
+
+      for (let i = 0; i < tableData.length; i++) {
+        columnsKeys.forEach((keyName, j) => {
+          const x = 10 + 150 * j;
+          const y = 18 + 30 * (i + 1);
+          ctx.fillText(tableData[i][keyName], x, y);
+        });
+      }
+
+      // 控制滚动条
+      let startY;
+      function move(event) {
+        slideWrap.style.top = event.clientY - startY + "px";
+        if (slideWrap.offsetTop <= 30) {
+          slideWrap.style.top = "30px";
+        }
+        if (slideWrap.offsetTop >= 240) {
+          slideWrap.style.top = 200 + "px";
+        }
+      }
+      function stop(event) {
+        event.target = slideWrap.onmousemove = slideWrap.onmouseup = null;
+      }
+      slide.addEventListener("mousedown", (e) => {
+        startY = e.clientY - slideWrap.offsetTop;
+        slideWrap.onmousemove = move;
+        slideWrap.onmouseup = stop;
+      });
+    </script>
+  </body>
+</html>
