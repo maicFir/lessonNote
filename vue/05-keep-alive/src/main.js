@@ -5,13 +5,14 @@ import Vue from 'vue';
 import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui';
 import { installCustComponent } from '@/components';
+import { extendElemenUI } from './extendElement';
 import App from './App';
 import router from './router';
 import store from './store';
 
 installCustComponent();
 Vue.config.productionTip = false;
-
+extendElemenUI(ElementUI);
 Vue.use(ElementUI);
 /* eslint-disable no-new */
 new Vue({

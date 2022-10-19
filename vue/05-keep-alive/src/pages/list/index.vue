@@ -14,6 +14,7 @@
         <el-select
           v-model="condition.address"
           clearable
+          filterable
           placeholder="请选择地址"
         >
           <el-option
@@ -21,6 +22,24 @@
             :key="index"
             :label="item.address"
             :value="item.address"
+            text-light="false"
+          >
+          </el-option>
+        </el-select>
+      </el-form-item>
+      <el-form-item label="爱好">
+        <el-select
+          v-model="condition.fv"
+          clearable
+          filterable
+          placeholder="请选择爱好"
+          ref="fvSelect"
+        >
+          <el-option
+            v-for="(item, index) in favData"
+            :key="index"
+            :label="item"
+            :value="item"
           >
           </el-option>
         </el-select>
@@ -105,12 +124,22 @@ export default {
   },
   data() {
     return {
+      favData: [
+        '我喜欢篮球',
+        '我喜欢乒乓球',
+        '足球',
+        '游泳',
+        '跳水',
+        'aabbccaa',
+        'hello aa, test',
+      ],
       tableData: [],
       cacheData: [], // 缓存数据
       condition: {
         name: '',
         address: '',
         page: 1,
+        fv: '',
       },
       dialogVisible: false,
       dialogVisible2: false,
@@ -208,11 +237,17 @@ export default {
         );
       }
     },
+    'condition.fv': function () {
+      console.log(this.$refs.fvSelect);
+    },
   },
   created() {
     this.featchList();
   },
   methods: {
+    handleChangeFv() {
+      console.log(1111);
+    },
     handleClose() {
       console.log('关闭了');
     },
