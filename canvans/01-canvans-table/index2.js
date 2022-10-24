@@ -1,5 +1,5 @@
 class CanvasTable {
-    constructor(options = {}) {
+    constructor(options = {}, callback) {
         this.options = options;
         const { el, slideWrap, slide, table: { rowHeight, columns, headerHight } } = options;
         this.el = el; // canvans dom
@@ -12,6 +12,7 @@ class CanvasTable {
         this.tableData = []; // canvans渲染的数据
         this.startIndex = 0; // 数据起始位
         this.endIndex = 0; // 数据末尾索引
+        this.callback = callback;
         this.init();
     }
     init() {
@@ -20,17 +21,21 @@ class CanvasTable {
         // 纵向滚动条Y
         this.setScrollY();
     }
-    setDataByPage() {
-        const { el, rowHeight, options: { table: { tableData: sourceData = [] } } } = this;
+    setDataByPage(item) {
+        let { el, rowHeight, options: { table: { tableData: sourceData = [] } }, callback } = this;
         const limit = Math.floor((el.height - rowHeight) / rowHeight); // 最大限度展示可是区域条数
         const endIndex = Math.min(this.startIndex + limit, sourceData.length)
         this.endIndex = endIndex;
-        this.tableData = sourceData.slice(this.startIndex, this.endIndex);
-        if (this.tableData.length === 0 || this.startIndex + limit > sourceData.length) {
+        if (item) {
+            sourceData = sourceData.filter(v => v.id !== item.id);
+        }
+        const tableData = sourceData.slice(this.startIndex, this.endIndex);
+        if (tableData.length === 0 || this.startIndex + limit > sourceData.length) {
             console.log('到底了')
             return;
         }
-        console.log(this.tableData, 'tableData')
+        this.tableData = tableData;
+        callback(this.tableData)
         // 清除画布
         this.clearCanvans();
         // 绘制表头
@@ -39,7 +44,7 @@ class CanvasTable {
         this.drawBody();
     }
     drawHeader() {
-        const { ctx, el: canvansDom, rowHeight } = this;
+        const { ctx, el: canvansDom, rowHeight, columns } = this;
         // 第一条横线
         ctx.beginPath();
         ctx.moveTo(0, 0);
@@ -84,22 +89,27 @@ class CanvasTable {
         console.log(this.tableData, 'tableDataLen')
         // 绘制竖线
         for (let index = 0; index < columns.length + 1; index++) {
+            const x0 = index * colWidth;
+            const y0 = 0;
+            const x1 = index * colWidth;
+            const y1 = (tableDataLen + 1) * rowHeight;
             ctx.beginPath();
-            ctx.moveTo(index * colWidth, 0);
-            ctx.lineTo(index * colWidth, (tableDataLen + 1) * rowHeight);
+            ctx.moveTo(x0, y0);
+            ctx.lineTo(x1, y1);
             ctx.stroke();
             ctx.closePath();
         }
         // 填充内容
-        const columnsKeys = columns.map((v) => v.key || v.solt);
+        const columnsKeys = columns.map((v) => v.key || v.slot);
         //   ctx.fillText(tableData[0].name, 10, 48);
         for (let i = 0; i < tableData.length; i++) {
             columnsKeys.forEach((keyName, j) => {
                 const x = 10 + colWidth * j;
                 const y = 18 + rowHeight * (i + 1);
-                if (tableData[i][keyName]) {
+                if (tableData[i][keyName] && !columns[j].render) {
                     ctx.fillText(tableData[i][keyName], x, y);
                 }
+                tableData[i][`${keyName}_position`] = [x, y];
             });
         }
     }
