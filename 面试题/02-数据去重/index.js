@@ -94,4 +94,4 @@ const quchong4 = (arr, map = new Map()) => {
 console.log('quchong1:', quchong(arr));
 console.log('quchong2:', quchong2(arr));
 console.log('quchong3:', quchong3(arr));
-console.log('quchong4:', quchong3(arr));
+console.log('quchong4:', quchong4(arr));
