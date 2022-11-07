@@ -81,7 +81,7 @@ const quchong3 = (arr) => {
     }, {})
 }
 /**
- * 方法4: Map
+ * 方法4: Map, 利用map设置不重复的事
  */
 const quchong4 = (arr, map = new Map()) => {
     arr.forEach(v => {
