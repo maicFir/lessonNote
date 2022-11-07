@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="./a.js">
+      /*
+        defer 等所有dom加载完成以及其他脚本执行完成后加载
+      */
+    </script>
+    <script>
+      console.log("同步加载");
+      document.ready = function () {
+        // 文档树加载完就立即执行
+        console.log("ready");
+      };
+    </script>
+    <script async>
+      console.log("async加载");
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>

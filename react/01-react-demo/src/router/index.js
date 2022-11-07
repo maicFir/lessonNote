@@ -1,4 +1,3 @@
-
 import { createBrowserRouter } from 'react-router-dom';
 import Hello from '../pages/HelloWorld'
 import ErrorPage from '../components/ErrorPage'
@@ -23,7 +22,7 @@ export const router = createBrowserRouter([
             {
                 path: 'about',
                 element: <About />
-            }
+            },
         ]
     },
 ])

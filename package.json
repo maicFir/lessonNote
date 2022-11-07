@@ -18,5 +18,9 @@
         "url": "https://github.com/maicFir/lessonNote/issues"
     },
     "homepage": "https://github.com/maicFir/lessonNote#readme",
-    "dependencies": {}
+    "dependencies": {},
+    "devDependencies": {
+        "ts-loader": "^9.4.1",
+        "typescript": "^4.8.4"
+    }
 }

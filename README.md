@@ -2,7 +2,7 @@
  * @Author: maicFir mcodes@163.com
  * @Date: 2022-04-30 22:32:18
  * @LastEditors: maicFir mcodes@163.com
- * @LastEditTime: 2022-10-15 16:14:27
+ * @LastEditTime: 2022-11-07 15:40:53
  * @FilePath: /lessonNote/README.md
  * @Description: 
 -->
@@ -66,6 +66,11 @@
 ### 面试题
 
 - http - 记录相关面试题
+- 01 - 引用数据问题
+- 02 - 数据去重
+- 03 - 事件循环
+- 04 - 数据结构转换
+- 05 - 最长公共前缀
 
 ### html
 

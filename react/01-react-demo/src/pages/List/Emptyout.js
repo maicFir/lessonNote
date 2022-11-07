@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
     NavLink,
@@ -8,6 +9,7 @@ export const BaseLayOut = () => {
         <div className="nav-list">
             <NavLink to="/list">home</NavLink> |
             <NavLink to="/list/about">about</NavLink>
+            <NavLink to="/list/resize">resize</NavLink>
         </div>
         <div className="content">
             <Outlet />
