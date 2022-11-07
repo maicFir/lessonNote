@@ -1,4 +1,5 @@
 
+
 /**
  * 去重数据中相同的id,并根据id进行排序
  */
@@ -79,6 +80,18 @@ const quchong3 = (arr) => {
         return Object.values(cur).sort((a, b) => a.id - b.id)
     }, {})
 }
+/**
+ * 方法4: Map
+ */
+const quchong4 = (arr, map = new Map()) => {
+    arr.forEach(v => {
+        if (!map.has(v.id)) {
+            map.set(v.id, v)
+        }
+    });
+    return Object.values(map).sort((a, b) => a.id - b.id)
+}
 console.log('quchong1:', quchong(arr));
 console.log('quchong2:', quchong2(arr));
 console.log('quchong3:', quchong3(arr));
+console.log('quchong4:', quchong3(arr));
