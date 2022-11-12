@@ -1,6 +1,6 @@
+
 import React from "react";
-import ResizeComp from "../../components/resize/index.tsx";
 function Resize() {
-    return <ResizeComp />
+    return <>111</>
 }
 export default Resize

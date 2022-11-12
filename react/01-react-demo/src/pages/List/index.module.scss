@@ -1,0 +1,12 @@
+.nav-list {
+  :global {
+    a {
+      padding: 0 15px;
+    }
+    a[aria-current="page"] {
+      &.active {
+        color: red;
+      }
+    }
+  }
+}

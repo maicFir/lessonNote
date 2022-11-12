@@ -13,14 +13,66 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
+import Menu from '@material-ui/core/Menu';
+import { makeStyles } from '@material-ui/core/styles';
 
 import ResizeObserverComp from "./ResizeObserver"
+import DrapPoper from '../drap-poper';
+
 import { SizeInfo } from "./type"
 
 import "./index.css"
 
 interface Props {}
-
+const options = [
+    {
+        text: 'hello111',
+        childrens: [
+            {
+                text: '1-1',
+                childrens: [
+                    {
+                        text: '1-1-1'
+                    },
+                    {
+                        text: '1-1-2'
+                    }
+            ] },
+            {text: '1-2'}
+        ]
+    },
+    {
+        text: 'hello222',
+        childrens: [
+            { text: '2-1' },
+            {text: '2-2'}
+        ]
+    },
+    {
+        text: 'hello333',
+        childrens: []
+    },
+    {
+        text: 'hello444',
+        childrens: []
+    },
+    {
+        text: 'hello555',
+        childrens: []
+    },
+    {
+        text: 'hello666',
+        childrens: []
+    },
+    {
+        text: 'hello777',
+        childrens: []
+    },
+    {
+        text: 'hello888',
+        childrens: []
+    },
+  ];
 
 
 const MenuItemPrefixCls = `aui-nav-menu-item`
@@ -28,9 +80,7 @@ const MenuItemPrefixCls = `aui-nav-menu-item`
 const MaxItemCount = 10
 
 const Index: React.FC<Props> = props => {
-    const {} = props
-   
-
+  
     // 收集所有子节点的宽度
     const [itemWidths, setItemWidths] = useState(new Map<React.Key, number>())
 
@@ -56,12 +106,26 @@ const Index: React.FC<Props> = props => {
     const [displayCount, setDisplayCount] = useState<number | null>(null)
 
     const [open, setOpen] = React.useState(false);
+   
     const anchorRef = React.useRef(null);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [child, setChild] = React.useState([]);
+    const [openMenu, setOpenMenu] = React.useState(false);
+    // ---点击下拉
+    const handleClick = (event: any, bool: Boolean = false, item?: any) => {
+        setAnchorEl(event.currentTarget)
+        setOpenMenu(!bool);
+        setChild(item.childrens)
+    }
+    const handleColseMenu = () => {
+        setOpenMenu(false);
+    }
+    //----下拉结束
     const handleClose = (event: any) => {
         setOpen(false);
     };
     const handleToggle = () => {
-        setOpen(true)
+        setOpen(!open)
     };
   
     // 合并显示的个数
@@ -75,16 +139,20 @@ const Index: React.FC<Props> = props => {
 
     /**所有的子节点 */
     const childNodeData = useMemo(() => {
-        return new Array(8)
-            .fill(0)
+        const res = options
             .map((item, index) => (
                 <ResizeObserverComp
                     key={`${MenuItemPrefixCls}${index}`}
                     className={'item1'}
                     onResize={size => registerSize(`${MenuItemPrefixCls}${index}`, size.offsetWidth)}
-                >{`当前子节点内容${index + 1}`}</ResizeObserverComp>
+                >
+                    <span onClick={(e) => {
+                        handleClick(e, false, item)
+                }}>当前节点{ item.text}</span>
+                </ResizeObserverComp>
             ))
-    }, [])
+        return res;
+    }, [options])
 
     // ================================= Size =================================
     const onOverflowResize = useCallback((size: SizeInfo, element: HTMLElement) => {
@@ -187,7 +255,8 @@ const Index: React.FC<Props> = props => {
                         aria-haspopup="true"
                         onClick={handleToggle}
                 >
-                更多...
+                    更多...
+              
                 </Button>
                 <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                     {({ TransitionProps, placement }) => (
@@ -197,11 +266,17 @@ const Index: React.FC<Props> = props => {
                         >
                             <Paper>
                                 <ClickAwayListener onClickAway={handleClose}>
-                                    <MenuList autoFocusItem={open} id="menu-list-grow">
-                                        <MenuItem onClick={handleClose}>Profile</MenuItem>
+                                    <Menu open={ open } variant="selectedMenu" id="menu-list-grow">
+                                        {
+                                            omitItems.map((v: any, index: number) => <MenuItem onClick={handleClose} key={index}>
+                                                {v.props.children}
+                                            
+                                            </MenuItem>)
+                                        }
+                                        {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
                                         <MenuItem onClick={handleClose}>My account</MenuItem>
-                                        <MenuItem onClick={handleClose}>Logout</MenuItem>
-                                    </MenuList>
+                                        <MenuItem onClick={handleClose}>Logout</MenuItem> */}
+                                    </Menu>
                                 </ClickAwayListener>
                             </Paper>
                         </Grow>
@@ -222,7 +297,7 @@ const Index: React.FC<Props> = props => {
         //         {originOmitItems}
         //     </SubMenu>
         // )
-    }, [])
+    }, [open])
 
     useLayoutEffect(() => {
         console.log("++++++useLayoutEffect:", mergedContainerWidth, mergedRestWidth, mergedData, itemWidths)
@@ -275,18 +350,19 @@ const Index: React.FC<Props> = props => {
     }, [mergedContainerWidth, itemWidths, restWidth, mergedData])
 
     const displayRest = restReady && !!omittedItems.length
-
     return (
         <>
-            <div style={{ minHeight: "100px", margin: '100px 0', display: 'flex' }}>
+            <div style={{ minHeight: "100px", margin: '100px 0', display: 'flex', flexDirection: 'row-reverse' }}>
                 <ResizeObserverComp className={'index1'} onResize={onOverflowResize}>
                     {displayItems}
                 </ResizeObserverComp>
                 {renderRawRest(omittedItems)}
             </div>
+           
             <div style={{  display:'flex',margin: '20px 0' }}>
                 {displayRest ? omittedItems : null}
             </div>
+            <DrapPoper child={ child } openMenu={ openMenu } handleColseMenu={handleColseMenu} anchorEl={anchorEl} ></DrapPoper>
         </>
     )
 }
