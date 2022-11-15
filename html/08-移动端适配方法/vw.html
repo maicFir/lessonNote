@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vw</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      html {
+        font-size: calc(100vw / 320 * 10);
+      }
+      #app {
+        position: relative;
+      }
+      .title {
+        font-size: 2rem;
+      }
+      .box {
+        max-width: 32rem;
+        height: 10rem;
+        background-color: red;
+      }
+      .content {
+        font-size: 2rem;
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        background-color: rgb(255, 0, 0, 0.1);
+      }
+      .row-present .col {
+        /* width: calc(100% / 3); */
+        width: 20%;
+        height: 100px;
+        float: left;
+        color: green;
+        font-size: 20px;
+      }
+      :root {
+        --background-color: #111;
+      }
+      .row-present .col:nth-of-type(2n + 1) {
+        background-color: var(--background-color);
+      }
+      p.title {
+        clear: both;
+      }
+      .row-vw .col {
+        float: left;
+        height: 100px;
+        width: 20vw;
+        color: green;
+        font-size: 2rem;
+      }
+      .row-vw .col:nth-of-type(2n + 1) {
+        background-color: var(--background-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="title">vw-适配</div>
+      <div class="content">vw-适配像素</div>
+      <div class="box"></div>
+      <p class="title">百分比</p>
+      <div class="row-present">
+        <div class="col">20%</div>
+        <div class="col">20%</div>
+        <div class="col">20%</div>
+      </div>
+      <p class="title">vw</p>
+      <div class="row-vw">
+        <div class="col">20vw</div>
+        <div class="col">20vw</div>
+        <div class="col">20vw</div>
+      </div>
+    </div>
+  </body>
+</html>

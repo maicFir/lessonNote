@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>meta适配</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      #app {
+        position: relative;
+      }
+      .title {
+        font-size: 20px;
+      }
+      .box {
+        max-width: 640px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="title">meta适配</div>
+      <div class="box"></div>
+    </div>
+    <script>
+      (function () {
+        let timer = null;
+        function flexable() {
+          const deviceWidth = window.screen.width;
+          // 根据当前设计稿，如果是设计稿640，那么targetWidth就是320,设计稿实际1px,页面也是1px
+          // 如果设计稿是750，那么targetWidth就是375
+          const targetWidth = 320;
+          const scale = deviceWidth / targetWidth;
+          let meta = document.querySelector('meta[name="viewport"]');
+          if (!meta) {
+            const meta = document.createElement("meta");
+            meta.setAttribute("name", "viewport");
+            meta.setAttribute(
+              "content",
+              `width=device-width,initial-scale=${scale},minimum-scale=${scale},maximum-scale=${scale},user-scalable=no`
+            );
+            document.getElementsByTagName("head")[0].appendChild(meta);
+          }
+          if (meta) {
+            meta.setAttribute(
+              "content",
+              `width=device-width,initial-scale=${scale},minimum-scale=${scale},maximum-scale=${scale},user-scalable=no`
+            );
+          }
+        }
+
+        window.addEventListener(
+          "resize",
+          () => {
+            if (timer) {
+              clearTimeout(timer);
+            }
+            timer = setTimeout(() => {
+              flexable();
+            }, 80);
+          },
+          false
+        );
+        flexable();
+      })();
+    </script>
+  </body>
+</html>
