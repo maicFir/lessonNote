@@ -1,0 +1,26 @@
+{
+    "name": "04-demo",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "host_permissions": [
+        "https://learn.wmcweb.cn/"
+    ],
+    "permissions": [],
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/content.js"
+            ],
+            "matches": [
+                "https://*.wmcweb.cn/*",
+                "<all_urls>"
+            ]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}

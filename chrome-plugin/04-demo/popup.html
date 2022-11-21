@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div>title: <input type="text" value="我是标题" id="title-input" /></div>
+      <div>color:<input type="color" id="color-input" /></div>
+      <div>
+        width: <input type="range" value="30" id="width-input" max="1000" />
+        <span id="width-result">30</span>
+      </div>
+      <div>
+        height: <input type="range" value="30" id="height-input" max="1000" />
+        <span id="height-result">30</span>
+      </div>
+      <button id="submit">确定</button>
+    </div>
+
+    <script src="./popup.js"></script>
+  </body>
+</html>
