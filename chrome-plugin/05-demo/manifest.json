@@ -4,15 +4,12 @@
     "description": "lesson demo",
     "version": "1.0",
     "author": "Maic",
-    "action": {
-        "default_popup": "popup.html"
-    },
+    "action": {},
     "background": {
         "service_worker": "background.js"
     },
     "permissions": [
-        "alarms",
-        "notifications",
-        "storage"
+        "activeTab",
+        "scripting"
     ]
 }

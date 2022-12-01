@@ -1,16 +1,8 @@
-<!--
- * @Author: maicFir mcodes@163.com
- * @Date: 2022-04-30 22:32:18
- * @LastEditors: maicFir mcodes@163.com
- * @LastEditTime: 2022-11-07 15:40:53
- * @FilePath: /lessonNote/README.md
- * @Description: 
--->
 # lessonNote-js 学习笔记
 
 > 本仓库主要用于记录学习 js，以及一些常用的笔记，会不断输出笔者在工作以及学习 JS 中的一些问题和想法，本仓库所有示例代码永久开放，对应文章可以扫描关注`Web技术学苑`，如果看完文章觉得有帮助，有收获，那么就点个`star`鼓励下作者哈，作者会持续输出更有价值的技术笔记，一起学习，一起成长。
 
-![Web技术学苑](https://files.mdnice.com/user/24614/50dd18f5-e2d5-4eb5-ac76-716aec6da88f.jpg)
+![Web技术学苑](https://files.mdnice.com/user/24614/b9852f54-1289-4559-9adc-44933bc29b97.png)
 
 ### javascript
 
