@@ -1,0 +1,22 @@
+
+.media-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 30rpx 0;
+	width: 100%;
+}
+.image {
+	height: 400rpx;
+	overflow: hidden;
+}
+.image image {
+	width: 100%;
+	height: 100%;
+}
+video {
+	width: 100%;
+}
+.uni-button {
+	margin: 30rpx 0;
+}

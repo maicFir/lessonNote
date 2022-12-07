@@ -1,0 +1,1 @@
+<text style="text-decoration:underline" href="{{b}}" bindtap="{{c}}" inWhiteList="{{d}}">{{a}}</text>

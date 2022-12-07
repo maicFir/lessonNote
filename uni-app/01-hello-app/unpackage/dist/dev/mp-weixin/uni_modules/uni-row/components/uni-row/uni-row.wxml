@@ -1,0 +1,1 @@
+<view class="{{['uni-row', a, b, c]}}" style="{{'margin-left:' + d + ';' + ('margin-right:' + e)}}"><slot></slot></view>

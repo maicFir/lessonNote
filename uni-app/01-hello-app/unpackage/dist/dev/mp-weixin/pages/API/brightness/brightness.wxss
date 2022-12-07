@@ -1,0 +1,20 @@
+
+.text-box {
+	margin-bottom: 40rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 300rpx;
+	background-color: #ffffff;
+	font-size: 32rpx;
+	color: #353535;
+}
+.uni-slider {
+	margin: 100rpx 0;
+}
+.tips {
+	font-size: 26rpx;
+	text-align: center;
+	margin-top: 20rpx;
+	color: #999;
+}

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "Grid 宫格",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-icons": "../../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "uni-grid-item": "../../../uni_modules/uni-grid/components/uni-grid-item/uni-grid-item",
+    "uni-grid": "../../../uni_modules/uni-grid/components/uni-grid/uni-grid",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section",
+    "uni-badge": "../../../uni_modules/uni-badge/components/uni-badge/uni-badge"
+  }
+}

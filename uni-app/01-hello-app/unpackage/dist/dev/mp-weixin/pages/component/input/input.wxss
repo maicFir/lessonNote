@@ -1,0 +1,63 @@
+@import "../../../nvue.wxss";
+
+.nvue-page-root.data-v-86086558 {
+        background-color: #F8F8F8;
+        padding-bottom: 20px;
+}
+.page-title.data-v-86086558 {
+
+        display: flex;
+
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 35rpx;
+}
+.page-title__wrapper.data-v-86086558 {
+        padding: 0px 20px;
+        border-bottom-color: #D8D8D8;
+        border-bottom-width: 1px;
+}
+.page-title__text.data-v-86086558 {
+        font-size: 16px;
+        height: 48px;
+        line-height: 48px;
+        color: #BEBEBE;
+}
+.title.data-v-86086558 {
+        padding: 5px 13px;
+}
+.uni-form-item__title.data-v-86086558 {
+        font-size: 16px;
+        line-height: 24px;
+}
+.uni-input-wrapper.data-v-86086558 {
+
+        display: flex;
+
+        padding: 8px 13px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background-color: #FFFFFF;
+}
+.uni-input.data-v-86086558 {
+        height: 28px;
+        line-height: 28px;
+        font-size: 15px;
+        padding: 0px;
+        flex: 1;
+        background-color: #FFFFFF;
+}
+.uni-icon.data-v-86086558 {
+        font-family: uniicons;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        color: #999999;
+}
+.uni-eye-active.data-v-86086558 {
+        color: #007AFF;
+}

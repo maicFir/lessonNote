@@ -1,0 +1,1 @@
+<view><page-head wx:if="{{a}}" u-i="055550f8-0" bind:__l="__l" u-p="{{a}}"></page-head><view class="uni-common-mt"><view><map latitude="{{b}}" longitude="{{c}}" markers="{{d}}"></map></view></view></view>

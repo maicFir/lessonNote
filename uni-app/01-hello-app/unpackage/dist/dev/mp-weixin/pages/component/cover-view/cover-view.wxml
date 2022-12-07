@@ -1,0 +1,1 @@
+<view><page-head wx:if="{{a}}" u-i="19575faa-0" bind:__l="__l" u-p="{{a}}"></page-head><view wx:if="{{b}}" class="cover-content"><map></map><cover-view class="cover-view">简单的cover-view</cover-view><cover-image class="cover-image" src="/static/uni.png"></cover-image></view></view>

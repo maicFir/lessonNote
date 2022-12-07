@@ -1,0 +1,41 @@
+@import "../../../nvue.wxss";
+
+.header {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+}
+.margin {
+		display: flex;
+		height: 200px;
+		margin: 10px;
+		overflow: hidden;
+		border-radius: 5px;
+		border: 1px #eee solid;
+
+		box-sizing: border-box;
+}
+.margin-item {
+		display: flex;
+		flex: 1;
+}
+.box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+}
+.actions {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+}
+.action-label {
+
+		flex-shrink: 0;
+
+		width: 50px;
+		margin-left: 10px;
+		margin-right: 10px;
+		font-size: 12px;
+}

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Tooltip 文字提示",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-tooltip": "../../../uni_modules/uni-tooltip/components/uni-tooltip/uni-tooltip",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="uni-padding-wrap"><page-head wx:if="{{a}}" u-i="2e3aacc7-0" bind:__l="__l" u-p="{{a}}"></page-head><view class="uni-common-mt"><slider value="{{b}}" min="{{0}}" max="{{c}}" bindchanging="{{d}}" bindchange="{{e}}"></slider></view><view class="play-button-area"><image class="icon-play" src="{{f}}" bindtap="{{g}}"></image></view></view>

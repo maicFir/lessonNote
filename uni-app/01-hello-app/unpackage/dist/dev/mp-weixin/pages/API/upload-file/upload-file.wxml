@@ -1,0 +1,1 @@
+<view><page-head wx:if="{{a}}" u-i="df9d12ce-0" bind:__l="__l" u-p="{{a}}"></page-head><view class="uni-padding-wrap uni-common-mt"><view class="demo"><block wx:if="{{b}}"><image src="{{c}}" class="image" mode="widthFix"></image></block><block wx:else><view class="uni-hello-addfile" bindtap="{{d}}">+ 选择图片</view></block></view></view></view>

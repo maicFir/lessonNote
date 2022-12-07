@@ -1,0 +1,130 @@
+@import "../../../nvue.wxss";
+
+page {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+}
+.tabs {
+        flex: 1;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: #ffffff;
+
+        height: 100vh;
+}
+.scroll-h {
+        width: 750rpx;
+
+
+
+		height: 80rpx;
+        flex-direction: row;
+
+        white-space: nowrap;
+
+        /* flex-wrap: nowrap; */
+        /* border-color: #cccccc;
+		border-bottom-style: solid;
+		border-bottom-width: 1px; */
+}
+.line-h {
+        height: 1rpx;
+        background-color: #cccccc;
+}
+.uni-tab-item {
+
+        display: inline-block;
+
+        flex-wrap: nowrap;
+        padding-left: 34rpx;
+        padding-right: 34rpx;
+}
+.uni-tab-item-title {
+        color: #555;
+        font-size: 30rpx;
+        height: 80rpx;
+        line-height: 80rpx;
+        flex-wrap: nowrap;
+
+        white-space: nowrap;
+}
+.uni-tab-item-title-active {
+        color: #007AFF;
+}
+.swiper-box {
+        flex: 1;
+}
+.swiper-item {
+        flex: 1;
+        flex-direction: row;
+}
+.scroll-v {
+        flex: 1;
+
+        flex-direction: column;
+
+        width: 750rpx;
+		width:100%;
+}
+.update-tips {
+        position: absolute;
+        left: 0;
+        top: 41px;
+        right: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: #FDDD9B;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+}
+.update-tips-text {
+        font-size: 14px;
+        color: #ffffff;
+}
+.refresh {
+        width: 750rpx;
+		width:100%;
+        height: 64px;
+        justify-content: center;
+}
+.refresh-view {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+}
+.refresh-icon {
+		width: 30px;
+		height: 30px;
+		transition-duration: .5s;
+		transition-property: transform;
+		transform: rotate(0deg);
+		transform-origin: 15px 15px;
+}
+.refresh-icon-active {
+		transform: rotate(180deg);
+}
+.loading-icon {
+		width: 20px;
+		height: 20px;
+		margin-right: 5px;
+		color: #999999;
+}
+.loading-text {
+        margin-left: 2px;
+        font-size: 16px;
+        color: #999999;
+}
+.loading-more {
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+}
+.loading-more-text {
+        font-size: 28rpx;
+        color: #999;
+}

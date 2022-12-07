@@ -1,0 +1,1 @@
+<view class="page"><swiper class="swiper" circular="{{b}}" vertical="{{true}}" bindchange="{{c}}"><swiper-item wx:for="{{a}}" wx:for-item="item" wx:key="d"><video class="video" id="{{item.a}}" ref="{{item.b}}" src="{{item.c}}" controls="{{false}}" loop="{{true}}" show-center-play-btn="{{false}}"></video></swiper-item></swiper></view>

@@ -1,0 +1,1 @@
+<view><page-head wx:if="{{a}}" u-i="08a73526-0" bind:__l="__l" u-p="{{a}}"></page-head><view class="uni-padding-wrap uni-common-mt"><view class="uni-textarea"><textarea value="{{b}}" placeholder="语音识别内容展示区域" disabled/></view><view class="uni-common-mt uni-btn-v"><button type="primary" bindtap="{{c}}">开始语音识别</button></view></view></view>

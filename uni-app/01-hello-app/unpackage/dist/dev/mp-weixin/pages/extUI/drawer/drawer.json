@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Drawer 抽屉",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-drawer": "../../../uni_modules/uni-drawer/components/uni-drawer/uni-drawer",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

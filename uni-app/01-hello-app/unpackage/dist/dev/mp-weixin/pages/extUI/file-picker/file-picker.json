@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "FilePicker 文件选择上传",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-file-picker": "../../../uni_modules/uni-file-picker/components/uni-file-picker/uni-file-picker",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "Breadcrumb 面包屑",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-breadcrumb-item": "../../../uni_modules/uni-breadcrumb/components/uni-breadcrumb-item/uni-breadcrumb-item",
+    "uni-breadcrumb": "../../../uni_modules/uni-breadcrumb/components/uni-breadcrumb/uni-breadcrumb",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "组件通讯",
+  "usingComponents": {
+    "reciver": "./reciver",
+    "sender": "./sender",
+    "sender-bus": "./sender-bus",
+    "page-head": "../../../components/page-head/page-head"
+  }
+}

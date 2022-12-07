@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Fab 悬浮按钮",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section",
+    "uni-fab": "../../../uni_modules/uni-fab/components/uni-fab/uni-fab"
+  }
+}

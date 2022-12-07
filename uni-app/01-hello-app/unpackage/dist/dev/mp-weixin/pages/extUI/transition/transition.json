@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Transition 过渡动画",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-transition": "../../../uni_modules/uni-transition/components/uni-transition/uni-transition",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="{{['data-v-fff79656', 'uni-col', a, b]}}" style="{{'padding-left:' + c + ';' + ('padding-right:' + d)}}"><slot></slot></view>

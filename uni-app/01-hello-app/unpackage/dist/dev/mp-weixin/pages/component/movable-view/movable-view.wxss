@@ -1,0 +1,20 @@
+
+movable-view {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 150rpx;
+		width: 150rpx;
+		background-color: #007AFF;
+		color: #fff;
+}
+movable-area {
+		height: 300rpx;
+		width: 100%;
+		background-color: #D8D8D8;
+		overflow: hidden;
+}
+.max {
+		width:500rpx;
+		height: 500rpx;
+}

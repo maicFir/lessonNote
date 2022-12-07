@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "SwipeAction 滑动操作",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section",
+    "uni-swipe-action-item": "../../../uni_modules/uni-swipe-action/components/uni-swipe-action-item/uni-swipe-action-item",
+    "uni-swipe-action": "../../../uni_modules/uni-swipe-action/components/uni-swipe-action/uni-swipe-action"
+  }
+}

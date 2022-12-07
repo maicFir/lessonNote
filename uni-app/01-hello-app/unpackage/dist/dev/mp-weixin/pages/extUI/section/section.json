@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Section 标题栏",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

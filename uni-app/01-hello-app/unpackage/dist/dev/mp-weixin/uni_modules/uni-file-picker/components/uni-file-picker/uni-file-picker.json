@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "upload-image": "./upload-image",
+    "upload-file": "./upload-file"
+  }
+}

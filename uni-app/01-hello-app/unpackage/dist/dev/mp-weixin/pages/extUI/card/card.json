@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "Card 卡片",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section",
+    "uni-icons": "../../../uni_modules/uni-icons/components/uni-icons/uni-icons",
+    "uni-list-item": "../../../uni_modules/uni-list/components/uni-list-item/uni-list-item",
+    "uni-list": "../../../uni_modules/uni-list/components/uni-list/uni-list"
+  }
+}

@@ -1,0 +1,1 @@
+<view wx:if="{{a}}" style="{{i}}" class="uni-grid-item data-v-7b4a3849"><view class="{{[b && 'uni-grid-item--border', c && 'uni-grid-item--border-top', d && 'uni-highlight', 'uni-grid-item__box', 'data-v-7b4a3849']}}" style="{{'border-right-color:' + e + ';' + ('border-bottom-color:' + f) + ';' + ('border-top-color:' + g)}}" bindtap="{{h}}"><slot/></view></view>

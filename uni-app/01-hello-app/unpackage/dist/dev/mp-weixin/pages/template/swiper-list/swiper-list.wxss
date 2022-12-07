@@ -1,0 +1,83 @@
+@import "../../../nvue.wxss";
+
+page {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+}
+.tabs {
+        flex: 1;
+        flex-direction: column;
+        overflow: hidden;
+        background-color: #ffffff;
+}
+.tab-bar {
+        width: 750rpx;
+        height: 84rpx;
+        flex-direction: row;
+
+        white-space: nowrap;
+}
+.tab-bar ::-webkit-scrollbar {
+        display: none;
+        width: 0 !important;
+        height: 0 !important;
+        -webkit-appearance: none;
+        background: transparent;
+}
+.scroll-view-indicator {
+        position: relative;
+        height: 2px;
+        background-color: transparent;
+}
+.scroll-view-underline {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        background-color: #007AFF;
+}
+.scroll-view-animation {
+        transition-duration: 0.2s;
+        transition-property: left;
+}
+.tab-bar-line {
+        height: 1rpx;
+        background-color: #cccccc;
+}
+.tab-view {
+        flex: 1;
+}
+.uni-tab-item {
+
+        display: inline-block;
+
+        flex-wrap: nowrap;
+        padding-left: 25px;
+        padding-right: 25px;
+}
+.uni-tab-item-title {
+        color: #555;
+        font-size: 30rpx;
+        height: 80rpx;
+        line-height: 80rpx;
+        flex-wrap: nowrap;
+
+        white-space: nowrap;
+}
+.uni-tab-item-title-active {
+        color: #007AFF;
+}
+.swiper-item {
+        flex: 1;
+        flex-direction: column;
+}
+.swiper-page {
+        flex: 1;
+        flex-direction: row;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+}

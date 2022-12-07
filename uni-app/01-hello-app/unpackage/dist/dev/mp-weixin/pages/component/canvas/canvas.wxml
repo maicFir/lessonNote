@@ -1,0 +1,1 @@
+<view><page-head wx:if="{{a}}" u-i="eeeb4bec-0" bind:__l="__l" u-p="{{a}}"></page-head><view class="page-body"><view class="page-body-wrapper"><canvas canvas-id="canvas" id="canvas" class="canvas"></canvas></view></view></view>

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "Collapse 折叠面板",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-collapse-item": "../../../uni_modules/uni-collapse/components/uni-collapse-item/uni-collapse-item",
+    "uni-collapse": "../../../uni_modules/uni-collapse/components/uni-collapse/uni-collapse",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section",
+    "uni-list-item": "../../../uni_modules/uni-list/components/uni-list-item/uni-list-item",
+    "uni-list": "../../../uni_modules/uni-list/components/uni-list/uni-list"
+  }
+}

@@ -1,0 +1,1 @@
+<view class="uni-breadcrumb-item"><view class="{{['uni-breadcrumb-item--slot', a && 'uni-breadcrumb-item--slot-link']}}" bindtap="{{b}}"><slot/></view><view wx:if="{{c}}" class="{{['uni-breadcrumb-item--separator', d]}}"/><text wx:else class="uni-breadcrumb-item--separator">{{e}}</text></view>

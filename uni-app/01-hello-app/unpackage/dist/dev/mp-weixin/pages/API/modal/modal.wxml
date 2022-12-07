@@ -1,0 +1,1 @@
+<view><page-head wx:if="{{a}}" u-i="212ed263-0" bind:__l="__l" u-p="{{a}}"></page-head><view class="uni-padding-wrap uni-common-mt"><view class="uni-btn-v"><button type="default" bindtap="{{b}}">有标题的modal</button><button type="default" bindtap="{{c}}">无标题的modal</button></view></view></view>

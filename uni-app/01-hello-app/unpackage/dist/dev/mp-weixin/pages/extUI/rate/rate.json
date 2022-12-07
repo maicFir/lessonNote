@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Rate 评分",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-rate": "../../../uni_modules/uni-rate/components/uni-rate/uni-rate",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

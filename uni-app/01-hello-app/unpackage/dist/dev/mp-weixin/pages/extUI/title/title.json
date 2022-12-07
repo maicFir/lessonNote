@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Title 章节标题",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-title": "../../../uni_modules/uni-title/components/uni-title/uni-title",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

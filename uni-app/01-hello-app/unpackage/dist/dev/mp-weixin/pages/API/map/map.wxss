@@ -1,0 +1,33 @@
+@import "../../../nvue.wxss";
+
+.content {
+        flex: 1;
+}
+.map {
+        width: 750rpx;
+
+
+
+        height: 250px;
+        background-color: #f0f0f0;
+}
+.scrollview {
+
+
+
+        flex: 1;
+        padding: 10px;
+}
+.list-item {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 5px 0px;
+}
+.list-text {
+        flex: 1;
+}
+.button {
+        margin-top: 5px;
+        margin-bottom: 5px;
+}

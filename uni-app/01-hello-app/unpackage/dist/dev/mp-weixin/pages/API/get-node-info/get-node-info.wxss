@@ -1,0 +1,44 @@
+
+.movable {
+		display: flex;
+		justify-content: center;
+}
+.block {
+		height: 400rpx;
+		width: 400rpx;
+		background-color: #FFFFFF;
+		border: 1px solid #ccc;
+		position: relative;
+		margin: 0 auto;
+		margin-bottom: 30rpx;
+}
+movable-area {
+		height: 400rpx;
+		width: 400rpx;
+		position: relative;
+}
+.target {
+		height: 80rpx;
+		width: 80rpx;
+		line-height: 80rpx;
+		text-align: center;
+		color: #FFFFFF;
+		background-color: #4cd964;
+		font-size: 28rpx;
+		position: absolute;
+}
+.info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+}
+.b {
+		font-weight: bold;
+		width: 150rpx;
+		display: inline-block;
+}
+.span {
+		width: 100rpx;
+		display: inline-block;
+}

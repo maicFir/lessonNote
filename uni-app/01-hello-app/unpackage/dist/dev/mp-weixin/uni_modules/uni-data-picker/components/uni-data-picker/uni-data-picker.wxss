@@ -1,0 +1,224 @@
+
+.uni-data-tree {
+		flex: 1;
+		position: relative;
+		font-size: 14px;
+}
+.error-text {
+		color: #DD524D;
+}
+.input-value {
+
+		display: flex;
+
+		flex-direction: row;
+		align-items: center;
+		flex-wrap: nowrap;
+		font-size: 14px;
+		/* line-height: 35px; */
+		padding: 0 10px;
+		padding-right: 5px;
+		overflow: hidden;
+		height: 35px;
+
+		box-sizing: border-box;
+}
+.input-value-border {
+		border: 1px solid #e5e5e5;
+		border-radius: 5px;
+}
+.selected-area {
+		flex: 1;
+		overflow: hidden;
+
+		display: flex;
+
+		flex-direction: row;
+}
+.load-more {
+
+		margin-right: auto;
+}
+.selected-list {
+
+		display: flex;
+
+		flex-direction: row;
+		flex-wrap: nowrap;
+		/* padding: 0 5px; */
+}
+.selected-item {
+		flex-direction: row;
+		/* padding: 0 1px; */
+
+		white-space: nowrap;
+}
+.text-color {
+		color: #333;
+}
+.placeholder {
+		color: grey;
+		font-size: 12px;
+}
+.input-split-line {
+		opacity: .5;
+}
+.arrow-area {
+		position: relative;
+		width: 20px;
+
+		margin-bottom: 5px;
+		margin-left: auto;
+		display: flex;
+
+		justify-content: center;
+		transform: rotate(-45deg);
+		transform-origin: center;
+}
+.input-arrow {
+		width: 7px;
+		height: 7px;
+		border-left: 1px solid #999;
+		border-bottom: 1px solid #999;
+}
+.uni-data-tree-cover {
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, .4);
+
+		display: flex;
+
+		flex-direction: column;
+		z-index: 100;
+}
+.uni-data-tree-dialog {
+		position: fixed;
+		left: 0;
+		top: 20%;
+		right: 0;
+		bottom: 0;
+		background-color: #FFFFFF;
+		border-top-left-radius: 10px;
+		border-top-right-radius: 10px;
+
+		display: flex;
+
+		flex-direction: column;
+		z-index: 102;
+		overflow: hidden;
+}
+.dialog-caption {
+		position: relative;
+
+		display: flex;
+
+		flex-direction: row;
+		/* border-bottom: 1px solid #f0f0f0; */
+}
+.title-area {
+
+		display: flex;
+
+		align-items: center;
+
+		margin: auto;
+
+		padding: 0 10px;
+}
+.dialog-title {
+		/* font-weight: bold; */
+		line-height: 44px;
+}
+.dialog-close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+
+		display: flex;
+
+		flex-direction: row;
+		align-items: center;
+		padding: 0 15px;
+}
+.dialog-close-plus {
+		width: 16px;
+		height: 2px;
+		background-color: #666;
+		border-radius: 2px;
+		transform: rotate(45deg);
+}
+.dialog-close-rotate {
+		position: absolute;
+		transform: rotate(-45deg);
+}
+.picker-view {
+		flex: 1;
+		overflow: hidden;
+}
+.icon-clear {
+		display: flex;
+		align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/* picker 弹出层通用的指示小三角, todo：扩展至上下左右方向定位 */
+.uni-popper__arrow,
+	.uni-popper__arrow::after {
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+		border-color: transparent;
+		border-style: solid;
+		border-width: 6px;
+}
+.uni-popper__arrow {
+		filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.03));
+		top: -6px;
+		left: 10%;
+		margin-right: 3px;
+		border-top-width: 0;
+		border-bottom-color: #EBEEF5;
+}
+.uni-popper__arrow::after {
+		content: " ";
+		top: 1px;
+		margin-left: -6px;
+		border-top-width: 0;
+		border-bottom-color: #fff;
+}
+
+	

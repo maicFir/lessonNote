@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "接口",
+  "usingComponents": {
+    "set-tab-bar": "../../../components/api-set-tabbar",
+    "u-link": "../../../components/u-link/u-link"
+  }
+}

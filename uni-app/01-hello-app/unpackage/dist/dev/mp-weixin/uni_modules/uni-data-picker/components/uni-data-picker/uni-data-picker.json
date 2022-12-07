@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "data-picker-view": "../uni-data-pickerview/uni-data-pickerview",
+    "uni-load-more": "../../../uni-load-more/components/uni-load-more/uni-load-more",
+    "uni-icons": "../../../uni-icons/components/uni-icons/uni-icons"
+  }
+}

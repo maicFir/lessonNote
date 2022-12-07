@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "List 列表",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-list-item": "../../../uni_modules/uni-list/components/uni-list-item/uni-list-item",
+    "uni-list": "../../../uni_modules/uni-list/components/uni-list/uni-list",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

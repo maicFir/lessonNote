@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Link 链接",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-link": "../../../uni_modules/uni-link/components/uni-link/uni-link",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

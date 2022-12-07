@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Steps 步骤条",
+  "usingComponents": {
+    "uni-steps": "../../../uni_modules/uni-steps/components/uni-steps/uni-steps",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

@@ -1,0 +1,1 @@
+<view><view class="reciver">{{a}}{{b}}</view></view>

@@ -1,0 +1,1 @@
+<view class="uni-list uni-border-top-bottom"><view wx:if="{{a}}" class="uni-list--border-top"></view><slot/><view wx:if="{{b}}" class="uni-list--border-bottom"></view></view>

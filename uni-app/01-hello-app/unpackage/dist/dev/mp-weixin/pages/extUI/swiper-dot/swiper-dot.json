@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "SwiperDot 轮播图指示点",
+  "usingComponents": {
+    "uni-swiper-dot": "../../../uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

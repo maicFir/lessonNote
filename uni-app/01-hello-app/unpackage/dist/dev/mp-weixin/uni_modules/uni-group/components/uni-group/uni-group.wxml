@@ -1,0 +1,1 @@
+<view class="{{['uni-group', e, f]}}" style="{{'margin-top:' + g}}"><block wx:if="{{$slots.title}}"><slot name="title"></slot></block><block wx:else><view wx:if="{{a}}" class="uni-group__title" style="{{'padding-left:' + c}}"><text class="uni-group__title-text">{{b}}</text></view></block><view class="{{['uni-group__content', d && 'group-conent-padding']}}"><slot/></view></view>

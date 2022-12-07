@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "DataCheckbox 单选复选框",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-data-checkbox": "../../../uni_modules/uni-data-checkbox/components/uni-data-checkbox/uni-data-checkbox",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

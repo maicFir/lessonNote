@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "Layout 布局",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-col": "../../../uni_modules/uni-row/components/uni-col/uni-col",
+    "uni-row": "../../../uni_modules/uni-row/components/uni-row/uni-row",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}

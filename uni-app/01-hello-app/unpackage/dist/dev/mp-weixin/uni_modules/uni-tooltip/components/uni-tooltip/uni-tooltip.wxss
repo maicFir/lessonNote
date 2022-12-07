@@ -1,0 +1,21 @@
+
+.uni-tooltip {
+		position: relative;
+		cursor: pointer;
+}
+.uni-tooltip-popup {
+		z-index: 1;
+		display: none;
+		position: absolute;
+		left: 0;
+		background-color: #333;
+		border-radius: 8px;
+		color: #fff;
+		font-size: 12px;
+		text-align: left;
+		line-height: 16px;
+		padding: 12px;
+}
+.uni-tooltip:hover .uni-tooltip-popup {
+		display: block;
+}

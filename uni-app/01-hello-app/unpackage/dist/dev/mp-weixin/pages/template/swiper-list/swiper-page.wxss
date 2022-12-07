@@ -1,0 +1,12 @@
+
+.uni-swiper-page.data-v-ca07aa9c {
+		flex: 1;
+		flex-direction: column;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		align-items: center;
+		justify-content: center;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "swiper-list",
+  "usingComponents": {
+    "swiper-page": "./swiper-page"
+  }
+}

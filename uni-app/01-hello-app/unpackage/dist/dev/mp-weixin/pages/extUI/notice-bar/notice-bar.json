@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "NoticeBar 通告栏",
+  "usingComponents": {
+    "uni-card": "../../../uni_modules/uni-card/components/uni-card/uni-card",
+    "uni-notice-bar": "../../../uni_modules/uni-notice-bar/components/uni-notice-bar/uni-notice-bar",
+    "uni-section": "../../../uni_modules/uni-section/components/uni-section/uni-section"
+  }
+}
