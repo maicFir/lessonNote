@@ -1,0 +1,17 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"uid": {
+			"bsonType": "string",
+			"foreignKey": "userinfo._id" // 使用foreignKey表示，此字段关联userinfo表的_id。
+		}
+	}
+}

@@ -1,0 +1,128 @@
+page{
+	background-color: #F5F5F5;
+}
+.banner{
+	width: 100%;
+	height: 300rpx;
+	background-image: url(../../static/mine/ttbnfhm_img@2x.png);
+	background-size: cover;
+	padding-top: 44px;
+	box-sizing: border-box;
+}
+.banner .morebutton{
+	width: 50%;
+	height: auto;
+	float: left;
+	padding: 0 25rpx;
+	box-sizing: border-box;
+	color: #FFFFFF;
+}
+.noticebar{
+	width: 100%;
+	height: 60rpx;
+	box-sizing: border-box;
+	line-height: 60rpx;
+	margin-bottom: 20rpx;
+}
+
+/* 今日每只分红 */
+.fenhongbox{
+	width: 688rpx;
+	height: 180rpx;
+	background-color: #FFFFFF;
+	border-radius: 15rpx;
+	margin: 0 auto;
+	padding: 0 30rpx;
+	box-sizing: border-box;
+	line-height: 180rpx;
+}
+.fenhongbox .image{
+	width: 166rpx;
+	height: 166rpx;
+	float: left;
+	margin-top: 8rpx;
+}
+.fenhongbox .wenzi{
+	margin-left: 20rpx;
+	color: #333333;
+	font-size: 30rpx;
+	font-weight: 700;
+}
+.fenhongbox1{
+	width: 688rpx;
+	height: 280rpx;
+	background-color: #FFFFFF;
+	border-radius: 15rpx;
+	margin: 28rpx auto;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+}
+.fenhongbox1 .top{
+	width: 100%;
+	height: 93rpx;
+	line-height: 93rpx;
+}
+.fenhongjianjie{
+	width: 688rpx;
+	height: 330rpx;
+	background-color: #FFFFFF;
+	border-radius: 15rpx;
+	margin: 0 auto 28rpx;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+}
+.fenhongjianjie .title{
+	width: 100%;
+	height: 110rpx;
+	line-height: 110rpx;
+	font-size: 35rpx;
+	font-weight: 700;
+	color: #333333;
+}
+.fenhongjianjie .content{
+	width: 100%;
+	color: #999999;
+	line-height: 1.8em;
+	font-size: 28rpx;
+}
+.geren{
+	width: 688rpx;
+	height: 216rpx;
+	background-color: #FFFFFF;
+	border-radius: 15rpx;
+	margin: 0 auto 28rpx;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+}
+.geren .top{
+	width: 100%;
+	height: 110rpx;
+	line-height: 110rpx;
+}
+.geren .top .wenzi{
+	font-size: 35rpx;
+	font-weight: 700;
+	color: #333333;
+	float: left;
+}
+.geren .top .huojian{
+	width: 32rpx;
+	height: 33rpx;
+}
+.geren .progress-box{
+	width: 100%;
+	height: 20rpx;
+	border-radius: 20rpx;
+	background-color: #F5F5F5;
+}
+.geren .progress{
+	height: 100%;
+	border-radius: 20rpx;
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+}
+.geren .jindu{
+	width: 100%;
+	font-size: 25rpx;
+	color: #999999;
+	margin-top: 20rpx;
+}

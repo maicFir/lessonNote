@@ -1,0 +1,9 @@
+// 本查询文件用于，使用JQL语法查询项目关联的uniCloud空间的数据库，方便开发调试
+// 选中查询代码，点击工具栏上的运行按钮或者【F5】运行查询语句
+// 如果没有选中代码，直接运行，则会执行整个文档的JQL语句。但如果文档中存在多条JQL语句，只有最后一条语句生效
+// 本文档支持简单js，但不支持clientDB的action
+// 数据库查询有最大返回条数限制，详见：https://uniapp.dcloud.net.cn/uniCloud/cf-database?id=limit
+// 详细JQL语法，请参考 https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=jsquery
+
+// 下面示例查询uni-id-users表的所有数据
+db.collection('uni-id-users').get();

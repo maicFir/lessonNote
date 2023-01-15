@@ -1,0 +1,58 @@
+.weixinbox{
+	width: 100%;
+	height: 110rpx;
+	padding-left: 40rpx;
+	box-sizing: border-box;
+}
+.weixinbox .icon{
+	width: 48rpx;
+	height: 110rpx;
+	float: left;
+	padding-top: 31rpx;
+	box-sizing: border-box;
+}
+.weixinbox .icon .weixin{
+	width: 48rpx;
+	height: 48rpx;
+}
+.weixinbox .title{
+	width: 150rpx;
+	height: 100%;
+	line-height: 110rpx;
+	float: left;
+	line-height: 110rpx;
+	color: #333333;
+	font-size: 28rpx;
+	text-align: center;
+}
+.weixinbox .input{
+	width: 480rpx;
+	height: 100%;
+	line-height: 110rpx;
+	float: left;
+	margin-left: 15rpx;
+}
+.weixinbox .input .weixin{
+	width: 100%;
+	height: 100%;
+	line-height: 110rpx;
+	color: #333333;
+	font-size: 28rpx;
+}
+
+.yaoqing{
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+	width: 626rpx;
+	height: 88rpx;
+	border-radius: 88rpx;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 100rpx;
+	margin: auto;
+	font-size: 30rpx;
+	font-weight: bold;
+	line-height: 88rpx;
+	color: #FFFFFF;
+	text-align: center;
+}

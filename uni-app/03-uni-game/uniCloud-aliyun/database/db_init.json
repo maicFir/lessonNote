@@ -1,0 +1,1883 @@
+// 在本文件中可配置云数据库初始化，数据格式见：https://uniapp.dcloud.io/uniCloud/cf-database?id=db_init
+// 编写完毕后对本文件点右键，可按配置规则创建表和添加数据
+{
+	"gameconfig": {
+		"data": [ // 数据
+			{
+				"_id": "globalinfo",
+				"debuginitcoin": 10000000, //初始化金币
+				"releaseinitcoin": 10000000, //初始化金币
+				"storeext": "200", //扩展仓库
+				"videocoin": "5", //分钟
+				"initstorecap": 15, //初始化的时候，仓库的容量
+				"fenhongcat": 1.5, //分红猫一秒的分红单位为分
+				"url": "",
+				"todayprofit": 100, //每个永久分红的金额
+				"templateId": "",//短信模板id
+				"videocount": 15 //每天看视频次数
+			},
+			{
+				"_id": "catinfo",
+				"catmaxid": 38 //猫的最大的ID序号,从1开始
+			},
+			{
+				"_id": "tixiantype",//配置支付类型  zhifubao：支付宝提现方式   weixin：微信提现方式
+				"type": "weixin"
+			},
+			{
+				"_id": "stage",
+				"0": {
+					"name": "第一阶段",
+					"mubiao": 20,
+					"beilv": 1.0
+				},
+				"1": {
+					"name": "第二阶段",
+					"mubiao": 50,
+					"beilv": 1.1
+				},
+				"2": {
+					"name": "第三阶段",
+					"mubiao": 100,
+					"beilv": 1.2
+				},
+				"3": {
+					"name": "第四阶段",
+					"mubiao": 200,
+					"beilv": 1.3
+				},
+				"4": {
+					"name": "第五阶段",
+					"mubiao": 500,
+					"beilv": 1.4
+				},
+				"5": {
+					"name": "第六阶段",
+					"mubiao": 1000,
+					"beilv": 1.5
+				},
+				"6": {
+					"name": "第七阶段",
+					"mubiao": 2000,
+					"beilv": 1.6
+				},
+				"7": {
+					"name": "第八阶段",
+					"mubiao": 3000,
+					"beilv": 1.7
+				},
+				"8": {
+					"name": "第九阶段",
+					"mubiao": 4000,
+					"beilv": 1.8
+				},
+				"9": {
+					"name": "第十阶段",
+					"mubiao": 5000,
+					"beilv": 2.0
+				},
+				"10": {
+					"name": "最终阶段",
+					"mubiao": "999999999999999",
+					"beilv": 2.0
+				}
+			},
+			{
+				"_id": "cats",
+				"cat1": {
+					"huishou": "1",
+					"name": "毛球",
+					"cal1": "1",
+					"cal2": "3",
+					"cal3": "4",
+					"cal4": "5",
+					"fengding": 100,
+					"price": "100"
+				},
+				"cat2": {
+					"huishou": "15",
+					"name": "球球",
+					"cal1": "3",
+					"cal2": "6",
+					"cal3": "8",
+					"cal4": "11",
+					"fengding": 95,
+					"price": "1500"
+				},
+				"cat3": {
+					"huishou": "67",
+					"name": "跑跑",
+					"cal1": "7",
+					"cal2": "12",
+					"cal3": "17",
+					"cal4": "24",
+					"fengding": 90,
+					"price": "6750"
+				},
+				"cat4": {
+					"huishou": "179",
+					"name": "水栖",
+					"cal1": "15",
+					"cal2": "25",
+					"cal3": "35",
+					"cal4": "48",
+					"fengding": 85,
+					"price": "17900"
+				},
+				"cat5": {
+					"huishou": "478",
+					"name": "掘洞",
+					"cal1": "30",
+					"cal2": "51",
+					"cal3": "71",
+					"cal4": "97",
+					"fengding": 80,
+					"price": "47800"
+				},
+				"cat6": {
+					"huishou": "1262",
+					"name": "知羞",
+					"cal1": "61",
+					"cal2": "103",
+					"cal3": "144",
+					"cal4": "196",
+					"fengding": 75,
+					"price": "126200"
+				},
+				"cat7": {
+					"huishou": "3388",
+					"name": "沙漠",
+					"cal1": "124",
+					"cal2": "207",
+					"cal3": "290",
+					"cal4": "394",
+					"fengding": 70,
+					"price": "338800"
+				},
+				"cat8": {
+					"huishou": "9013",
+					"name": "石窟",
+					"cal1": "250",
+					"cal2": "417",
+					"cal3": "548",
+					"cal4": "793",
+					"fengding": 65,
+					"price": "901300"
+				},
+				"cat9": {
+					"huishou": "24000",
+					"name": "草原",
+					"cal1": "504",
+					"cal2": "840",
+					"cal3": "1177",
+					"cal4": "1597",
+					"fengding": 60,
+					"price": "2400000"
+				},
+				"cat10": {
+					"huishou": "63900",
+					"name": "沼泽",
+					"cal1": "1015",
+					"cal2": "1692",
+					"cal3": "2369",
+					"cal4": "3215",
+					"fengding": 55,
+					"price": "6390000"
+				},
+				"cat11": {
+					"huishou": "170000",
+					"name": "森林",
+					"cal1": "2043",
+					"cal2": "3405",
+					"cal3": "4768",
+					"cal4": "6471",
+					"fengding": 50,
+					"price": "17000000"
+				},
+				"cat12": {
+					"huishou": "453000",
+					"name": "山脚",
+					"cal1": "4112",
+					"cal2": "6854",
+					"cal3": "9596",
+					"cal4": "13023",
+					"fengding": 45,
+					"price": "45300000"
+				},
+				"cat13": {
+					"huishou": "1205000",
+					"name": "渔夫",
+					"cal1": "8276",
+					"cal2": "13794",
+					"cal3": "19312",
+					"cal4": "26210",
+					"fengding": 40,
+					"price": "120500000"
+				},
+				"cat14": {
+					"huishou": "3200000",
+					"name": "猎户",
+					"cal1": "16657",
+					"cal2": "27762",
+					"cal3": "38867",
+					"cal4": "52748",
+					"fengding": 35,
+					"price": "320000000"
+				},
+				"cat15": {
+					"huishou": "8538000",
+					"name": "农民",
+					"cal1": "33523",
+					"cal2": "55872",
+					"cal3": "78221",
+					"cal4": "106158",
+					"fengding": 30,
+					"price": "853800000"
+				},
+				"cat16": {
+					"huishou": "23000000",
+					"name": "药农",
+					"cal1": "67466",
+					"cal2": "112444",
+					"cal3": "157422",
+					"cal4": "213644",
+					"fengding": 25,
+					"price": "2300000000"
+				},
+				"cat17": {
+					"huishou": "60500000",
+					"name": "果农",
+					"cal1": "135778",
+					"cal2": "226296",
+					"cal3": "316815",
+					"cal4": "429963",
+					"fengding": 20,
+					"price": "6050000000"
+				},
+				"cat18": {
+					"huishou": "160000000",
+					"name": "驯兽师",
+					"cal1": "273255",
+					"cal2": "455425",
+					"cal3": "637595",
+					"cal4": "865308",
+					"fengding": 19,
+					"price": "16000000000"
+				},
+				"cat19": {
+					"huishou": "430000000",
+					"name": "游民",
+					"cal1": "549930",
+					"cal2": "916551",
+					"cal3": "1283200",
+					"cal4": "1741400",
+					"fengding": 18,
+					"price": "43000000000"
+				},
+				"cat20": {
+					"huishou": "1141000000",
+					"name": "邮差",
+					"cal1": "1106700",
+					"cal2": "1884600",
+					"cal3": "2582400",
+					"cal4": "3504700",
+					"fengding": 17,
+					"price": "114100000000"
+				},
+				"cat21": {
+					"huishou": "3038000000",
+					"name": "店员",
+					"cal1": "2227300",
+					"cal2": "3712200",
+					"cal3": "5197100",
+					"cal4": "7053200",
+					"fengding": 16,
+					"price": "303800000000"
+				},
+				"cat22": {
+					"huishou": "8808000000",
+					"name": "领班",
+					"cal1": "4482600",
+					"cal2": "7470900",
+					"cal3": "10459000",
+					"cal4": "14195000",
+					"fengding": 15,
+					"price": "808800000000"
+				},
+				"cat23": {
+					"huishou": "21500000000",
+					"name": "漆匠",
+					"cal1": "9021200",
+					"cal2": "15035000",
+					"cal3": "21050000",
+					"cal4": "28567000",
+					"fengding": 14,
+					"price": "2150000000000"
+				},
+				"cat24": {
+					"huishou": "57300000000",
+					"name": "商贩",
+					"cal1": "18155000",
+					"cal2": "30259000",
+					"cal3": "42362000",
+					"cal4": "57492000",
+					"fengding": 13,
+					"price": "5730000000000"
+				},
+				"cat25": {
+					"huishou": "153000000000",
+					"name": "铁匠",
+					"cal1": "36538000",
+					"cal2": "60897000",
+					"cal3": "85255000",
+					"cal4": "115700000",
+					"fengding": 12,
+					"price": "15300000000000"
+				},
+				"cat26": {
+					"huishou": "406000000000",
+					"name": "厨师",
+					"cal1": "73533000",
+					"cal2": "122560000",
+					"cal3": "171580000",
+					"cal4": "232850000",
+					"fengding": 11,
+					"price": "40600000000000"
+				},
+				"cat27": {
+					"huishou": "1080000000000",
+					"name": "酿酒师",
+					"cal1": "147990000",
+					"cal2": "246640000",
+					"cal3": "345300000",
+					"cal4": "468620000",
+					"fengding": 10,
+					"price": "108000000000000"
+				},
+				"cat28": {
+					"huishou": "4500000000000",
+					"name": "鞋匠",
+					"cal1": "297830000",
+					"cal2": "496380000",
+					"cal3": "694930000",
+					"cal4": "943110000",
+					"fengding": 10,
+					"price": "450000000000000"
+				},
+				"cat29": {
+					"huishou": "13500000000000",
+					"name": "管家",
+					"cal1": "599380000",
+					"cal2": "998960000",
+					"cal3": "1398500000",
+					"cal4": "1898000000",
+					"fengding": 10,
+					"price": "1350000000000000"
+				},
+				"cat30": {
+					"huishou": "42000000000000",
+					"name": "会计",
+					"cal1": "1206300000",
+					"cal2": "2010400000",
+					"cal3": "2814600000",
+					"cal4": "3819800000",
+					"fengding": 10,
+					"price": "4200000000000000"
+				},
+				"cat31": {
+					"huishou": "130000000000000",
+					"name": "医生",
+					"cal1": "2427600000",
+					"cal2": "4046000000",
+					"cal3": "5664400000",
+					"cal4": "7687400000",
+					"fengding": 10,
+					"price": "13000000000000000"
+				},
+				"cat32": {
+					"huishou": "400000000000000",
+					"name": "画家",
+					"cal1": "4885600000",
+					"cal2": "8142700000",
+					"cal3": "11400000000",
+					"cal4": "15471000000",
+					"fengding": 10,
+					"price": "40000000000000000"
+				},
+				"cat33": {
+					"huishou": "1200000000000000",
+					"name": "工程师",
+					"cal1": "9832400000",
+					"cal2": "16387000000",
+					"cal3": "22942000000",
+					"cal4": "31136000000",
+					"fengding": 10,
+					"price": "120000000000000000"
+				},
+				"cat34": {
+					"huishou": "1760000000000000",
+					"name": "老板",
+					"cal1": "19788000000",
+					"cal2": "32980000000",
+					"cal3": "46171000000",
+					"cal4": "62661000000",
+					"fengding": 10,
+					"price": "360000000000000000"
+				},
+				"cat35": {
+					"huishou": "1760000000000000",
+					"name": "名媛",
+					"cal1": "39823000000",
+					"cal2": "66372000000",
+					"cal3": "92921000000",
+					"cal4": "126110000000",
+					"fengding": 10,
+					"price": "1080000000000000000"
+				},
+				"cat36": {
+					"huishou": "1760000000000000",
+					"name": "守卫",
+					"cal1": "80145000000",
+					"cal2": "133570000000",
+					"cal3": "187000000000",
+					"cal4": "253790000000",
+					"fengding": 10,
+					"price": "3240000000000000000"
+				},
+				"cat37": {
+					"huishou": "1760000000000000",
+					"name": "骑士",
+					"cal1": "161290000000",
+					"cal2": "268820000000",
+					"cal3": "376350000000",
+					"cal4": "510760000000",
+					"fengding": 10,
+					"price": "9720000000000000000"
+				},
+				"cat138": {
+					"huishou": "1760000000000000",
+					"name": "限时金色招财猫",
+					"cal1": "0",
+					"cal2": 0,
+					"cal3": 0,
+					"cal4": 0,
+					"fengding": 10,
+					"price": "150"
+				},
+				"cat238": {
+					"huishou": "1760000000000000",
+					"name": "金义",
+					"cal1": "324000000000",
+					"cal2": "541010000000",
+					"cal3": "757410000000",
+					"cal4": "1027900000000",
+					"fengding": 10,
+					"price": "150"
+				},
+				"cat338": {
+					"huishou": "1760000000000000",
+					"name": "木仁",
+					"cal1": "324000000000",
+					"cal2": "541010000000",
+					"cal3": "757410000000",
+					"cal4": "1027900000000",
+					"fengding": 10,
+					"price": "150"
+				},
+				"cat438": {
+					"huishou": "1760000000000000",
+					"name": "水智",
+					"cal1": "324000000000",
+					"cal2": "541010000000",
+					"cal3": "757410000000",
+					"cal4": "1027900000000",
+					"fengding": 10,
+					"price": "150"
+				},
+				"cat538": {
+					"huishou": "1760000000000000",
+					"name": "火礼",
+					"cal1": "324000000000",
+					"cal2": "541010000000",
+					"cal3": "757410000000",
+					"cal4": "1027900000000",
+					"fengding": 10,
+					"price": "150"
+				},
+				"cat638": {
+					"huishou": "1760000000000000",
+					"name": "土信",
+					"cal1": "324000000000",
+					"cal2": "541010000000",
+					"cal3": "757410000000",
+					"cal4": "1027900000000",
+					"fengding": 10,
+					"price": "150"
+				},
+				"cat738": {
+					"huishou": "1760000000000000",
+					"name": "风伯",
+					"cal1": "324000000000",
+					"cal2": "541010000000",
+					"cal3": "757410000000",
+					"cal4": "1027900000000",
+					"fengding": 10,
+					"price": "150"
+				},
+				"cat838": {
+					"huishou": "1760000000000000",
+					"name": "雷公",
+					"cal1": "324000000000",
+					"cal2": "541010000000",
+					"cal3": "757410000000",
+					"cal4": "1027900000000",
+					"fengding": 10,
+					"price": "150"
+				},
+				"cat938": {
+					"huishou": "1760000000000000",
+					"name": "电母",
+					"cal1": "324000000000",
+					"cal2": "541010000000",
+					"cal3": "757410000000",
+					"cal4": "1027900000000",
+					"fengding": 10,
+					"price": "150"
+				},
+				"cat1038": {
+					"huishou": 1,
+					"name": "金色招财猫",
+					"cal1": 0,
+					"cal2": 0,
+					"cal3": 0,
+					"cal4": 0,
+					"fengding": 10,
+					"price": "150"
+				}
+			},
+			{
+				"_id": "city",
+				"c1": {
+					"name": "六扇门",
+					"bide": 0.3,
+					"p001": "600000",
+					"Royalty": 1,
+					"distance": 4478
+				},
+				"c2": {
+					"name": "绿竹巷",
+					"bide": 0.31,
+					"p001": "4500000000",
+					"Royalty": 1,
+					"distance": 6525
+				},
+				"c3": {
+					"name": "桃花岛",
+					"bide": 0.33,
+					"p001": "190000000000",
+					"Royalty": 1,
+					"distance": 7566
+				},
+				"c4": {
+					"name": "玄幽阁",
+					"bide": 0.34,
+					"p001": "900000000000",
+					"Royalty": 1,
+					"distance": 7566
+				},
+				"c5": {
+					"name": "见性峰",
+					"bide": 0.34,
+					"p001": "10000000000000",
+					"Royalty": 1,
+					"distance": 12532
+				},
+				"c6": {
+					"name": "星宿海",
+					"bide": 0.34,
+					"p001": "200000000000000",
+					"Royalty": 1,
+					"distance": 50000
+				},
+				"c7": {
+					"name": "燕子坞",
+					"bide": 0.34,
+					"p001": "300000000000000",
+					"Royalty": 1,
+					"distance": 90000
+				},
+				"c8": {
+					"name": "血魔洞",
+					"bide": 0.34,
+					"p001": "400000000000000",
+					"Royalty": 1,
+					"distance": 100000
+				},
+				"c9": {
+					"name": "地灵潭",
+					"bide": 0.34,
+					"p001": "500000000000000",
+					"Royalty": 1,
+					"distance": 130000
+				},
+				"c10": {
+					"name": "神武门",
+					"bide": 0.34,
+					"p001": "6000000000000000",
+					"Royalty": 1,
+					"distance": 160000
+				},
+				"c11": {
+					"name": "柳善府",
+					"bide": 0.34,
+					"p001": "70000000000000000",
+					"Royalty": 1,
+					"distance": 190000
+				},
+				"c12": {
+					"name": "风陵渡",
+					"bide": 0.34,
+					"p001": "800000000000000000",
+					"Royalty": 1,
+					"distance": 210000
+				},
+				"c13": {
+					"name": "翡翠池",
+					"bide": 0.34,
+					"p001": "9000000000000000000",
+					"Royalty": 1,
+					"distance": 230000
+				},
+				"c14": {
+					"name": "绝情谷",
+					"bide": 0.34,
+					"p001": "1000000000000000000",
+					"Royalty": 1,
+					"distance": 250000
+				},
+				"c15": {
+					"name": "灵鹫宫",
+					"bide": 0.34,
+					"p001": "2000000000000000000",
+					"Royalty": 1,
+					"distance": 270000
+				},
+				"c16": {
+					"name": "神龙岛",
+					"bide": 0.34,
+					"p001": "3000000000000000000",
+					"Royalty": 1,
+					"distance": 290000
+				},
+				"c17": {
+					"name": "南林关",
+					"bide": 0.34,
+					"p001": "4000000000000000000",
+					"Royalty": 1,
+					"distance": 310000
+				},
+				"c18": {
+					"name": "断肠崖",
+					"bide": 0.34,
+					"p001": "5000000000000000000",
+					"Royalty": 1,
+					"distance": 230000
+				},
+				"c19": {
+					"name": "龙霄殿",
+					"bide": 0.34,
+					"p001": "6000000000000000000",
+					"Royalty": 1,
+					"distance": 250000
+				},
+				"c20": {
+					"name": "光明顶",
+					"bide": 0.34,
+					"p001": "7000000000000000000",
+					"Royalty": 1,
+					"distance": 270000
+				}
+			},
+			{
+				"_id": "profitfromfriend", // 好友收益相关设置   百分比
+				"online": 1,
+				"videocount": 1,
+				"friendcount": 1
+			},
+			{
+				"_id": "dailytask", //  打工  兼职红包  奖励
+				"dagong1": 0.03, // 分
+				"dagong2": 0.30, // 分
+				"jianzhi": 0.03 // 分
+			},
+			{
+				"_id": "withdraw", // 提现手续费比例
+				"commission": 3
+			},
+			{
+				"_id": "friendactiveteam", // 旅行团收益  好友活跃 每满足一次  给直推上级赚钱 2分   上上级 1分
+				"onlinetime": 60, // 在线分钟
+				"videocount": 1, // 看视频次数
+				"friendcount": 1 // 邀请人数
+			},
+			{
+				"_id": "hechenghongbao", // 合成红包设置
+				"hongbao1": 0.01,
+				"hongbao2": 0.05
+			},
+			{
+				"_id": "sale", // 单身卖出
+				"hongbao1": 5, // 元
+				"hongbao2": 50 // 元
+			},
+			{
+				"_id": "friendprofit", // 单身卖出
+				"onlinetimeprofit": 0.01, // fen
+				"videocountprofit": 0.01, // fen
+				"friendcountprofit": 0.01 // fen
+			},
+			{
+				"_id": "bide", // 必得分红猫进度   每满足一次  给上级增加进度0.02   上上级 0.01
+				"videocount": 1, // 看视频次数
+				"friendcount": 1, // 邀请人数
+				"hechengcount": 1, // 合成狗次数
+				"friendfen": 0.01 // 旅行团收益   分
+			},
+			{
+				"_id": "bideprofit", // 满足一次   给多少必得收益
+				"videocount": 0.01, // 百分比
+				"friendcount": 0.01, // 百分比
+				"hechengcount": 0.01, // 百分比
+				"friendfen": 0.01 // 百分比
+			},
+			{
+				"_id": "xianshicat", // 限时分红猫设置
+				"persec": 0.01, // fen
+				"gailv": 1, // 百分比
+				"time1": 5, // 分钟
+				"time2": 15 // 分钟
+			},
+			{
+				"_id": "lvl5", // 5级的现金红包
+				"hongbao": 0.03
+			},
+			{
+				"_id": "roulette", // 转盘奖励设置
+				"shaoliang": 1,
+				"zhongliang": 2,
+				"daliang": 4,
+				"hailiang": 6
+			},
+			{
+				"_id": "zijinhulu", // 5紫金葫芦设置
+				"a1": {
+					"time": 3,
+					"count": 10,
+					"gailv": 30
+				},
+				"a2": {
+					"time": 5,
+					"count": 10,
+					"gailv": 25
+				},
+				"a3": {
+					"time": 240,
+					"count": 10,
+					"gailv": 20
+				},
+				"a4": {
+					"time": 720,
+					"count": 10,
+					"gailv": 15
+				},
+				"a5": {
+					"time": 1440,
+					"count": 10,
+					"gailv": 10
+				}
+			},
+			{
+				"_id": "lvl37to1038", // 俩37合成38  获得永久的概率
+				"gailv": 10
+			},
+			{
+				"_id": "setadtime", // 广告间隔时间
+				"time": 20
+			},
+			{
+				"_id": "zphongbao", // 转盘红包设置
+				"hongbao1": 0.01,
+				"hongbao2": 0.05
+			},
+			{
+				"_id": "qiandao", // 签到金币
+				"coin": 180
+			},
+			{
+				"_id": "xianshilingqu", // 限时领取
+				"time": 5
+			},
+			{
+				"_id": "bidetype", // 必得进度分红规则配置  0表示等比分4份  1 表示满足单一条件就行
+				"type": 0
+			}
+		]
+	},
+	"opendb-app-list": {
+		"data": [],
+		"index": [{
+			"IndexName": "appid",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "appid",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": true
+			}
+		}, {
+			"IndexName": "name",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "name",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}]
+	},
+	"opendb-app-versions": {
+		"data": [],
+		"index": [{
+			"IndexName": "appid",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "appid",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "查找上线发行应用",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "appid",
+					"Direction": "1"
+				}, {
+					"Name": "platform",
+					"Direction": "1"
+				}, {
+					"Name": "stable_publish",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}]
+	},
+	"userinfo": {},
+	"video-reward": {},
+	"taskinfo": {},
+	"buycountinfo": {},
+	"bideinfo": {},
+	"allinfo": {},
+	"cityinfo": {},
+	"rouletteinfo": {},
+	"user_profitrecord": {},
+	"storeinfobyuid": {},
+	"user_login": {},
+	"xscatinfo": {},
+	"dialytaskinfo": {
+		"bsonType": "object",
+		"required": [],
+		"permission": {
+			"read": false,
+			"create": false,
+			"update": false,
+			"delete": false
+		}
+	},
+	"fenhongcatinfo": {},
+	"user_getfenhongcatrecord": {},
+	"qiandao": {},
+	"news": {},
+	"user_fenhongdcatrecord": {},
+	"user_teamprofitrecord": {
+		"index": [{
+			"IndexName": "uid_",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "uid",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "createtime_",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "createtime",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}]
+	},
+	"withdrawrecord_log": {},
+	"videocallback":{},
+	"offlinebonus": {},
+	"lastvideotimes": {},
+	"friendactiveinfo": {},
+	"huoyuerenshu": {},
+	"uni-id-scores": {
+		"index": [{
+			"IndexName": "score_",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "score",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "balance_",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "balance",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}]
+	},
+	"uni-verify": {},
+	"helpinfo": {
+		"data": [{
+				"title": "可以解除邀请好友关系吗？",
+				"createtime": 1609410158,
+				"type": "zhuce",
+				"content": "您好，注册成功后不支持解绑"
+			},
+			{
+				"title": "注册时未填写邀请码，可补填吗？",
+				"createtime": 1609410158,
+				"type": "zhuce",
+				"content": "您好，是可以补填的。新用户未通过扫码，而是直接下载游戏注册的，注册24小时内。可以到【我的】-【我的邀请码】页面，点击右上角【绑定邀请者】进行补填。"
+			},
+			{
+				"title": "有效好友",
+				"createtime": 1609410197,
+				"type": "youxi",
+				"content": "有效好友是指已经进行过实名认证的好友，并且游戏内合成等级不低于4级"
+			},
+			{
+				"title": "广告视频上限",
+				"createtime": 1609410197,
+				"type": "youxi",
+				"content": "广告视频上限是指每日用户可以通过观看广告获得游戏奖励内容的最大次数，当用户达到广告视频每日最大次数后，将无法从观看广告视频中获得游戏奖励。"
+			},
+			{
+				"title": "提现",
+				"createtime": 1609410197,
+				"type": "tixian",
+				"content": "除首次提现0.3元为实时到账外，其余提现均为人工审核，到账时间按照提现申请的先后次序进行审核提现，审核时间为正常工作时间9：00-18：00"
+			},
+			{
+				"title": "提现失败",
+				"createtime": 1609410197,
+				"type": "tixian",
+				"content": "为保障正常玩家获得的全平台分红收益，我们将严厉打击（外挂）（机器人）（利用BUG漏洞）以及非正常游戏流程的非法玩家的提现请求。详情请直接联系平台客服咨询。"
+			}
+		]
+	},
+	"uni-id-users": {
+		"data": [],
+		"index": [{
+			"IndexName": "username",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "username",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "mobile",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "mobile",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "email",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "email",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "wx_openid.app-plus",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "wx_openid.app-plus",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "wx_openid.mp-weixin",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "wx_openid.mp-weixin",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "wx_unionid",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "wx_unionid",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "ali_openid",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "ali_openid",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "my_invite_code",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "my_invite_code",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "inviter_uid",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "inviter_uid",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "invite_time",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "invite_time",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}, {
+			"IndexName": "role",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "role",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}]
+	},
+	"opendb-verify-codes": {
+		"data": []
+	},
+	"uni-id-roles": {
+		"data": [],
+		"index": [{
+				"IndexName": "role_id",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "role_id",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": true
+				}
+			},
+			{
+				"IndexName": "permission",
+				"MgoKeySchema": {
+					"MgoIndexKeys": [{
+						"Name": "permission",
+						"Direction": "1"
+					}],
+					"MgoIsUnique": false
+				}
+			}
+		]
+	},
+	"uni-id-permissions": {
+		"data": [],
+		"index": [{
+			"IndexName": "permission_id",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "permission_id",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": true
+			}
+		}]
+	},
+	"opendb-feedback":{},
+	"opendb-app-publish": {
+		"data": [],
+		"index": [{
+			"IndexName": "appid",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "appid",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": true
+			}
+		}, {
+			"IndexName": "name",
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "name",
+					"Direction": "1"
+				}],
+				"MgoIsUnique": false
+			}
+		}]
+	},
+	"opendb-admin-menus": {
+		"data": [{
+			"menu_id": "index",
+			"name": "首页",
+			"icon": "uni-icons-home",
+			"url": "/",
+			"sort": 100,
+			"parent_id": "",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "userlist",
+			"name": "用户管理",
+			"icon": "uni-icons-person",
+			"url": "/pages/userlist/userlist",
+			"sort": 101,
+			"parent_id": "",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "adReward",
+			"name": "看视频奖励",
+			"icon": "uni-icons-gear",
+			"url": "/pages/adReward/adReward",
+			"sort": 102,
+			"parent_id": "",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "adReward",
+			"name": "提现管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/tixian/tixian",
+			"sort": 103,
+			"parent_id": "",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "uni-feedback",
+			"name": "意见反馈",
+			"icon": "uni-icons-gear",
+			"url": "/uni_modules/uni-feedback-admin/pages/uni-feedback-admin/list",
+			"sort": 104,
+			"parent_id": "",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		}, 
+		{
+			"menu_id": "canshu",
+			"name": "参数管理",
+			"icon": "uni-icons-gear",
+			"url": "",
+			"sort": 105,
+			"parent_id": "",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "bideset",
+			"name": "必得猫设置",
+			"icon": "uni-icons-gear",
+			"url": "/pages/bideset/bideset",
+			"sort": 106,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "cat",
+			"name": "猫管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/cat/cat",
+			"sort": 107,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "yongjiumao",
+			"name": "永久概率管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/yongjiumao/yongjiumao",
+			"sort": 108,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "fenhongset",
+			"name": "永久分红猫设置",
+			"icon": "uni-icons-gear",
+			"url": "/pages/fenhongset/fenhongset",
+			"sort": 109,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "xianshimao",
+			"name": "限时分红猫管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/xianshimao/xianshimao",
+			"sort": 110,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "dehongbaoguanli",
+			"name": "5级红包管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/dehongbaoguanli/dehongbaoguanli",
+			"sort": 111,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "bidefenhong",
+			"name": "必得分红进度管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/bidefenhong/bidefenhong",
+			"sort": 112,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "lvxingtuanshouyi",
+			"name": "旅行团收益管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/lvxingtuanshouyi/lvxingtuanshouyi",
+			"sort": 113,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "lvxingtuan",
+			"name": "旅行团管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/lvxingtuan/lvxingtuan",
+			"sort": 114,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "role",
+			"name": "转盘管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/role/role",
+			"sort": 115,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "qiandao",
+			"name": "签到收益管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/qiandao/qiandao",
+			"sort": 116,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "xianshilingqu",
+			"name": "倒计时收益管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/xianshilingqu/xianshilingqu",
+			"sort": 117,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "setvideocount",
+			"name": "看视频次数设置",
+			"icon": "uni-icons-gear",
+			"url": "/pages/setvideocount/setvideocount",
+			"sort": 118,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "kuocangku",
+			"name": "扩展仓库管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/kuocangku/kuocangku",
+			"sort": 119,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "tixianshouxu",
+			"name": "提现手续费管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/tixianshouxu/tixianshouxu",
+			"sort": 120,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "help",
+			"name": "帮助管理",
+			"icon": "uni-icons-gear",
+			"url": "/pages/help/help",
+			"sort": 121,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "seturl",
+			"name": "云函数url化",
+			"icon": "uni-icons-gear",
+			"url": "/pages/seturl/seturl",
+			"sort": 122,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "setadtime",
+			"name": "设置广告间隔时间",
+			"icon": "uni-icons-gear",
+			"url": "/pages/setadtime/setadtime",
+			"sort": 123,
+			"parent_id": "canshu",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "log",
+			"name": "日志管理",
+			"icon": "uni-icons-gear",
+			"url": "",
+			"sort": 124,
+			"parent_id": "",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "tuandabiao",
+			"name": "团达标",
+			"icon": "uni-icons-gear",
+			"url": "/pages/tuandabiao/tuandabiao",
+			"sort": 125,
+			"parent_id": "log",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "xianshifenhong",
+			"name": "限时分红",
+			"icon": "uni-icons-gear",
+			"url": "/pages/xianshifenhong/xianshifenhong",
+			"sort": 126,
+			"parent_id": "log",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "yongjiufenhong",
+			"name": "永久分红",
+			"icon": "uni-icons-gear",
+			"url": "/pages/yongjiufenhong/yongjiufenhong",
+			"sort": 127,
+			"parent_id": "log",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "5jihongbao",
+			"name": "5级红包",
+			"icon": "uni-icons-gear",
+			"url": "/pages/5jihongbao/5jihongbao",
+			"sort": 128,
+			"parent_id": "log",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "dangehuishou",
+			"name": "单个回收",
+			"icon": "uni-icons-gear",
+			"url": "/pages/dangehuishou/dangehuishou",
+			"sort": 129,
+			"parent_id": "log",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "lianggehecheng",
+			"name": "合成奖励",
+			"icon": "uni-icons-gear",
+			"url": "/pages/lianggehecheng/lianggehecheng",
+			"sort": 130,
+			"parent_id": "log",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "scores",
+			"name": "积分记录",
+			"icon": "uni-icons-gear",
+			"url": "/pages/uni-id-scores/list",
+			"sort": 131,
+			"parent_id": "log",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		},
+		{
+			"menu_id": "system_management",
+			"name": "系统管理",
+			"icon": "admin-icons-fl-xitong",
+			"url": "",
+			"sort": 1000,
+			"parent_id": "",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		}, {
+			"menu_id": "system_user",
+			"name": "用户管理",
+			"icon": "admin-icons-manager-user",
+			"url": "/pages/system/user/list",
+			"sort": 1010,
+			"parent_id": "system_management",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469398
+		}, {
+			"menu_id": "system_role",
+			"name": "角色管理",
+			"icon": "admin-icons-manager-role",
+			"url": "/pages/system/role/list",
+			"sort": 1020,
+			"parent_id": "system_management",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469397
+		}, {
+			"menu_id": "system_permission",
+			"name": "权限管理",
+			"icon": "admin-icons-manager-permission",
+			"url": "/pages/system/permission/list",
+			"sort": 1030,
+			"parent_id": "system_management",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		}, {
+			"menu_id": "system_menu",
+			"name": "菜单管理",
+			"icon": "admin-icons-manager-menu",
+			"url": "/pages/system/menu/list",
+			"sort": 1040,
+			"parent_id": "system_management",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469396
+		}, {
+			"menu_id": "system_app",
+			"name": "应用管理",
+			"icon": "admin-icons-manager-app",
+			"url": "/pages/system/app/list",
+			"sort": 1035,
+			"parent_id": "system_management",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662469399
+		}, {
+			"menu_id": "system_update",
+			"name": "App升级中心",
+			"icon": "uni-icons-cloud-upload",
+			"url": "/uni_modules/uni-upgrade-center/pages/version/list",
+			"sort": 1036,
+			"parent_id": "system_management",
+			"permission": [],
+			"enable": true,
+			"create_date": 1656491532434
+		}, {
+			"menu_id": "system_tag",
+			"name": "标签管理",
+			"icon": "admin-icons-manager-tag",
+			"url": "/pages/system/tag/list",
+			"sort": 1037,
+			"parent_id": "system_management",
+			"permission": [],
+			"enable": true,
+			"create_date": 1602662479389
+		}, {
+			"permission": [],
+			"enable": true,
+			"menu_id": "safety_statistics",
+			"name": "安全审计",
+			"icon": "admin-icons-safety",
+			"url": "",
+			"sort": 3100,
+			"parent_id": "",
+			"create_date": 1638356430871
+		}, {
+			"permission": [],
+			"enable": true,
+			"menu_id": "safety_statistics_user_log",
+			"name": "用户日志",
+			"icon": "",
+			"url": "/pages/system/safety/list",
+			"sort": 3101,
+			"parent_id": "safety_statistics",
+			"create_date": 1638356430871
+		}, {
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat",
+			"name": "uni 统计",
+			"icon": "admin-icons-tongji",
+			"url": "",
+			"sort": 2100,
+			"parent_id": "",
+			"create_date": 1638356430871
+		}, {
+			"parent_id": "uni-stat",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-device",
+			"name": "设备统计",
+			"icon": "admin-icons-shebeitongji",
+			"url": "",
+			"sort": 2120,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-device",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-device-overview",
+			"name": "概况",
+			"icon": "",
+			"url": "/pages/uni-stat/device/overview/overview",
+			"sort": 2121,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-device",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-device-activity",
+			"name": "活跃度",
+			"icon": "",
+			"url": "/pages/uni-stat/device/activity/activity",
+			"sort": 2122,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-device",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-device-trend",
+			"name": "趋势分析",
+			"icon": "",
+			"url": "/pages/uni-stat/device/trend/trend",
+			"sort": 2123,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-device",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-device-retention",
+			"name": "留存",
+			"icon": "",
+			"url": "/pages/uni-stat/device/retention/retention",
+			"sort": 2124,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-device",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-device-comparison",
+			"name": "平台对比",
+			"icon": "",
+			"url": "/pages/uni-stat/device/comparison/comparison",
+			"sort": 2125,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-device",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-device-stickiness",
+			"name": "粘性",
+			"icon": "",
+			"url": "/pages/uni-stat/device/stickiness/stickiness",
+			"sort": 2126,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-user",
+			"name": "注册用户统计",
+			"icon": "admin-icons-yonghutongji",
+			"url": "",
+			"sort": 2122,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-user",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-user-overview",
+			"name": "概况",
+			"icon": "",
+			"url": "/pages/uni-stat/user/overview/overview",
+			"sort": 2121,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-user",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-user-activity",
+			"name": "活跃度",
+			"icon": "",
+			"url": "/pages/uni-stat/user/activity/activity",
+			"sort": 2122,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-user",
+			"permission": [],
+			"enable": true,
+			"icon": "",
+			"menu_id": "uni-stat-user-trend",
+			"name": "趋势分析",
+			"url": "/pages/uni-stat/user/trend/trend",
+			"sort": 2123,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-user",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-user-retention",
+			"name": "留存",
+			"icon": "",
+			"url": "/pages/uni-stat/user/retention/retention",
+			"sort": 2124,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-user",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-user-comparison",
+			"name": "平台对比",
+			"icon": "",
+			"url": "/pages/uni-stat/user/comparison/comparison",
+			"sort": 2125,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-user",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-user-stickiness",
+			"name": "粘性",
+			"icon": "",
+			"url": "/pages/uni-stat/user/stickiness/stickiness",
+			"sort": 2126,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-page-analysis",
+			"name": "页面统计",
+			"icon": "admin-icons-page-ent",
+			"url": "",
+			"sort": 2123,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-page-analysis",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-page-res",
+			"name": "受访页",
+			"icon": "",
+			"url": "/pages/uni-stat/page-res/page-res",
+			"sort": 2131,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-page-analysis",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-page-ent",
+			"name": "入口页",
+			"icon": "",
+			"url": "/pages/uni-stat/page-ent/page-ent",
+			"sort": 2132,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-senceChannel",
+			"name": "渠道/场景值分析",
+			"icon": "admin-icons-qudaofenxi",
+			"url": "",
+			"sort": 2150,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-senceChannel",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-senceChannel-scene",
+			"name": "场景值（小程序）",
+			"icon": "",
+			"url": "/pages/uni-stat/scene/scene",
+			"sort": 2151,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-senceChannel",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-senceChannel-channel",
+			"name": "渠道（app）",
+			"icon": "",
+			"url": "/pages/uni-stat/channel/channel",
+			"sort": 2152,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-event-event",
+			"name": "自定义事件",
+			"icon": "admin-icons-shijianfenxi",
+			"url": "/pages/uni-stat/event/event",
+			"sort": 2160,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-error",
+			"name": "错误统计",
+			"icon": "admin-icons-cuowutongji",
+			"url": "",
+			"sort": 2170,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-error",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-error-js",
+			"name": "js报错",
+			"icon": "",
+			"url": "/pages/uni-stat/error/js/js",
+			"sort": 2171,
+			"create_date": 1638356902516
+		}, {
+			"parent_id": "uni-stat-error",
+			"permission": [],
+			"enable": true,
+			"menu_id": "uni-stat-error-app",
+			"name": "app崩溃",
+			"icon": "",
+			"url": "/pages/uni-stat/error/app/app",
+			"sort": 2172,
+			"create_date": 1638356902516
+		}]
+	},
+	"uni-stat-active-devices": {},
+	"uni-stat-active-users": {},
+	"uni-stat-app-channels": {},
+	"uni-stat-app-crash-logs": {},
+	"uni-stat-app-platforms": {},
+	"uni-stat-error-logs": {},
+	"uni-stat-error-result": {},
+	"uni-stat-event-logs": {},
+	"uni-stat-event-result": {},
+	"uni-stat-events": {},
+	"uni-stat-loyalty-result": {},
+	"uni-stat-mp-scenes": {},
+	"uni-stat-page-logs": {},
+	"uni-stat-page-result": {},
+	"uni-stat-pages": {},
+	"uni-stat-result": {},
+	"uni-stat-run-errors": {},
+	"uni-stat-session-logs": {},
+	"uni-stat-share-logs": {},
+	"uni-stat-user-session-logs": {},
+	"opendb-device": {}
+}

@@ -1,0 +1,15 @@
+{
+  "name": "uni_modules_tools",
+  "version": "1.0.0",
+  "description": "本插件是一个[uni_modules钩子脚本](https://uniapp.dcloud.io/uni_modules?id=uni_modulesconfigjson)，仅限uni_modules插件使用 #### 为什么使用 uni_modules_tools 在实际开发中很多插件需要配置文件才可以正常运行，比如uni-id、uni-pay等； 有些配置内容属于密钥，在发表到插件市场的时候我们通常不希望这些配置被暴露。 传统的方式你需要手动备份密钥内容，上传结束后再将配置填回。这样插件作者发表插件会比较不便。",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hjson": "^3.2.2",
+    "shelljs": "^0.8.4"
+  }
+}

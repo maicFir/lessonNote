@@ -1,0 +1,79 @@
+{
+	"id": "uni-moneygame",
+	"displayName": "网赚游戏",
+	"version": "1.7.2",
+	"description": "一款基于uniCloud、uniAD的合成类网赚游戏",
+	"keywords": [
+        "网赚游戏",
+        "广告合成",
+        "养猫",
+        "合成猫",
+        "萌猫成长"
+    ],
+	"repository": "",
+	"engines": {
+		"HBuilderX": "^3.1.0"
+	},
+    "dcloudext": {
+        "sale": {
+			"regular": {
+				"price": "0.00"
+			},
+			"sourcecode": {
+				"price": "0.00"
+			}
+		},
+		"contact": {
+			"qq": ""
+		},
+		"declaration": {
+			"ads": "玩家可通过观看激励视频获取游戏金币，广告频率开发者可自己控制。",
+			"data": "无",
+			"permissions": "无"
+		},
+        "npmurl": "",
+        "type": "unicloud-template-project"
+	},
+	"uni_modules": {
+		"platforms": {
+			"cloud": {
+				"tcb": "y",
+				"aliyun": "y"
+			},
+			"client": {
+				"App": {
+					"app-vue": "y",
+					"app-nvue": "n"
+				},
+				"H5-mobile": {
+					"Safari": "n",
+					"Android Browser": "n",
+					"微信浏览器(Android)": "n",
+					"QQ浏览器(Android)": "n"
+				},
+				"H5-pc": {
+					"Chrome": "n",
+					"IE": "n",
+					"Edge": "n",
+					"Firefox": "n",
+					"Safari": "n"
+				},
+				"小程序": {
+					"微信": "n",
+					"阿里": "n",
+					"百度": "n",
+					"字节跳动": "n",
+					"QQ": "n"
+				},
+				"快应用": {
+					"华为": "n",
+					"联盟": "n"
+				},
+				"Vue": {
+					"vue2": "y",
+					"vue3": "u"
+				}
+			}
+		}
+	}
+}

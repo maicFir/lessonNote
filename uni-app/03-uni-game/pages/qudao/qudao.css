@@ -1,0 +1,33 @@
+.box{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.kuai{
+	width: 8rpx;
+	height: 40rpx;
+	float: left;
+}
+.xinxi{
+	width: 742rpx;
+	height: 500rpx;
+	float: right;
+	padding: 0 45rpx;
+	box-sizing: border-box;
+}
+.title{
+	color: #555555;
+	font-size: 32rpx;
+	font-weight: 700;
+}
+.content{
+	color: #999999;
+	font-size: 25rpx;
+}
+.bgimg{
+	width: 463rpx;
+	height: 325rpx;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}

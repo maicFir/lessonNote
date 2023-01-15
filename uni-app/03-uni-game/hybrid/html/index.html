@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<title>网赚游戏</title>
+
+	<!--http://www.html5rocks.com/en/mobile/mobifying/-->
+	<meta name="viewport"
+		content="width=device-width,user-scalable=no,initial-scale=1, minimum-scale=1,maximum-scale=1" />
+
+	<!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- force webkit on 360 -->
+	<meta name="renderer" content="webkit" />
+	<meta name="force-rendering" content="webkit" />
+	<!-- force edge on IE -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="msapplication-tap-highlight" content="no">
+
+	<!-- force full screen on some browser -->
+	<meta name="full-screen" content="yes" />
+	<meta name="x5-fullscreen" content="true" />
+	<meta name="360-fullscreen" content="true" />
+
+	<!-- force screen orientation on some browser -->
+	<meta name="screen-orientation" content="" />
+	<meta name="x5-orientation" content="">
+
+	<!--fix fireball/issues/3568 -->
+	<!--<meta name="browsermode" content="application">-->
+	<meta name="x5-page-mode" content="app">
+
+	<!--<link rel="apple-touch-icon" href=".png" />-->
+	<!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+
+	<link rel="stylesheet" type="text/css" href="style-mobile.css" />
+	<link rel="icon" href="favicon.ico" />
+</head>
+
+<body>
+	<canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
+	<div id="splash">
+		<div class="progress-bar stripes">
+			<span style="width: 0%"></span>
+		</div>
+	</div>
+	<script>
+		var OldImage = Image
+		var oldProto = Image.prototype
+		Image = function (width, height) {
+			var image = new OldImage(width, height)
+			image.crossOrigin = 'anonymous'
+			Object.defineProperty(image, 'crossOrigin', {
+				set() {
+					return true
+				}
+			})
+			return image
+		}
+		Image.prototype = oldProto
+	</script>
+	<script src="ad.js" charset="utf-8"></script>
+	<script>
+		function initAD() {
+			if (window.AD) {
+				return;
+			}
+			var AD = new Ad();
+			window.AD = AD;
+			window._adpid = 1507000689;// 激励视频广告位：1507000689仅在HBuilderX标准基座中有效，仅用于测试，广告后台申请的广告位(adpid)需要自定义基座/云打包/本地打包后生效
+			// window._rewardedOptions = {
+			// 	adpid: window._adpid,
+			// 	adType: "RewardedVideo",
+			// 	urlCallback: {
+			// 		userId: plus.storage.getItem('uid')
+			// 	}
+			// }
+			//window.AD.load(window._rewardedOptions);
+		}
+		window.showAD = function (extra, success, fail) {
+			if (!window.AD) {
+				initAD();
+			}
+      let options = {
+        adpid: window._adpid,
+        adType: "RewardedVideo",
+        singleton: false,
+        urlCallback: {
+          userId: plus.storage.getItem('uid'),
+          extra: JSON.stringify(extra)
+        }
+      }
+			return window.AD.show(options, success, fail);
+		};
+
+		let currentAdViewId = null;
+		window.showAdView = function (top) {
+			var left = 10;
+			var w = window.innerWidth - left * 2;
+			currentAdViewId = AdView.instance.showAdView({
+				adpid: 1111111111,
+				width: w,
+				left,
+				top: top || 200
+			});
+			/* 信息流测试广告位：1111111111仅在HBuilderX标准基座中有效，仅用于测试，广告后台申请的广告位(adpid)需要自定义基座/云打包/本地打包后生效 */
+		}
+		window.closeAdView = function () {
+			AdView.instance.closeAdView(currentAdViewId);
+		}
+		document.addEventListener('plusready', function () {
+			initAD();
+		}, false)
+	</script>
+	<script src="src/settings.js" charset="utf-8"></script>
+	<script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.1.js"></script>
+
+	<script src="main.js" charset="utf-8"></script>
+
+	<script type="text/javascript">
+			(function () {
+				// open web debugger console
+				if (typeof VConsole !== 'undefined') {
+					window.vConsole = new VConsole();
+				}
+
+				var debug = window._CCSettings.debug;
+				var splash = document.getElementById('splash');
+				splash.style.display = 'block';
+
+				function loadScript(moduleName, cb) {
+					function scriptLoaded() {
+						document.body.removeChild(domScript);
+						domScript.removeEventListener('load', scriptLoaded, false);
+						cb && cb();
+					};
+					var domScript = document.createElement('script');
+					domScript.async = true;
+					domScript.src = moduleName;
+					domScript.addEventListener('load', scriptLoaded, false);
+					document.body.appendChild(domScript);
+				}
+
+				document.addEventListener('UniAppJSBridgeReady', function () { });
+
+				var isRunning = false;
+				function startApplication() {
+					if (isRunning == true) {
+						return;
+					}
+					isRunning = true;
+
+					window.jwt_token = plus.storage.getItem('jwt_token');
+					console.log('window.jwt_token====', window.jwt_token)
+					window.uid = plus.storage.getItem('uid');
+					console.log('window.uid====', window.uid)
+					loadScript(debug ? 'cocos2d-js.js' : 'cocos2d-js-min.js', function () {
+						window.boot();
+					});
+				}
+
+				if (window.plus && window.plus.isReady) {
+					startApplication();
+				} else {
+					document.addEventListener('plusready', function (e) {
+						startApplication();
+					})
+				}
+			})();
+	</script>
+	<script type="text/javascript">
+		// 在Webview窗口中执行JS脚本
+		function share() {
+			embed.evalJS('window["share"];');
+		}
+	</script>
+</body>
+
+</html>

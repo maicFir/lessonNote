@@ -1,0 +1,28 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": "doc._id==auth.uid",
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成",
+			"foreignKey":"uni-id-users._id"
+		},
+		"nickname": {
+			"bsonType": "string",
+			"description": "昵称"
+		},
+		"avatar": {
+			"bsonType": "string",
+			"description": "头像"
+		},
+		"realname": {
+			"bsonType": "string",
+			"description": "真实姓名"
+		}
+	}
+}

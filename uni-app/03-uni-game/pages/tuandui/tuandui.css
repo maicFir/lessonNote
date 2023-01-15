@@ -1,0 +1,456 @@
+page {
+	background-color: #F5F5F5;
+	padding: 0;
+	margin: 0;
+}
+.topbox{
+	width: 750rpx;
+	height: 480rpx;
+	position: relative;
+}
+.top-view{
+	width: 750rpx;
+	height: 344rpx;
+	background-image: linear-gradient(to right, #FF9853 , #FF7D63);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.con_box{
+	width: 750rpx;
+	padding-left: 40rpx;
+	margin-top: 47rpx;
+	margin-bottom: 0rpx;
+	box-sizing: border-box;
+	position: relative;
+}
+.con_box .messagebox{
+	float: left;
+}
+.bann_left_txt1{
+	font-size: 30rpx;
+	font-weight: 500;
+	color: #FFFFFF;
+	margin-bottom: 18rpx;
+	display: block;
+	padding-top: 60rpx;
+	box-sizing: border-box;
+}
+.bann_left_txt2{
+	font-size: 54rpx;
+	font-weight: 800;
+	color: #FFFFFF;
+	display: block;
+}
+.bann_right_img{
+	width: 384rpx;
+	height: 228rpx;
+	float: right;
+}
+.friend_box{
+	width: 700rpx;
+	height: 240rpx;
+	border-radius: 20rpx;
+	background-color: #fff;
+	padding: 30rpx 50rpx;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	left: 25rpx;
+}
+
+.friend_box_top{
+	width: 620rpx;
+	justify-content: space-between;
+	height:  66rpx;
+	line-height: 66rpx;
+	font-size: 36rpx;
+	font-weight: 800;
+	color: #333333;
+	margin-bottom: 30rpx;
+}
+.arrow_right{
+	color: #CCCCCC;
+}
+
+.friend_Num{
+	font-size: 42rpx;
+	font-weight: 800;
+	color: #FF6D4E;
+}
+.friend_box_bot{
+	align-items: center;
+	justify-content: center;
+	margin-left: 54rpx;
+	width: 500rpx;
+	height: 80rpx;
+	background-image: linear-gradient(to right, #FF8048, #FF6D4E);
+	border-radius: 40px;
+	line-height: 80rpx;
+	text-align: center;
+}
+.friend_box_bot_txt{
+	font-size: 32rpx;
+	font-weight: 800;
+	color: #FFFFFF;
+}
+
+
+/* 好友累计赚钱 */
+.conbox1{
+	width: 700rpx;
+	/* height: 400rpx; */
+	margin-top: 30rpx;
+	margin-left: 25rpx;
+	border-radius: 20px;
+	background-color: #fff;
+	padding: 40rpx;
+	box-sizing: border-box;
+}
+
+
+.conbox1_top{
+	width: 620rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	margin-bottom: 35rpx;
+}
+.conbox1_top_left{
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #333333;
+}
+.conbox1_top_right{
+	font-size: 24rpx;
+	font-weight: 500;
+	color: #666666;
+}
+.conbox1_cen{
+	margin-bottom: 40rpx;
+	height: auto;
+	overflow: hidden;
+}
+.conbox1_cen_item{
+	width: 308rpx;
+	height: 137rpx;
+	align-items: center;
+	float: left;
+}
+.conbox1_cen_Line{
+	width: 2rpx;
+	height: 85rpx;
+	background-color: #DDDDDD;
+	float: left;
+}
+.conbox1_cen_item_t{
+	height: 70rpx;
+	line-height: 60rpx;
+	text-align: center;
+}
+.conbox1_cen_item_t1{
+	font-size: 60rpx;
+	font-weight: 800;
+	color: #FF6D4E;
+	margin-right: 3rpx;
+}
+.conbox1_cen_item_t2{
+	font-size: 24rpx;
+	line-height: 90rpx;
+	font-weight: 800;
+	color: #FF6D4E;
+}
+.conbox1_cen_item_b{
+	text-align: center;
+}
+.conbox1_cen_item_b1{
+	font-size: 24rpx;
+	font-weight: 500;
+	color: #999999;
+	margin-top: 25rpx;
+}
+
+.conbox1_bot_t{
+	width: 580rpx;
+	height: 16rpx;
+	background-color: #EEEEEE;
+	border-radius: 8rpx;
+	overflow: hidden;
+}
+.conbox1_bot_t_over{
+	height: 16rpx;
+	background-image: linear-gradient(to right, #FF8048, #FF6D4E);
+	border-radius: 8rpx;
+}
+.conbox1_bot_b{
+	margin-top: 20rpx;
+	text-align: center;
+}
+
+.col999Font{
+	font-size: 20rpx;
+	font-weight: 500;
+	color: #999999;
+}
+.orangeFont{
+	font-size: 20rpx;
+	font-weight: 500;
+	color: #FF6D4E;
+}
+
+/* 今日好友赚钱 */
+
+.conBox2{
+	width: 700rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+	margin-top: 30rpx;
+	padding: 40rpx 5rpx;
+	margin-left: 25rpx;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.conBox2_tit_t1{
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #333333;
+	padding-left: 40rpx;
+	line-height: 36rpx;
+	margin-right: 10rpx;
+	box-sizing: border-box;
+}
+.conBox2_tit_t2{
+	font-size: 24rpx;
+	font-weight: 500;
+	color: #999999;
+	line-height: 45rpx;
+}
+.conBox2_item{
+	width: 230rpx;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	text-align: center;
+}
+.conBox2_item_price{
+	margin-top: 50rpx;
+}
+.conBox2_item_price_t{
+	font-size: 60rpx;
+	font-weight: 800;
+	color: #FF6D4E;
+	line-height: 60rpx;
+	margin-right: 5rpx;
+	height: 60rpx;
+}
+.conBox2_item_price_b{
+	height: 60rpx;
+	font-size: 24rpx;
+	font-weight: 800;
+	color: #FF6D4E;
+	line-height: 80rpx;
+}
+.conBox2_item_btxt{
+	font-size: 24rpx;
+	font-weight: 500;
+	color: #999999;
+	text-align: center;
+	margin-top: 30rpx;
+}
+.col333Font24{
+	font-size: 24rpx;
+	font-weight: 800;
+	color: #333333;
+}
+.col333Font60{
+	font-size: 60rpx;
+	font-weight: 800;
+	color: #333333;
+}
+
+.my_yaoqingren_box{
+	width: 700rpx;
+	background-color: #fff;
+	border-radius: 20rpx;
+	margin-top: 30rpx;
+	padding: 40rpx;
+	margin-bottom: 20rpx;
+	margin-left: 25rpx;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.yaoqing_t{
+	width: 620rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+}
+.yaoqing_tl{
+	font-size: 36rpx;
+	font-weight: bold;
+	color: #333333;
+}
+.yaoqing_tr{
+	font-size: 24rpx;
+	font-weight: 500;
+	color: #666666;
+}
+.yaoqing_b{
+	width: 620rpx;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin-top: 50rpx;
+}
+.yaoqing_bl{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50rpx;
+	float: left;
+}
+.yaoqing_blimg{
+	width: 98rpx;
+	height: 98rpx;
+	border-width: 2rpx;  
+    border-style: solid;  
+    border-color: #F0F0F0;  
+	border-radius: 49rpx;
+}
+.col999Font1{
+	font-size: 30rpx;
+	font-weight: 500;
+	color: #999999;
+	line-height: 100rpx;
+}
+.colorangeFont{
+	font-size: 30rpx;
+	font-weight: 500;
+	color: #FF6D4E;
+	line-height: 100rpx;
+}
+.yaoqing_bt{
+	margin-left: 30rpx;
+	float: left;
+}
+.conBox2_item_jiasu{
+	width: 130rpx;
+	height: 23rpx;
+	position: absolute;
+	left: 155rpx;
+	top: 20rpx;
+	z-index: 6;
+}
+.conBox2_item_jiasuImg{
+	width: 130rpx;
+	height: 23rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.conBox2_item_jiasuImgBeishu{
+	font-size: 16rpx;
+	font-weight: 500;
+	color: #FFFFFF;
+	display: block;
+	position: absolute;
+	bottom:0rpx;
+	left: 45rpx;
+	height: 23rpx;
+	line-height: 23rpx;
+}
+
+/* 弹窗 */
+.dialog{
+	width: 550rpx;
+	height: 600rpx;
+	background-color: #FFFFFF;
+	border-radius: 15rpx;
+	padding:0 35rpx;
+}
+.closeiconbox{
+	width: 550rpx;
+	justify-content: center;
+}
+.dialogtitle{
+	width: 550rpx;
+	text-align: center;
+	height: 80rpx;
+	line-height: 80rpx;
+	color: #333333;
+	font-size: 35rpx;
+}
+.clipboardTextBox{
+	flex-direction: row;
+	width: 550rpx;
+	display: flex;
+	align-items: center;
+}
+.fuzhiIcon{
+	width:82rpx;
+	height: 30rpx;
+}
+.dialogText{
+	width: 450rpx;
+	text-align: center;
+	height: 50rpx;
+	line-height: 50rpx;
+	color: #333333;
+	font-size:28rpx;
+}
+.dialogavatar{
+	width: 128rpx;
+	height: 128rpx;
+	border-radius: 128rpx;
+}
+.dialogavatarbox{
+	width: 550rpx;
+	height: 128rpx;
+	text-align: center;
+}
+.dialognamebox{
+	width: 550rpx;
+	text-align: center;
+	margin: 25rpx 0;
+}
+.dialognameboxicon{
+	width: 42rpx;
+	height: 30rpx;
+	margin-left: 5rpx;
+}
+.dialognameboxname{
+	font-size: 33rpx;
+	color: #333333;
+	font-weight: 700;
+}
+.dialogset{
+	width: 550rpx;
+	text-align: center;
+	justify-content: center;
+	margin-top: 40rpx;
+}
+.dialogsettitle{
+	color: #333333;
+	font-size: 30rpx;
+}
+
+.jieduanshouyibox{
+	width: 550rpx;
+	height: 580rpx;
+	background-color: #FFFFFF;
+	border-radius: 15rpx;
+}
+
+.dialogwenzi{
+	color: #333333;
+	font-size: 30rpx;
+	margin-bottom: 20rpx;
+	width: 380rpx;
+}
+.dialogbutton{
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+	width: 400rpx;
+	height: 70rpx;
+	border-radius: 70rpx;
+	justify-content: center;
+	flex-direction: row; 
+	align-items: center;
+	margin-top: 40rpx;
+	text-align: center;line-height: 70rpx;
+}

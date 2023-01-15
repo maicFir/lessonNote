@@ -1,0 +1,140 @@
+.bgbox {
+	width: 100%;
+	height: 564rpx;
+	background-image: url(../../static/mine/fhmtj_bg@2x.png);
+	background-size: cover;
+	position: relative;
+}
+
+
+.echarts {
+	width: 100%;
+	height: 400rpx;
+	margin: 0 auto;
+}
+.bgbox .yuanjiao{
+	width: 100%;
+	height: 60rpx;
+	position: absolute;
+	background-color: #FFFFFF;
+	bottom: 0;
+	left: 0;
+	border-radius: 40rpx 40rpx 0 0;
+}
+.jinbubox{
+	width: 100%;
+	height: 166rpx;
+}
+.jinbubox .image{
+	width: 166rpx;
+	height: 166rpx;
+	float: left;
+	margin-left: 50rpx;
+}
+.jinbubox .jindu{
+	width: 490rpx;
+	height: 100%;
+	float: left;
+	margin-left: 20rpx;
+}
+.jinbubox .jindu .wenzi{
+	width: 100%;
+	height: 109rpx;
+	line-height: 120rpx;
+}
+
+.jinbubox .progress-box{
+	width: 100%;
+	height: 20rpx;
+	border-radius: 20rpx;
+	background-color: #F5F5F5;
+}
+.jinbubox .progress{
+	height: 100%;
+	border-radius: 20rpx;
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+}
+.yaoqing{
+	width: 666rpx;
+	height: 158rpx;
+	position: relative;
+	margin: 30rpx auto;
+	background-image: url(../../static/mine/yqbl_bg@2x.png);
+	background-size: cover;
+}
+.yaoqing .image{
+	width: 109rpx;
+	height: 93rpx;
+	position: absolute;
+	left: 42rpx;
+	top: 34rpx;
+}
+.tisheng{
+	width: 666rpx;
+	height: 158rpx;
+	position: relative;
+	margin: 0 auto;
+	background-image: url(../../static/mine/bg_promote_active@2x.png);
+	background-size: cover;
+}
+
+.tisheng .image{
+	width: 153rpx;
+	height: 120rpx;
+	position: absolute;
+	left: 5rpx;
+	top: 25rpx;
+}
+
+
+
+
+
+
+
+
+
+.dialog{
+	width: 550rpx;
+	height: 798rpx;
+	background-color: #FFFFFF;
+	border-radius: 15rpx;
+	padding:0 35rpx;
+}
+.closeicon{
+	float: right;
+}
+.dialog .title{
+	width: 100%;
+	text-align: center;
+	height: 70rpx;
+	line-height: 70rpx;
+	color: #333333;
+	font-size: 35rpx;
+	font-weight: 700;
+}
+.dialog .biaoti{
+	width: 450rpx;
+	height: auto;
+	margin: 35rpx auto 0;
+	color: #333333;
+	font-size: 32rpx;
+	font-weight: 700;
+}
+.dialog .content{
+	width: 450rpx;
+	height: auto;
+	color: #888888;
+	font-size: 30rpx;
+	margin: 15rpx auto 0;
+}
+.dialog .queding{
+	width: 400rpx;
+	height: 70rpx;
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+	color: #FFFFFF;
+	text-align: center;
+	border-radius: 70rpx;
+	line-height: 70rpx;
+	margin: 45rpx auto 0;
+}

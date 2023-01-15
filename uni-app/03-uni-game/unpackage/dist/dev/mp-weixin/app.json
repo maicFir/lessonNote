@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/download-app/download-app"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "网赚游戏",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#FFFFFF"
+  },
+  "usingComponents": {
+    "tab-bar": "/common/tabbar"
+  }
+}

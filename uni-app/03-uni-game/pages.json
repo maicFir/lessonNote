@@ -1,0 +1,382 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// #ifdef APP-PLUS
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/rewarded-video/rewarded-video",
+			"style": {
+				"navigationBarTitleText": "cocos game html"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/xiaoxi/xiaoxi",
+			"style": {
+				"navigationBarTitleText": "消息中心",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+		}, {
+			"path": "pages/set/set",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+		}, {
+			"path": "pages/alipay/alipay",
+			"style": {
+				"navigationBarTitleText": "我的支付宝",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+
+		}, {
+			"path": "pages/qudao/qudao",
+			"style": {
+				"navigationBarTitleText": "渠道商邀请",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+
+		}, {
+			"path": "pages/qianbao/qianbao",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		}, {
+			"path": "pages/yaoqingma/yaoqingma",
+			"style": {
+				"navigationBarTitleText": "我的邀请码",
+				"app-plus": {
+					"bounce": "none", // 将回弹属性关掉
+					"titleNView": {
+						"titleSize": "32rpx",
+						"buttons": [{
+							"color": "#333333",
+							"fontSize": "28rpx",
+							"text": "我的邀请人",
+							"width": "auto"
+						}]
+					}
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+
+		}, {
+			"path": "pages/bangzhu/bangzhu",
+			"style": {
+				"navigationBarTitleText": "帮助中心",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+
+		}, {
+			"path": "pages/tixian/tixian",
+			"style": {
+				"navigationBarTitleText": "提现结果",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+
+		}, {
+			"path": "pages/tixianjilu/tixianjilu",
+			"style": {
+				"navigationBarTitleText": "余额明细",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5",
+				"enablePullDownRefresh":true,
+				"onReachBottomDistance":"30px"
+			}
+
+		}, {
+			"path": "pages/bangzhuitem/bangzhuitem",
+			"style": {
+				"navigationBarTitleText": "帮助中心",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+
+		}, {
+			"path": "pages/bindphone/bindphone",
+			"style": {
+				"navigationBarTitleText": "绑定手机号",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+
+		}, {
+			"path": "pages/shejiao/shejiao",
+			"style": {
+				"navigationBarTitleText": "社交信息",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+		}, {
+			"path": "pages/fenhongjilu/fenhongjilu",
+			"style": {
+				"navigationBarTitleText": "今日分红记录",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance":"30px"
+			}
+		}, {
+			"path": "pages/shourumingxi/shourumingxi",
+			"style": {
+				"navigationBarTitleText": "喵喵团收入明细",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance":"30px",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				},
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+		}, {
+			"path": "pages/yaoqingjilu/yaoqingjilu",
+			"style": {
+				"navigationBarTitleText": "邀请记录",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance":"30px",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5"
+			}
+		}, {
+			"path": "pages/fenhongshouyi/fenhongshouyi",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		}, {
+			"path": "pages/play/play",
+			"style": {
+				"navigationBarTitleText": "怎么玩",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		}, {
+			"path": "pages/fenhongmao/fenhongmao",
+			"style": {
+				"navigationBarTitleText": "必得全球分红猫",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		}, {
+			"path": "pages/shiming/shiming",
+			"style": {
+				"navigationBarTitleText": "实名认证",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		}, {
+			"path": "pages/changename/changename",
+			"style": {
+				"navigationBarTitleText": "修改昵称",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		}, {
+			"path": "pages/xieyi/xieyi",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		}, {
+			"path": "pages/wanfa/wanfa",
+			"style": {
+				"navigationBarTitleText": "喵喵团玩法",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"backgroundColor": "#F5F5F5",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		}, {
+			"path": "pages/mine/mine",
+			"style": {
+				"backgroundColor": "#F5F5F5",
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		}, {
+			"path": "pages/tuandui/tuandui",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true,
+				"backgroundColorTop": "#F5F5F5",
+				"backgroundColorBottom": "#F5F5F5"
+			}
+		},
+		{
+			"path": "pages/interactive-ad/interactive-ad",
+			"style": {
+				"navigationBarTitleText": "互动游戏",
+				"backgroundColor": "#F5F5F5",
+				"navigationBarBackgroundColor": "#ff9652",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+
+		},
+		{
+			"path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup",
+			"style": {
+				"disableScroll": true,
+				"app-plus": {
+					"backgroundColorTop": "transparent",
+					"background": "transparent",
+					"titleNView": false,
+					"scrollIndicator": false,
+					"popGesture": "none",
+					"animationType": "fade-in",
+					"animationDuration": 200
+				}
+			}
+		},
+		{
+			"path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback",
+			"style": {
+				"navigationBarTitleText": "意见反馈",
+				"enablePullDownRefresh": false
+			}
+		}, 
+		{
+			"path": "uni_modules/uni-feedback/pages/opendb-feedback/list",
+			"style": {
+				"navigationBarTitleText": "意见反馈列表",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#FFFFFF"
+			}
+		}, 
+		// #endif
+		{
+			"path": "pages/download-app/download-app",
+			"style": {
+				"navigationBarTitleText": "",
+				"h5":{
+					"titleNView":false
+				},
+				"enablePullDownRefresh": false
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "网赚游戏",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#FFFFFF"
+	}
+	// #ifdef APP-PLUS
+	,
+	"tabBar": {
+		"color": "#888888",
+		"selectedColor": "#FD7155",
+		"borderStyle": "#ffffff",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/index.png",
+				"selectedIconPath": "static/tabbar/indexcheck.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tuandui/tuandui",
+				"iconPath": "static/tabbar/mmt.png",
+				"selectedIconPath": "static/tabbar/mmtcheck.png",
+				"text": "喵喵团"
+			},
+			{
+				"pagePath": "pages/interactive-ad/interactive-ad",
+				"iconPath": "static/tabbar/game.png",
+				"selectedIconPath": "static/tabbar/gamecheck.png",
+				"text": "游戏"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"iconPath": "static/tabbar/wode.png",
+				"selectedIconPath": "static/tabbar/wodecheck.png",
+				"text": "我的"
+			}
+		]
+	}
+	// #endif
+}

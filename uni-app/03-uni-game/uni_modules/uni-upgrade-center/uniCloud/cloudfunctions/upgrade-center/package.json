@@ -1,0 +1,14 @@
+{
+	"name": "upgrade-center",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"uni-cloud-router": "file:../../../../uni-cloud-router/uniCloud/cloudfunctions/common/uni-cloud-router"
+	}
+}

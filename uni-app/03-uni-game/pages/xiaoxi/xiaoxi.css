@@ -1,0 +1,77 @@
+page {
+	background-color: #F5F5F5;
+}
+.messagebox{
+	width: 100%;
+	height: auto;
+	padding: 65rpx 0 0;
+}
+.messagebox .timebox{
+	width: 260rpx;
+	height: 40rpx;
+	background-color: #EBEBEB;
+	margin: 0 auto 65rpx;
+	border-radius: 40rpx;
+	font-size: 25rpx;
+	color: #C1C1C1;
+	text-align: center;
+	line-height: 40rpx;
+}
+.messagebox .xinxi{
+	width: 685rpx;
+	height: auto;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	border-radius: 20rpx;
+	padding: 45rpx 0 15rpx;
+	overflow: hidden;
+}
+.messagebox .xinxi .image{
+	width: 8rpx;
+	float: left;
+}
+.messagebox .xinxi .tishi{
+	float: left;
+	margin-left: 20rpx;
+	color: rgb(237,120,85);
+}
+.messagebox .xinxi .miaoshu{
+	width: 100%;
+	height: auto;
+	padding: 30rpx 35rpx 0;
+	line-height: 50rpx;
+	box-sizing: border-box;
+	float: left;
+}
+.bgimagebox{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	right: 0;
+	z-index: -1;
+}
+.bgimage{
+	width: 211rpx;
+	height: 279rpx;
+	position: absolute;
+	right: 0;
+	bottom: 40rpx;
+}
+
+.wuxiaoxi{
+	width: 249rpx;
+	height: auto;
+	padding-top: 250rpx;
+	margin: 0 auto;
+	text-align: center;
+}
+.wuxiaoxi .image{
+	width: 249rpx;
+	height: 97rpx;
+	padding-bottom: 20rpx;
+}
+.wuxiaoxi .wenzi{
+	color: #C1C1C1;
+	font-size: 25rpx;
+}

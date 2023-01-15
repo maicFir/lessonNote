@@ -1,0 +1,27 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": false,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"user_id": {
+			"description": "用户id"
+		},
+		"times": {
+			"description": "视频次数"
+		},
+		"reward_fen": {
+			"description": "奖励金额"
+		},
+		"create_date": {
+			"description": "创建时间"
+		}
+	}
+}

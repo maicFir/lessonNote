@@ -1,0 +1,126 @@
+page {
+	background-color: #F5F5F5;
+}
+.minbox{
+	width: 100%;
+	height: 130rpx;
+	background-color: #FFFFFF;
+	padding: 0 30rpx;
+	box-sizing: border-box;
+}
+.minbox .box{
+	width: 100%;
+	height: 100%;
+	border-bottom: 1px solid #DDDDDD;
+	box-sizing: border-box;
+}
+.minbox .box .xinxi{
+	width: 30%;
+	height: 100%;
+	line-height: 130rpx;
+	color: #333333;
+	font-size: 30rpx;
+	box-sizing: border-box;
+	float: left;
+}
+.minbox .box .rightbox{
+	width: 70%;
+	height: 100%;
+	line-height: 130rpx;
+	float: right;
+	box-sizing: border-box;
+}
+.minbox .box .avatar{
+	width: 70rpx;
+	height: 70rpx;
+	border-radius: 100%;
+	margin-top: 30rpx;
+	float: right;
+	margin-right: 20rpx;
+}
+.minbox .box .righticon{
+	float: right;
+}
+.minbox .box .nickname{
+	color: #666666;
+	font-size: 30rpx;
+	float: right;
+	margin-right: 20rpx;
+	overflow: hidden;
+	max-width: 85%;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.switch{
+	float: right;
+}
+.loginout{
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+	width: 626rpx;
+	height: 88rpx;
+	border-radius: 88rpx;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 100rpx;
+	margin: auto;
+	color: #FFFFFF;
+	font-size: 30rpx;
+	font-weight: bold;
+	line-height: 88rpx;
+}
+
+.dialog{
+	width: 550rpx;
+	height: 450rpx;
+	background-color: #FFFFFF;
+	border-radius: 15rpx;
+	padding:0 35rpx;
+}
+.closeicon{
+	float: right;
+}
+.dialog .title{
+	width: 100%;
+	text-align: center;
+	height: 70rpx;
+	line-height: 70rpx;
+	color: #333333;
+	font-size: 35rpx;
+	font-weight: 700;
+}
+.dialog .content{
+	width: 100%;
+	padding: 40rpx 80rpx 0;
+	line-height: 2em;
+	box-sizing: border-box;
+	font-size: 28rpx;
+	color: #333333;
+}
+.dialog .bottonbox{
+	width: 100%;
+	padding: 30rpx 80rpx 0;
+	box-sizing: border-box;
+	height: 70rpx;
+}
+.dialog .quxiao,.dialog .queding{
+	width: 180rpx;
+	height: 70rpx;
+	border-radius: 70rpx;
+	float: left;
+	text-align: center;
+	line-height: 70rpx;
+	box-sizing: border-box;
+	color: #999999;
+	font-size: 28rpx;
+}
+.dialog .quxiao{
+	border: 1px solid #F5F5F5;
+}
+.dialog .queding{
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+	float: right;
+	color: #FFFFFF;
+	font-size: 28rpx;
+}

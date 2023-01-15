@@ -1,0 +1,43 @@
+.jilubox{
+	width: 690rpx;
+	height: 130rpx;
+	border-bottom: 1px solid #DDDDDD;
+	margin: 0 auto;
+}
+.jilubox .left{
+	float: left;
+	width: 70%;
+	height: 100%;
+	color: #999999;
+	font-size: 25rpx;
+}
+.jilubox .left .title{
+	font-size: 30rpx;
+	color: #333333;
+	padding: 30rpx 0 10rpx;
+}
+.jilubox .right{
+	float: right;
+	text-align: right;
+	line-height: 130rpx;
+	color: #F17215;
+	font-size: 40rpx;
+}
+
+
+.wuxiaoxi{
+	width: 249rpx;
+	height: auto;
+	padding-top: 250rpx;
+	margin: 0 auto;
+	text-align: center;
+}
+.wuxiaoxi .image{
+	width: 249rpx;
+	height: 97rpx;
+	padding-bottom: 20rpx;
+}
+.wuxiaoxi .wenzi{
+	color: #C1C1C1;
+	font-size: 25rpx;
+}

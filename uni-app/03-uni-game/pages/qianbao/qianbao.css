@@ -1,0 +1,165 @@
+.tixiantop{
+	width: 100%;
+	height: 440rpx;
+	background-image: url(../../static/mine/qianbao/txtt_img@2x.png);
+	background-size: cover;
+	position: relative;
+}
+.tixiantop .banner{
+	width: 100%;
+	height: 80rpx;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+}
+.tixiantop .banner .box{
+	width: 33.3%;height: 100%;float: left;
+	color: #FFFFFF;
+}
+.tixiantop .moneynum{
+	width: 100%;text-align: center;
+	line-height: 100rpx;
+	color: #FFFFFF;
+	height: 100rpx;
+	font-size: 50rpx;
+}
+.tixiantop .moneynum .num{
+	font-size: 50rpx;
+	font-weight: 700;
+}
+.tixiantop .bottom{
+	width: 100%;
+	height: 40rpx;
+	background-color: #FFFFFF;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-radius: 40rpx 40rpx 0 0;
+}
+
+
+
+.weixinicon{
+	width: 100%;
+	height: 48rpx;
+	line-height: 48rpx;
+	padding: 0 40rpx;
+	box-sizing: border-box;
+}
+.weixinicon .img{
+	width: 57rpx;
+	height: 48rpx;
+	float: left;
+	margin-left: 10rpx;
+}
+.weixinicon .wenzi{
+	width: 60%;
+	float: left;
+}
+.weixinicon .icon{
+	width: 40%;
+	float: left;
+	text-align: right;
+	color: #999999;
+	font-size: 22rpx;
+	line-height: 48rpx;
+}
+.weixinicon .icon .iconimg{
+	width: 22rpx;
+	height: 22rpx;
+	float: right;
+	margin-top: 13rpx;
+	margin-left: 15rpx;
+}
+
+.numbigbox{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding-left: 15rpx;
+	box-sizing: border-box;
+}
+.numbigbox .numbox{
+	width: 208rpx;
+	height: 104rpx;
+	float: left;
+	background-color: rgb(243,243,241);
+	border-radius: 25rpx;
+	line-height: 104rpx;
+	text-align: center;
+	font-size: 30rpx;
+	color: #8E8E8E;
+	box-sizing: border-box;
+	margin-top: 30rpx;
+	margin-left: 25rpx;
+}
+.numbigbox .active{
+	background-color: rgb(243,207,158);
+	color: #DC6800;
+}
+.tixinbutton{
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+	width: 626rpx;
+	height: 88rpx;
+	border-radius: 88rpx;
+	color: #FFFFFF;
+	font-size: 30rpx;
+	font-weight: bold;
+	margin-top: 50rpx;
+	line-height: 88rpx;
+}
+
+
+.dialog{
+	width: 550rpx;
+	height: 420rpx;
+	background-color: #FFFFFF;
+	border-radius: 15rpx;
+	padding:0 35rpx;
+}
+.closeicon{
+	float: right;
+}
+.dialog .title{
+	width: 100%;
+	text-align: center;
+	height: 70rpx;
+	line-height: 70rpx;
+	color: #333333;
+	font-size: 35rpx;
+	font-weight: 700;
+}
+.dialog .content{
+	width: 100%;
+	padding: 40rpx 50rpx 0;
+	line-height: 2em;
+	box-sizing: border-box;
+	font-size: 28rpx;
+	color: #333333;
+}
+.dialog .bottonbox{
+	width: 100%;
+	padding: 30rpx 80rpx 0;
+	box-sizing: border-box;
+	height: 70rpx;
+}
+.dialog .quxiao,.dialog .queding{
+	width: 180rpx;
+	height: 70rpx;
+	border-radius: 70rpx;
+	float: left;
+	text-align: center;
+	line-height: 70rpx;
+	box-sizing: border-box;
+	color: #999999;
+	font-size: 28rpx;
+}
+.dialog .quxiao{
+	border: 1px solid #F5F5F5;
+}
+.dialog .queding{
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+	float: right;
+	color: #FFFFFF;
+	font-size: 28rpx;
+}

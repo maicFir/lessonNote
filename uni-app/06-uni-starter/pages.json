@@ -1,0 +1,253 @@
+{
+	"pages": [{
+			"path": "pages/list/list",
+			"style": {
+				// #ifndef APP-PLUS
+				"enablePullDownRefresh": true,
+				// #endif
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/grid/grid",
+			"style": {
+				//#ifndef MP
+				"navigationStyle": "custom"
+				//#endif
+			}
+		}, {
+			"path": "pages/list/search/search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		}, {
+			"path": "pages/list/detail",
+			"style": {
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "share"
+						}],
+						"type": "transparent"
+					}
+				},
+				"h5": {
+					"titleNView": {
+						"type": "transparent"
+					}
+				},
+				"navigationBarTitleText": "文章详情"
+			}
+		},
+		{
+			"path": "pages/ucenter/ucenter",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/ucenter/about/about",
+			"style": {
+				"navigationBarTitleText": "关于"
+					// #ifdef APP-PLUS
+					,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "share"
+						}]
+					}
+				}
+				// #endif
+			}
+
+		},
+		{
+			"path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup",
+			"style": {
+				"disableScroll": true,
+				"app-plus": {
+					"backgroundColorTop": "transparent",
+					"background": "transparent",
+					"titleNView": false,
+					"scrollIndicator": false,
+					"popGesture": "none",
+					"animationType": "fade-in",
+					"animationDuration": 200
+
+				}
+			}
+		}, {
+			"path": "pages/uni-agree/uni-agree",
+			"style": {
+				"navigationStyle": "custom",
+				"app-plus": {
+					"popGesture": "none"
+				}
+			}
+		}, {
+			"path": "pages/ucenter/settings/settings",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+
+		}, {
+			"path": "pages/common/webview/webview",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/ucenter/read-news-log/read-news-log",
+			"style": {
+				"navigationBarTitleText": "阅读记录",
+				"enablePullDownRefresh": true
+			}
+		}, {
+			"path": "pages/ucenter/invite/invite",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback",
+			"style": {
+				"navigationBarTitleText": "意见反馈",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate",
+			"style": {
+				"navigationBarTitleText": "注销账号"
+			}
+		},
+		{
+			"path": "uni_modules/uni-id-pages/pages/userinfo/userinfo",
+			"style": {
+				"navigationBarTitleText": "个人资料"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile",
+			"style": {
+				"navigationBarTitleText": "绑定手机号码"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/cropImage/cropImage",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/login/login-withoutpwd",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/login/login-withpwd",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/login/login-smscode",
+			"style": {
+				"navigationBarTitleText": "手机验证码登录"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/register/register",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/retrieve/retrieve",
+			"style": {
+				"navigationBarTitleText": "重置密码"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/common/webview/webview",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": ""
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": "修改密码"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/register/register-by-email",
+			"style": {
+				"navigationBarTitleText": "邮箱验证码注册"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email",
+			"style": {
+				"navigationBarTitleText": "通过邮箱重置密码"
+			}
+		}, {
+			"path": "uni_modules/uni-id-pages/pages/register/register-admin",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": "注册管理员账号"
+			}
+		}
+	],
+	"globalStyle": {
+		// #ifdef H5
+		"h5": {
+			"titleNView": false
+		},
+		// #endif
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-starter",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8",
+		"enablePullDownRefresh": false,
+		// "maxWidth":375,
+		"rpxCalcMaxDeviceWidth": 375,
+		"rpxCalcBaseDeviceWidth": 375
+		// "rpxCalcIncludeWidth":0
+	},
+	"condition": {
+		"list": [{
+				"path": "pages/list/detail"
+			}, {
+				"path": "pages/list/list"
+			},
+			{
+				"path": "pages/ucenter/settings/settings"
+			}
+		],
+		"current": 1
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#FFFFFF",
+		"list": [{
+			"pagePath": "pages/list/list",
+			"iconPath": "static/tabbar/list.png",
+			"selectedIconPath": "static/tabbar/list_active.png",
+			"text": "列表"
+		}, {
+			"pagePath": "pages/grid/grid",
+			"iconPath": "static/tabbar/grid.png",
+			"selectedIconPath": "static/tabbar/grid_active.png",
+			"text": "宫格"
+		}, {
+			"pagePath": "pages/ucenter/ucenter",
+			"iconPath": "static/tabbar/me.png",
+			"selectedIconPath": "static/tabbar/me_active.png",
+			"text": "我的"
+		}]
+	},
+	"uniIdRouter": {
+		"loginPage": "uni_modules/uni-id-pages/pages/login/login-withoutpwd",
+		"needLogin": [
+			"/uni_modules/uni-id-pages/pages/userinfo/userinfo"
+		],
+		"resToLogin": true
+	}
+}

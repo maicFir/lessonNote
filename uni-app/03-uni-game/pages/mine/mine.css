@@ -1,0 +1,194 @@
+page {
+	background-color: #F5F5F5;
+}
+.mine_top{
+	width: 750rpx;
+	height: 400rpx;
+	position: relative;
+	padding-top: 78rpx;
+	box-sizing: border-box;
+}
+.mine_top_bgimg{
+	width: 750rpx;
+	height: 300rpx;
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.mine_top_avatar{
+	width: 750rpx;
+	height: 136rpx;
+	padding: 0 42rpx;
+	position: relative;
+	box-sizing: border-box;
+}
+
+.nicknamebox{
+	width: 500rpx;
+	height: 136rpx;
+	float: left;
+	overflow: hidden;
+}
+.avatar{
+	width: 136rpx;
+	height: 136rpx;
+	border-radius: 100%;
+	background-color: #ffa26e;
+	position: relative;
+	float: left;
+}
+.avatarimg{
+	width: 126rpx;
+	height: 126rpx;
+	border-radius: 100%;
+	position: absolute;
+	left: 7rpx;
+	top: 7rpx;
+}
+.nickname{
+	font-size: 40rpx;
+	line-height:20px;
+	color: #ffffff;
+	font-weight: 700;
+	margin-top:10px;
+	display: block;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.userid{
+	font-size: 25rpx;
+	line-height:30px;
+	color: #ffffff;
+	font-weight: 500;
+	lines:1;
+	text-overflow:ellipsis;
+}
+
+/* 头像昵称结束 */
+.zhaocaimaobox{
+	width: 700rpx;
+	height: 180rpx;
+	position: absolute;
+	left: 32rpx;
+	bottom: 0;
+}
+
+.juzhengimg{
+	width: 700rpx;
+	height: 170rpx;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.zcmxx_img{
+	position: absolute;
+	left: 60rpx;
+	top: 0;
+	z-index: 999;
+	width: 124rpx;
+	height: 151rpx;
+}
+
+.jindubox{
+	width: 480rpx;
+	height: 120rpx;
+	left: 220rpx;
+	top:20rpx;
+	z-index: 999;
+	position: absolute;
+}
+.zhaocaimaotext{
+	color: #FFFFFF;
+	font-size: 40rpx;
+	font-weight: 700;
+}
+.progress-box{
+	width: 370rpx;
+	height: 20rpx;
+	background-color: #FFFFFF;
+	border-radius: 20rpx;
+	margin-top: 10rpx;
+	overflow: hidden;
+}
+.progress{
+	height: 20rpx;
+	background-image: linear-gradient(to bottom, #FF8B2B , #FF4B27);
+	border-radius: 20rpx;
+}
+.jinduyiwancheng{
+	font-size: 22rpx;
+	color: #ffffff;
+	margin-top: 10rpx;
+}
+/* 下面列表 */
+.listviewitem{
+	width: 704rpx;
+	height: 120rpx;
+	border-radius: 10rpx;
+	background-color: #FFFFFF;
+	
+	line-height: 120rpx;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+.listviewitem1{
+	width: 100%;
+	height: 120rpx;
+	border-radius: 10rpx;
+	background-color: #FFFFFF;
+	padding: 0 47rpx 0 37rpx;
+	line-height: 120rpx;
+	box-sizing: border-box;
+}
+.listviewitemleft{
+	height: 120rpx;
+	float: left;
+}
+.icon{
+	width: 51rpx;
+	height: 48rpx;
+	margin-top: 36rpx;
+	margin-right: 20rpx;
+}
+
+.updateicon{
+	width:54rpx;
+	height:54rpx;
+	margin-top: 36rpx;
+	margin-right: 20rpx;
+}
+
+.listviewitemleft .message{
+	display: block;
+	float: left;
+}
+.listviewitemright{
+	float: right;
+}
+
+.message{
+	color: #333333;
+	font-size: 30rpx;
+	line-height: 120rpx;
+}
+.righticon{
+	line-height: 120rpx;
+}
+.shuzhi{
+	color: #999999;
+	font-size: 30rpx;
+	line-height: 120rpx;
+	margin-right: 10rpx;
+	lines:1;
+	text-overflow:ellipsis;
+	width: 300rpx;
+	text-align: right;
+}
+.borderbottom{
+	/* border-bottom-width: 2rpx;
+	border-bottom-color: #EEEEEE; */
+	border-bottom: 2rpx solid #EEEEEE;
+}

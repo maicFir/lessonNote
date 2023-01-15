@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">{{name}}</div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const dataMix = {
+        data() {
+          return {
+            name: "hello",
+          };
+        },
+        methods: {
+          getName() {
+            console.log(333);
+            console.log(this.name, "mix: hello");
+          },
+        },
+        created() {
+          console.log(111);
+          this.getName();
+        },
+      };
+      var vm = new Vue({
+        el: "#app",
+        mixins: [dataMix],
+        data() {
+          return {
+            name: "Web技术学苑",
+          };
+        },
+        created() {
+          console.log(222);
+          this.getName();
+        },
+        methods: {
+          getName() {
+            console.log(this.name, "hello");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

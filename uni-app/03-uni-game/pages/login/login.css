@@ -1,0 +1,189 @@
+.bg-set {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -3;
+}
+.logoimg{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -2;
+}
+.maoimg{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 35%;
+	z-index: -1;
+}
+.buttonbox{
+/* 	overflow: hidden;
+	height: auto; */
+	width: 750rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.loginbutton{
+	width: 100%;
+	height: auto;
+	position: fixed;
+	left: 0;
+	bottom:20rpx;
+}
+.applelogin{
+	width:92rpx;
+	height:92rpx;
+	display: flex;
+	background-image: url(../../static/login/logo-apple.png);
+	background-size: cover;
+}
+.phonelogin{
+	width:100rpx;
+	height:100rpx;
+	display: flex;
+	margin:0 40rpx;
+	background-image: url(../../static/login/login-phone.png);
+	background-size: cover;
+}
+
+.phonelogin-android{
+	width: 303rpx;
+	height: 98rpx;
+	display: flex;
+	margin:0 20rpx;
+	background-image: url(../../static/login/phone.png);
+	background-size: cover;
+}
+
+
+.wchatlogin{
+	width:100rpx;
+	height:100rpx;
+	display: flex;
+	background-image: url(../../static/login/login-wechat.png);
+	background-size: cover;
+}
+.wchatlogin-android{
+	width: 303rpx;
+	height: 98rpx;
+	display: flex;
+	background-image: url(../../static/login/weixin.png);
+	background-size: cover;
+}
+
+.phoneloginimg{
+	width: 100%;
+}
+.yinsi{
+	width: 100%;
+	height: 80rpx;
+	text-align: center;
+	padding-top:30rpx;
+}
+.checkbox{
+	width: 30rpx;
+	margin-right: 10rpx;
+}
+
+.phonepopup{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-color: rgba(0,0,0,.5);
+}
+.phonepopup .bgbox{
+	width: 623rpx;
+	height: 720rpx;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto;
+}
+.phonepopup .bgbox .bgimg{
+	width: 603rpx;
+	height: 701rpx;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-image: url(../../static/login/sjdl_bg.png);
+	background-size: cover;
+}
+.phonepopup .bgbox .close{
+	width: 68rpx;
+	height: 71rpx;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-image: url(../../static/login/close.png);
+	background-size: cover;
+}
+.phonepopup .bgbox .bgimg .title{
+	width: 100%;
+	text-align: center;
+	height: 70rpx;
+	margin-top: 33rpx;
+	line-height: 70rpx;
+	
+	font-size: 25px;
+	color: #ffffff;
+	-webkit-text-fill-color: #ffffff;/*文字的填充色*/
+	-webkit-text-stroke: 1.5px #87360A;
+	font-weight: 700;
+}
+
+.phonepopup .bgbox .bgimg .phonenum{
+	width: 498rpx;
+	height: 84rpx;
+	background-image: url(../../static/login/sjdlsrk_bg.png);
+	background-size: cover;
+	margin: 0 auto;
+	padding: 0 20rpx;
+	position: relative;
+	box-sizing: border-box;
+}
+.phonepopup .bgbox .bgimg .uni-input{
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	color: #ffffff;
+	-webkit-text-fill-color: #ffffff;/*文字的填充色*/
+	-webkit-text-stroke: 1.5px #87360A;
+	font-weight: 700;
+}
+.phonepopup .bgbox .bgimg .code{
+	width: 161rpx;
+	height: 73rpx;
+	background: url(../../static/login/hqyzm_btn.png);
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 10rpx;
+	margin: auto;
+	line-height: 73rpx;
+	text-align: center;
+}
+.phonepopup .bgbox .bgimg .login{
+	width: 500rpx;
+	height: 86rpx;
+	background: url(../../static/login/hdqr_btn.png);
+	background-size: cover;
+	margin: 80rpx auto 0;
+}
+.phonepopup .bgbox .bgimg .codenum{
+	color: #ffffff;
+	-webkit-text-fill-color: #ffffff;/*文字的填充色*/
+	-webkit-text-stroke: 1.5px #87360A;
+	font-weight: 700;
+	font-size: 20px;
+}

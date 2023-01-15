@@ -1,0 +1,29 @@
+{
+	"name": "trigger",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"globalunit": "file:../common/globalunit",
+		"uni-cloud-router": "file:../../../uni_modules/uni-cloud-router/uniCloud/cloudfunctions/common/uni-cloud-router",
+		"uni-id": "file:../../../uni_modules/uni-id/uniCloud/cloudfunctions/common/uni-id"
+	},
+	"cloudfunction-config": {
+		"memorySize": 256,
+		"timeout": 600,
+		"triggers": [
+			{
+				"name": "myTrigger",
+				"type": "timer",
+				"config": "0 57 23 * * * *"
+			}
+		],
+		"path": "/http/trigger"
+	}
+}

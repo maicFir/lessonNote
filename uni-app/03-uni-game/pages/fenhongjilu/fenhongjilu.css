@@ -1,0 +1,115 @@
+.jilubox{
+	width: 690rpx;
+	height: 130rpx;
+	border-bottom: 1px solid #DDDDDD;
+	margin: 0 auto;
+}
+.jilubox .name{
+	float: left;
+	width: 40%;
+	height: 100%;
+	position: relative;
+}
+.jilubox .name .avatar{
+	width: 70rpx;
+	height: 70rpx;
+	border-radius: 70rpx;
+	margin-top: 30rpx;
+	display: block;
+}
+.jilubox .name .nickname{
+	padding-left: 90rpx;
+	height: 100%;
+	width: 100%;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	/* overflow: hidden;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1; */
+}
+.jilubox .name .nickname .time{
+	display: block;
+	height: 50%;
+	width: 100%;
+	line-height: 60rpx;
+	overflow: hidden;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+}
+.jilubox .left{
+	float: left;
+	width: 20%;
+	height: 100%;
+	color: #999999;
+	font-size: 25rpx;
+	text-align: center;
+}
+.jilubox .left .title{
+	font-size: 30rpx;
+	color: #333333;
+	line-height: 130rpx;
+}
+.jilubox .right{
+	float: right;
+	text-align: right;
+	line-height: 130rpx;
+	color: #F17215;
+	font-size: 40rpx;
+	width: 40%;
+}
+
+
+
+/* biaoti */
+.biaotibox{
+	width: 100%;
+	height: 50rpx;
+	background-color: #FFFFFF;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99999999;
+}
+.biaotibox .biaoti{
+	width: 700rpx;
+	height: 100%;
+	background-color: #F5F5F5;
+	border-radius: 50rpx;
+	margin: 0 auto;
+	padding: 0 15rpx;
+	box-sizing: border-box;
+}
+.biaotibox .biaoti .title{
+	width: 40%;
+	height: 100%;
+	line-height: 50rpx;
+	float: left;
+	color: #333333;
+	font: 28rpx;
+}
+
+
+.wuxiaoxi{
+	width: 249rpx;
+	height: auto;
+	padding-top: 250rpx;
+	margin: 0 auto;
+	text-align: center;
+}
+.wuxiaoxi .image{
+	width: 249rpx;
+	height: 97rpx;
+	padding-bottom: 20rpx;
+}
+.wuxiaoxi .wenzi{
+	color: #C1C1C1;
+	font-size: 25rpx;
+}

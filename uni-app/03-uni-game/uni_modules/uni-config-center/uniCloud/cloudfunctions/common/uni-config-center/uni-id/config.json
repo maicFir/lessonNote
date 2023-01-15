@@ -1,0 +1,45 @@
+{
+  "passwordSecret": "passwordSecret-demo",
+  "tokenSecret": "tokenSecret-demo",
+  "tokenExpiresIn": 7200,
+  "tokenExpiresThreshold": 600,
+  "passwordErrorLimit": 6,
+  "bindTokenToDevice": false,
+  "passwordErrorRetryTime": 3600,
+  "autoSetInviteCode": false,
+  "forceInviteCode": false,
+  "preferedAppPlatform": "app-plus",
+  "app-plus": {
+    "tokenExpiresIn": 2592000,
+    "oauth": {
+      "weixin": {
+        "appid": "填写来源微信开放平台https://open.weixin.qq.com/创建的应用的appid",
+        "appsecret": "填写来源微信开放平台https://open.weixin.qq.com/创建的应用的appsecret"
+      },
+      "apple": {
+        "bundleId": "苹果开发者后台获取的bundleId"
+      }
+    }
+  },
+  "mp-weixin": {
+    "oauth": {
+      "weixin": {
+        "appid": "my weixin appid",
+        "appsecret": "my weixin appsecret"
+      }
+    }
+  },
+  "service": {
+    "sms": {
+      "name": "my app name",
+      "codeExpiresIn": 300,
+      "smsKey": "my smsKey",
+      "smsSecret": "my smsSecret"
+    },
+    "univerify": {
+      "appid": "__UNI__346EE07",
+      "apiKey": "6fffc1145d83e6027b474baa66c53111",
+      "apiSecret": "ab95d754eb9f8c62025a15eeb160f038"
+    }
+  }
+}

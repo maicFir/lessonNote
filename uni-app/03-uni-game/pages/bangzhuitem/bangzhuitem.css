@@ -1,0 +1,52 @@
+page {
+	background-color: #F5F5F5;
+}
+.titlebox{
+	width: 100%;
+	height: 125rpx;
+	background-color: #FFFFFF;
+}
+.titlebox .tishi{
+	width: 60rpx;
+	height: 100%;
+	float: left;
+	line-height: 125rpx;
+}
+.titlebox .tishi .icon{
+	width: 8rpx;
+	height: 40rpx;
+}
+.titlebox .title{
+	width: 660rpx;
+	height: 100%;
+	border-bottom: 1px solid #DDDDDD;
+	line-height: 125rpx;
+	box-sizing: border-box;
+	float: left;
+	color: #555555;
+	font-size: 30rpx;
+	font-weight: 700;
+	overflow: hidden;
+	word-break: break-all;  /* break-all(允许在单词内换行。) */
+	text-overflow: ellipsis;  /* 超出部分省略号 */
+	display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+	-webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+	-webkit-line-clamp: 1; /** 显示的行数 **/
+}
+.content{
+	width: 100%;
+	background-color: #FFFFFF;
+	height: auto;
+	line-height: 2em;
+	padding: 37rpx 23rpx 54rpx 52rpx;
+	box-sizing: border-box;
+	font-size: 28rpx;
+	color: #999999;
+}
+.bgimg{
+	width: 360rpx;
+	height: 264rpx;
+	position: fixed;
+	right: 0;
+	bottom: 10rpx;
+}

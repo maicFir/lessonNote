@@ -1,0 +1,36 @@
+.tixianbox{
+	width: 100%;
+	height: auto;
+	padding: 120rpx 0 90rpx 0;
+	box-sizing: border-box;
+	text-align: center;
+}
+.tixianbox .msg{
+	color: #333333;
+	font-size: 35rpx;
+}
+.tixianbox .msg1{
+	color: #999999;
+	font-size: 25rpx;
+}
+.itembox{
+	width: 690rpx;
+	height: 115rpx;
+	margin: 0 auto;
+	line-height: 115rpx;
+}
+.loginout{
+	background-image: linear-gradient(to bottom, #FF9853 , #FF7D63);
+	width: 626rpx;
+	height: 88rpx;
+	border-radius: 88rpx;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 100rpx;
+	margin: auto;
+	color: #FFFFFF;
+	font-size: 30rpx;
+	font-weight: bold;
+	line-height: 88rpx;
+}
