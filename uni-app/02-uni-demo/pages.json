@@ -3,7 +3,7 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "仿淘宝网触屏版"
 			}
 		}
 	    ,{
@@ -15,6 +15,24 @@
             }
             
         }
+        ,{
+            "path" : "pages/shop/shop",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "购物车",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my/my",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的淘宝",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -22,5 +40,30 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
-	"uniIdRouter": {}
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"height": "60px",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "https://img.alicdn.com/imgextra/i2/O1CN01OStgh21aWOP69RsTZ_!!6000000003337-2-tps-63-63.png",
+			"selectedIconPath": "https://img.alicdn.com/imgextra/i1/O1CN01oAxBQ81qF1EZtn4Rq_!!6000000005465-2-tps-108-108.png",
+			"text": ""
+		}, {
+			"pagePath": "pages/shop/shop",
+			"iconPath": "https://img.alicdn.com/imgextra/i3/O1CN0151qDFg2AN4Vma3SdE_!!6000000008190-2-tps-63-63.png",
+			"selectedIconPath": "",
+			"text": "购物车"
+		},
+		{
+			"pagePath": "pages/my/my",
+			"iconPath": "https://img.alicdn.com/imgextra/i3/O1CN01nOAkIZ1ou7XqRzXEZ_!!6000000005284-2-tps-63-63.png",
+			"selectedIconPath": "https://img.alicdn.com/imgextra/i1/O1CN01gJdKCx1sB10EydwbE_!!6000000005727-2-tps-63-63.png",
+			"text": "我的淘宝"
+		}
+		]
+	}
 }

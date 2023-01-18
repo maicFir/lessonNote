@@ -1,25 +1,19 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
-		<view @click="goToAbout">前往关于页面</view>
-		<!-- <view>{{text}}</view>
-		<view>查询</view>
-		<view v-for="(item, index) in user" :key="index">
-			<view>{{item.name}}--<text @click="handleRemove(item)">删除</text></view>
-			<view>{{item.age}}</view>
-		</view>
-		<view>添加</view>
-		<input type="text" placeholder="请输入名称" v-model="formParams.name" />
-		<input type="text" placeholder="请输入年龄" v-model="formParams.age" />
-		<button type="default" @click="handleSure">确定</button> -->
+	<view class="index-content">
+		<Header></Header>
+		<Content></Content>
 	</view>
 </template>
 
 <script>
+	import Header from "./component/Header.vue";
+	import Content from "./component/Content.vue";
+	
 	export default {
+		components: {
+			Header,
+			Content
+		},
 		data() {
 			return {
 				title: 'Hello',
@@ -34,7 +28,6 @@
 		onLoad() {
 			console.log('index load')
 			console.log(window)
-			this.queryList();
 		},
 		onShow() {
 			console.log('index on show')
@@ -90,29 +83,5 @@
 </script>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+	
 </style>
