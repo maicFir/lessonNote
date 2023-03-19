@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid布局</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .app {
+            background: red;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 30px calc(100vh - 90px) 60px;
+        }
+        header {
+            grid-column: 1 / 3;
+            background-color: blue;
+        }
+        aside {
+            grid-column: 1 / 2;
+            background-color: pink;
+        }
+        main {
+            grid-column: 2 / 3;
+            background-color: yellow;
+        }
+        footer {
+            grid-column: 1 / 3;
+            background-color: palegreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+       <header>header</header>
+       <aside>slide</aside>
+       <main>main</main>
+       <footer>footer</footer>
+    </div>
+</body>
+</html>

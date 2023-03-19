@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid布局</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .app {
+            background: red;
+        }
+        .box-1 {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 50px calc(100vh - 130px) 40px;
+            gap: 20px;
+            position: relative;
+        }
+        .box .item:nth-of-type(2n) {
+            background-color: green;
+        }
+        .box .item:nth-of-type(2n+1) {
+            background-color: pink;
+        }
+        .box .item:nth-of-type(1) {
+            grid-column: 1/5;
+        }
+        .box .item:nth-of-type(2) {
+            grid-row: 2/3;
+        }
+        .box .item:nth-of-type(3) {
+            grid-column: 2/5;
+        }
+        .box .item:nth-of-type(4) {
+            grid-column: 1/5;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="box box-1">
+            <div class="item">header</div>
+            <div class="item">slide</div>
+            <div class="item">main</div>
+            <div class="item">footer</div>
+        </div>
+    </div>
+</body>
+</html>
