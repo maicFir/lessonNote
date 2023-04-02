@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keyframes</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      @keyframes fadeOut {
+        0% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 0.3;
+          color: red;
+        }
+        40% {
+          opacity: 0.5;
+          color: aqua;
+        }
+        60% {
+          opacity: 1;
+          color: green;
+        }
+        80% {
+          opacity: 0.5;
+          color: palegreen;
+        }
+        90% {
+          opacity: 0.3;
+          color: blue;
+        }
+        100% {
+          opacity: 0;
+          color: cadetblue;
+        }
+      }
+      .fadeout {
+        animation: fadeOut 1s infinite;
+      }
+      @keyframes light {
+        0% {
+          transform: scale(0.5);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(0);
+        }
+      }
+      @keyframes itemAni {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-30px);
+        }
+        100% {
+          transform: translateY(-60px);
+        }
+      }
+      @keyframes fadeLeft {
+        0% {
+          margin-left: 100%;
+        }
+        100% {
+          margin-left: 0;
+        }
+      }
+      .item-wrap {
+        height: 30px;
+        overflow: hidden;
+      }
+      .item {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+      }
+      .item:nth-of-type(2n) {
+        background-color: red;
+      }
+      .item:nth-of-type(2n + 1) {
+        background-color: pink;
+      }
+      .item-wrap .item {
+        animation: itemAni 3s ease;
+        animation-delay: 1s;
+      }
+      .text {
+        animation-name: fadeLeft;
+        animation-duration: 3s;
+        animation-delay: 4s;
+        animation-iteration-count: ease;
+      }
+      .text:hover {
+        animation-play-state: paused;
+      }
+      .text:active {
+        animation-play-state: running;
+      }
+      .bulb {
+        position: relative;
+        font-size: 50px;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        z-index: 2;
+      }
+      .bulb::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        filter: blur(10px);
+        display: inline-block;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: radial-gradient(#feffbe 25%, transparent 100%);
+        animation: light 5s ease infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <div class="fadeout">Web技术学苑</div> -->
+      <!-- <div class="item-wrap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </div> -->
+      <!-- <div class="text">欢迎关注公众号：Web技术学苑</div> -->
+      <div>
+        <span class="bulb">💡</span>
+      </div>
+    </div>
+    <script>
+      var textDom = document.querySelector(".text");
+      textDom.addEventListener("animationstart", function () {
+        console.log('animationstart')
+      }, false);
+      textDom.addEventListener("animationend", function () {
+        console.log('animationend')
+      }, false);
+      textDom.addEventListener("animationiteration", function () {
+        console.log('animationiteration');
+      }, false);
+    </script>
+  </body>
+</html>
