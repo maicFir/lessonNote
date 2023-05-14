@@ -2,8 +2,8 @@
  * @description Header
  * @author maicFir
  */
-import React, { PropsWithChildren, useRef, useState } from "react";
-import logo from "../../logo.svg";
+import React, { PropsWithChildren, useRef, useState, useEffect } from "react";
+import { userTitle } from "../../hooks";
 import type { UserInfo, Menu } from "./userInterfence";
 // interface Props {
 //   children?: React.ReactNode;
@@ -36,8 +36,8 @@ const Input: React.FC<InputProps> = (props) => {
   });
   return (
     <>
-      <input type="text" ref={inputRef} value={userInfo.name} />
-      <input type="text" value={userInfo.age} />
+      <input type="text" ref={inputRef} defaultValue={userInfo.name} />
+      <input type="text" defaultValue={userInfo.age} />
       <div ref={sureRef} onClick={props?.onSure}>
         确定
       </div>
@@ -62,6 +62,7 @@ const MenuSubComp: React.FC<Pick<Menu, "items">> = (props) => {
 };
 
 const Index: React.FC<Partial<Props>> = (props) => {
+  const { title } = userTitle();
   const { className } = props;
   const handleSure = () => {};
   const subInfo: Pick<Menu, "items"> = {
@@ -72,25 +73,15 @@ const Index: React.FC<Partial<Props>> = (props) => {
       },
     ],
   };
+  useEffect(() => {
+    document.title = title;
+  }, []);
   return (
     <header className={`App-header ${className}`}>
       <SubHeader />
       <Input onSure={handleSure} />
       <MenuComp price={10} title={"menuA"} />
       <MenuSubComp items={subInfo.items} />
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-
       {props.children}
     </header>
   );

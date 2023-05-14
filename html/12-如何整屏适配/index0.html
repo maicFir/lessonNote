@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex如何整屏适配</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        .app {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        main {
+            flex:1;
+            padding: 0 20px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+       header {
+            display: flex;
+            height: 50px;
+            align-items: center;
+            padding: 0 20px;
+        }
+        footer {
+            padding: 10px 20px;
+            height: 30px;
+        }
+        header >div {
+            padding: 0 5px;
+        }
+        .web {
+            color: green;
+        }
+        .about {
+           flex:1;
+           display: flex;
+           justify-content: flex-end;
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="app">
+        <header>
+            <div class="home">Home</div>
+            <div class="web">web技术学苑</div>
+            <div class="about">about</div>
+            <div class="login">登录</div>
+        </header>
+        <main>
+            <div>公众号：Web技术学苑</div>
+            <div>https://learn.wmcweb.cn</div>
+            <div id="content"></div>
+        </main>
+        <footer>
+            MIT Licensed | Copyright © 2022-present Maic
+        </footer>
+    </div>
+    <script>
+        const contentDom = document.getElementById('content');
+        var limit = 100;
+        var str = '';
+        new Array(limit).fill(0).forEach((v, index) => {
+            str +=`<p>公众号：Web技术学苑-${index}</p>`
+        });
+        contentDom.innerHTML = str;
+
+    </script>
+</body>
+</html>
