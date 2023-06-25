@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+.app {
+  @apply dark:bg-[#111];
+}
+.public-text {
+  @apply animate-customer_opacity-in-bounce
+}
+.web-content {
+  @apply dark:text-red-500 dark:p-6 dark:bg-[#111];
+}
+.model-wrap {
+  @apply flex
+}
+.model-wrap p {
+  @apply mx-[5px] cursor-pointer
+}
