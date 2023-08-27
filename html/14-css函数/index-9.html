@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3函数-url</title>
+
+    <style>
+        * {padding: 0;margin:0;}
+        html,body {height: 100%; font-size:16px }
+        :root {
+            --text-color: red;
+        }
+        .text >div.img {
+            display: block;
+            height: 800px;
+            background: url("https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF") no-repeat;
+        }
+        .text >div.img2::before {
+            content: url("https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF");
+            display: block;
+        }
+     
+       
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="text">
+            <div class="cursor">Web技术学苑</div>
+            <div class="img"></div>
+            <div class="img2"></div>
+      
+        </div>
+    </div>
+</body>
+</html>

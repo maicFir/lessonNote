@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3函数-url</title>
+
+    <style>
+        * {padding: 0;margin:0;}
+        html,body {height: 100%; font-size:16px }
+        :root {
+            --bg: red;
+            --defaultBg: #e5e5e5;
+            --width: 400;
+            --height: 200;
+            --angle: 30deg;
+      
+        }
+        #app {
+            overflow: hidden;
+        }
+        .box-wrap {
+            width: 100%;
+            height: calc(1px * var(--height));
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+    
+        .box {
+            width: calc(1px * var(--width));
+        }
+        .box:nth-of-type(1):before{
+            content: "";
+            display: block;
+            width: 100%;
+            height: calc(1px * var(--height));
+            transform: skewX(calc(var(--angle) * 1));
+            background-color: var(--bg);
+            border-left: 1px solid #e5e5e5;
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <div class="box-wrap">
+        <div class="box"></div>
+       </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3函数-attr</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3844652_3qxwqjxiuyp.css">
+    <style>
+        * {padding: 0;margin:0;}
+        html,body {height: 100%; }
+        #app {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #app div::before {
+            font-family: "iconfont";
+            content: attr(data-uniCode);
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="app">
+        
+    </div>
+    <script>
+        const app = document.getElementById('app');
+        const dataSource = [
+            {
+                title: "公众号:Web技术学苑",
+                uniCode: "&#xe611;"
+            },
+            {
+                title: "公众号:前端之巅",
+                uniCode: "&#xe60f;"
+            },
+            {
+                title: "公众号:前端之神",
+                uniCode: "&#xe8bc;"
+            },
+            {
+                title: "公众号:itclanCoder",
+                uniCode: "&#xe60d;"
+            }
+        ];
+        let htmlTemplate = "";
+        dataSource.forEach(item => {
+            htmlTemplate+=`<div data-uniCode=${item.uniCode}>${item.title}</div>`
+        });
+        app.innerHTML = htmlTemplate;
+    </script>
+</body>
+</html>

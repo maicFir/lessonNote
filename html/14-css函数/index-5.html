@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3函数-attr</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3844652_3qxwqjxiuyp.css">
+    <style>
+        * {padding: 0;margin:0;}
+        html,body {height: 100%; }
+        #app {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #app div::before {
+        
+            content: attr(data-text);
+            display: block;
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div data-text="Web技术学苑"></div>
+    </div>
+  
+</body>
+</html>

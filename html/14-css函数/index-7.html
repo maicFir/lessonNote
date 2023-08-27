@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3函数-attr</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3844652_3qxwqjxiuyp.css">
+    <style>
+        * {padding: 0;margin:0;}
+        html,body {height: 100%; font-size:16px }
+        :root {
+            --text-color: red;
+        }
+        .text {
+            color: var(--text-color);
+            width: min(500px, calc(80% + 100px));
+            background-color: green;
+        }
+        .text .title {
+            font-size: clamp(2rem, 2.5vw, 3rem);
+        }
+        .text p.content {
+            font-size: max(1rem, 2rem);
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="text">
+            <h1 class="title">Web技术学苑</h1>
+            <p class="content">hello world</p>
+        </div>
+    </div>
+  
+</body>
+</html>

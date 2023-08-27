@@ -20,28 +20,22 @@
            background-color: yellow;
         }
         main {
-
-            position: relative;
+            display: flex;
         }
         .slide {
-            position: absolute;
-            left:0px;
             width: 100px;
             height: calc(100vh - 80px);
             background-color: green;
             padding-left: 20px;
         }
        .content-box {
-        padding-left:120px;
-        width: calc(100vw - 120px);
+        flex:1;
         height: calc(100vh - 80px);
         overflow-y: auto;
         background-color: pink;
-        
        }
         footer {
             padding: 10px 20px;
-          
         }
         header >div {
             padding: 0 5px;
