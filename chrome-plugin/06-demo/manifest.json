@@ -1,0 +1,31 @@
+{
+    "name": "test",
+    "description": "test demo",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+  
+    "options_page": "set.html",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            
+            "run_at": "document_end",
+            "all_frames": false
+        }
+    ],
+    "permissions": [
+      "storage"
+    ]
+}
