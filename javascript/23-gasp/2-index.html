@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo1</title>
+</head>
+<body>
+    <div id="app">
+        <p class="text1">欢迎关注</p>
+        <p class="text2">公众号：Web技术学苑</p>
+        <p class="text3">好好学习，天天向上</p>
+        <button id="stop">暂停</button>
+        <button id="play">播放</button>
+        <button id="reset">重置</button>
+    </div>
+    <script src="./lib/gsap-latest-beta.min.js"></script>
+    <script>
+        const stopBtn = document.getElementById('stop');
+        const playBtn = document.getElementById('play');
+        const resetBtn = document.getElementById('reset');
+        const gsapData = [
+            {
+                name: "setRed",
+                props: { opacity: 0.5, x: 300, yoyo: true, repeat: -1, color: 'red' }
+            },
+            {
+                name: "setBlue",
+                animate: 'from', 
+                props: { opacity: 0.25, x: 300, yoyo: true, color: 'blue' }
+            },
+            {
+                name: "setGreen",
+                animate: 'fromTo', 
+                props: { opacity: 0.1, x: 300}, 
+                props2: { opacity: 1, x: 600, yoyo: true, repeat: -1, color: 'green'  }
+            }
+        ]
+        gsapData.forEach(v => {
+            gsap.registerEffect({
+                name: v.name,
+                defaults: { duration: 1 },
+                extendTimeline: true,
+                effect(target, config) {
+                    if (config.animate === "from") {
+                        return gsap.from(target, {
+                            ...v.props,
+                            ...config
+                        })
+                    } else if (config.animate === 'fromTo') {
+                        return gsap.fromTo(target, {
+                            ...v.props,
+                            ...config
+                        }, {...config.props2})
+                    } else {
+                        return gsap.to(target, {
+                            ...v.props,
+                            ...config
+                        })
+                    }
+                }
+            })
+        })
+  
+        const timeline = gsap.timeline();
+        timeline.setRed(".text1", {duration: 3}).setBlue(".text2", {duration: 1}).setGreen(".text3", 1);
+
+        stopBtn.addEventListener('click', () => {
+            timeline.pause();
+        })
+        playBtn.addEventListener('click', () => {
+            timeline.play();
+        })
+     
+        resetBtn.addEventListener('click', () => {
+            timeline.reverse();
+        })
+    </script>
+</body>
+</html>

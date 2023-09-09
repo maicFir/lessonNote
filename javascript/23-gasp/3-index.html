@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo1</title>
+</head>
+<body>
+    <div id="app">
+        <p class="text">公众号：Web技术学苑</p>
+    </div>
+    <script src="./lib/gsap-latest-beta.min.js"></script>
+    <script>
+        window.onload = function () {
+            gsap.from(".text", {
+                opacity: 0,
+                y:100,
+                duration: 1
+            }).f
+        }
+    </script>
+</body>
+</html>

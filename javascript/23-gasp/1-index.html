@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo1</title>
+</head>
+<body>
+    <div id="app">
+        <p class="text1">欢迎关注</p>
+        <p class="text2">公众号：Web技术学苑</p>
+        <p class="text3">好好学习，天天向上</p>
+    </div>
+    <script src="./lib/gsap-latest-beta.min.js"></script>
+    <script>
+        gsap.registerEffect({
+            name: "myFade",
+            effect: (targets, config) => {
+                return gsap.to(targets, {duration: config.duration, opacity: 0, repeat: -1});
+            },
+            defaults: {duration: 2},
+            extendTimeline: true
+        });
+        const timeline = gsap.timeline();
+        timeline.myFade(".text1", {duration: 3}).myFade(".text2", {duration: 2}).myFade(".text3", {duration: 1});
+    </script>
+</body>
+</html>

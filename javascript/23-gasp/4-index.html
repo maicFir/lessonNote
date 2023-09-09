@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo1</title>
+</head>
+<body>
+    <div id="app">
+        <p class="text">公众号：Web技术学苑</p>
+        <button value="start" id="start">开始</button>
+    </div>
+    <script src="./lib/gsap-latest-beta.min.js"></script>
+    <script>
+        window.onload = function () {
+            const startDom = document.getElementById("start");
+            let tween = gsap.fromTo(".text", {
+                opacity: 0,
+            }, {
+                opacity: 1,
+                duration: 2,
+                delay: 1,
+                x: 100,
+                repeat:-1
+            });
+            tween.pause();
+            startDom.addEventListener("click", () => {
+                tween.seek(2);
+                tween.progress(0.5);
+            tween.play();
+            })
+        }
+    </script>
+</body>
+</html>
