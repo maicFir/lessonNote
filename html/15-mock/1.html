@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mock-test</title>
+    <style>
+        * {
+            padding: 0;
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const appDom = document.getElementById('app');
+        const baseUrl = 'https://console-mock.apipost.cn/mock/cd19ff79-1221-4f2b-8671-ac0c6e19e6b7'
+        const getData = async () => {
+            const res = await fetch(`${baseUrl}/api/shoplist?pageNum=1&pageSize=10`)
+           const {status} = res;
+           if (status === 200) {
+            return res.json();
+           }
+            
+        }
+        getData().then(({data}) => {
+    
+            const html = data.map(item => {
+                return `
+                <div class="item">
+                    <p>${item.name}</p>
+                    <p>${item.age}</p>
+                </div>`
+         });
+         appDom.innerHTML = html.join('');
+    })
+
+    </script>
+</body>
+</html>
