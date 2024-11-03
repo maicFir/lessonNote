@@ -1,0 +1,25 @@
+{
+  "name": "web3.js",
+  "version": "1.0.0",
+  "description": "web3.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --mode development --node-env=development"
+  },
+  "keywords": [
+    "web3.js"
+  ],
+  "author": "maicFir",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.26.0",
+    "babel-loader": "^9.2.1",
+    "html-webpack-plugin": "^5.6.3",
+    "web3": "^4.14.0",
+    "webpack": "^5.96.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
