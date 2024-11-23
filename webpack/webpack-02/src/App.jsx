@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import deepMerge from './utils/index.js';
 import '../src/assets/css/app.css';
 import image1 from '../src/assets/images/1.png';
 import image2 from '../src/assets/images/2.jpg';
+import Tag from "../src/tag/index.jsx"
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +29,7 @@ class App extends Component {
               imgSource.map(src => <img src={src} key={src} />)
             }
           </div>
+          <Tag />
       </div>
     </>)
   }

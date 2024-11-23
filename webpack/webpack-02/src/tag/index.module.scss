@@ -1,0 +1,26 @@
+$width: 100px;
+$height: 30px;
+$tagName: "tag-wrap";
+
+.tag-app {
+  :global {
+    .tag-common {
+      display: inline-block;
+      width: $width;
+      height: $height;
+    }
+    .#{$tagName} {
+      span {
+        @extend .tag-common;
+      }
+      @each $name, $bgColor, $textColor in ("tag1", #c61c27, #fff),
+        ("tag2", #1a83fd, #111), ("tag3", #f2df62, blue)
+      {
+        .#{$name} {
+          background-color: $bgColor;
+          color: $textColor;
+        }
+      }
+    }
+  }
+}

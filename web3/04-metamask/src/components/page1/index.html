@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
+
+    <div id="content-button-request-accounts">request accounts</div>
+    <div id="getBlance">getBlance</div>
+    <div id="content-eth_sign">eth_sign</div>
+    <script>
+      const MMSDK = new MetaMaskSDK.MetaMaskSDK({
+        dappMetadata: {
+          name: "demo",
+          url: window.location.href,
+        },
+        infuraAPIKey: "5920517516ba405d8b898b80f8bc4243",
+        // Other options.
+      });
+
+      document
+        .getElementById("content-button-request-accounts")
+        .addEventListener("click", async () => {
+          const ethereum = MMSDK.getProvider();
+
+          const account = await ethereum.request({
+            method: "eth_requestAccounts",
+          });
+          console.log(account);
+        });
+
+      document.getElementById("getBlance").addEventListener("click", () => {
+        const ethereum = MMSDK.getProvider();
+        const blance = ethereum.request({ method: "eth_getBalance" });
+        console.log(blance);
+      });
+
+      document
+        .getElementById("content-eth_sign")
+        .addEventListener("click", async () => {
+          await ethereum.request({
+            method: "eth_sign",
+          });
+        });
+    </script>
+  </body>
+</html>

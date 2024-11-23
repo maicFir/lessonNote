@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button onclick="connect()">Connect</button>
+      <button onclick="getAddress()">getAddress</button>
+      <p id="address_result"></p>
+      <button onclick="addEthereumChain()">ADD ETHEREUM CHAIN</button>
+
+      <button onclick="handleDisconect()">Disconnect</button>
+    </div>
+    <script src="https://c0f4f41c-2f55-4863-921b-sdk-docs.github.io/cdn/metamask-sdk.js"></script>
+    <script>
+      var sdk = new MetaMaskSDK.MetaMaskSDK({
+        logging: {
+          developerMode: true,
+        },
+        dappMetadata: {
+          name: "dapp",
+        },
+      });
+      console.log(sdk, "=sdk");
+    </script>
+    <script>
+      let provider;
+
+      const connect = async () => {
+        await sdk
+          .connect()
+          .catch((e) => console.log("request accounts ERR", e));
+        provider = sdk.getProvider();
+      };
+      const getAddress = async () => {
+        console.log(provider, "provider");
+        const res = await provider.request({
+          method: "eth_accounts",
+          params: [],
+        });
+        document.getElementById("address_result").innerHTML = res[0];
+      };
+
+      const handleDisconect = async () => {
+        await provider.request({
+          method: "wallet_revokePermissions", // wallet_requestPermissions
+          params: [
+            {
+              eth_accounts: {},
+            },
+          ],
+        });
+      };
+
+      function addEthereumChain() {
+        provider
+          .request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: "0x89",
+                chainName: "Polygon",
+                blockExplorerUrls: ["https://polygonscan.com"],
+                nativeCurrency: { symbol: "POL", decimals: 18 },
+                rpcUrls: ["https://polygon-rpc.com/"],
+              },
+            ],
+          })
+          .then((res) => console.log("add", res))
+          .catch((e) => console.log("ADD ERR", e));
+      }
+    </script>
+  </body>
+</html>
