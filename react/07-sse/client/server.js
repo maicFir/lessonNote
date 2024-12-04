@@ -18,7 +18,7 @@ app.use(
     target: "http://localhost:3000", // 目标接口地址
     changeOrigin: true, // 修改请求的源头为目标地址
     pathRewrite: {
-      "^/api": "/api", // 将 /api 重写为空，例如 /api/posts -> /posts
+      "^/api": "/api",
     },
   })
 );
