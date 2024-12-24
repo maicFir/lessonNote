@@ -24,4 +24,4 @@ const Page = async () => {
   );
 };
 
-export default React.memo(Page);
+export default Page;
