@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import GlobalModalProvider from "./components/modal4"
 import "./globals.css";
 
 const geistSans = localFont({
@@ -27,8 +28,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+          >
+              <GlobalModalProvider>
+                {children}
+              </GlobalModalProvider>
+
       </body>
     </html>
   );
