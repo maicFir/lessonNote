@@ -1,0 +1,261 @@
+:root {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --secondary: #1e293b;
+    --accent: #8b5cf6;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-muted: #94a3b8;
+    --success: #10b981;
+    --danger: #ef4444;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    outline: none;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 1rem;
+}
+
+.glass-panel {
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Layout */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #8b5cf6, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--glass-border);
+    border-radius: 0.5rem;
+    color: var(--foreground);
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 8px -1px rgba(99, 102, 241, 0.5);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--foreground);
+}
+
+.btn-danger {
+    background: transparent;
+    color: var(--danger);
+    width: auto;
+    padding: 0.5rem;
+}
+
+.btn-danger:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Todo List */
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    transition: transform 0.2s;
+}
+
+.todo-item:hover {
+    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.todo-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.checkbox {
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--text-muted);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.checkbox:checked {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.875rem;
+}
+
+.todo-text {
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.todo-text.completed {
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Utility */
+.text-center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
